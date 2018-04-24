@@ -1,0 +1,35 @@
+.w3-white, .w3-hover-white:hover {
+    color: #ff9800!important;
+    background-color: #fff!important;
+}
+
+.w3-xlarge {
+  font-size: 23px!important;
+      padding: 7px;
+}
+.w3-bar-block .w3-bar-item {
+  width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    color: #ffffff;
+}
+.w3-top, .w3-bottom {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    color: #ffffff!important;
+    background-color: #FF9800!important;
+}
+
+.w3-white, .w3-hover-white:hover {
+  color: #FF9800!important;
+  background-color: #ffffff!important;
+  border-bottom-color: hsla(36, 25%, 89%, 0.16);
+  border-bottom-style: inset;
+  border-bottom-width: 3px;
+}
