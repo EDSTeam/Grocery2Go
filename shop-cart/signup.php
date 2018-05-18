@@ -14,7 +14,7 @@
         die("Connection failed: ".$conn->connect_error);
       }
 
-      $firstname=$POST_['firstname']
+      $firstname=$POST_['firstname'];
       $username=$POST_["username"];
       $lastname=$POST_["lastname"];
       $mobilenumber=$POST_["mobilenumber"];
@@ -30,7 +30,7 @@
         die("Query failed".$conn->connect_error);
       }
       $conn->close();
-      
+
       header('Location: index.html');
   ?>
 </body>
