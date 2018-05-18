@@ -1,3 +1,4 @@
+
 .w3-white, .w3-hover-white:hover {
     color: #ff9800!important;
     background-color: #fff!important;
@@ -7,6 +8,7 @@
   font-size: 23px!important;
       padding: 7px;
 }
+
 .w3-bar-block .w3-bar-item {
   width: 100%;
     display: block;
@@ -18,6 +20,7 @@
     outline: 0;
     color: #ffffff;
 }
+
 .w3-top, .w3-bottom {
     position: fixed;
     width: 100%;
@@ -32,4 +35,12 @@
   border-bottom-color: hsla(36, 25%, 89%, 0.16);
   border-bottom-style: inset;
   border-bottom-width: 3px;
+}
+
+.shopnow{
+    border: #55555585;
+    border-style: solid;
+    font-size: 20px;
+    border-width:thin;
+    border-radius: 8px;
 }
