@@ -123,6 +123,26 @@ Navigation Bar Section
 <!--
 Body Section
 -->
+  <?php
+      $servername="localhost";
+      $serverusername="root";
+      $servepassword="";
+      $dbname="grocery2go";
+
+      $conn = mysqli_connect($servername,$serverusername,$serverpassword,$dbname);
+
+      if(!$conn){
+        die("Connection failed:" .mysqli_connect_error());
+      }
+
+      $sql="SELECT * FROM ";
+      $result= mysqli_query($conn,$sql);
+
+      if(mysqli_num_rows($result)>0){
+
+      }
+  ?>
+
 	<div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
@@ -141,22 +161,45 @@ Body Section
                   <th>Unit price</th>
                   <th>Qty </th>
                   <th>Total</th>
-				       </tr>
+				</tr>
               </thead>
               <tbody>
                 <tr>
                   <td><img width="100" src="assets/img/e.jpg" alt=""></td>
                   <td>Items name here<br>Carate : 22<br>Model : n/a</td>
-                  <td>$00.00</td>
+                  <td>$50.00</td>
                   <td>
-                    <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="2">
-                    <div class="input-append">
-                      <button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button"> + </button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-                    </div>
-                  </td>
-
+					<input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="2">
+				  <div class="input-append">
+					<button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button"> + </button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
+				</div>
+				</td>
                   <td>$100.00</td>
-              </tr>
+                </tr>
+				<tr>
+                  <td><img width="100" src="assets/img/f.jpg" alt=""></td>
+                  <td>Item names and brief details<br>Carate:24 <br>Model:HBK24</td>
+                  <td>$348.42</td>
+                  <td>
+				  <input class="span1" style="max-width:34px" placeholder="1" size="16" type="text">
+				  <div class="input-append">
+					<button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button">+</button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
+				</div>
+				  </td>
+                  <td>$348.42</td>
+                </tr>
+                  <tr>
+                  <td colspan="6" class="alignR"><b>Subtotal</b>	</td>
+                  <td> $00.00</td>
+                </tr>
+                 <tr>
+                  <td colspan="6" class="alignR">Delivery Fee:	</td>
+                  <td> $00.00</td>
+                </tr>
+				         <tr>
+                  <td colspan="6" class="alignR"><b>Total:</b></td>
+                  <td> $00.00</td>
+                </tr>
 
 				</tbody>
             </table><br/>
