@@ -123,6 +123,26 @@ Navigation Bar Section
 <!--
 Body Section
 -->
+  <?php
+      $servername="localhost";
+      $serverusername="root";
+      $servepassword="";
+      $dbname="grocery2go";
+
+      $conn = mysqli_connect($servername,$serverusername,$serverpassword,$dbname);
+
+      if(!$conn){
+        die("Connection failed:" .mysqli_connect_error());
+      }
+
+      $sql="SELECT * FROM ";
+      $result= mysqli_query($conn,$sql);
+
+      if(mysqli_num_rows($result)>0){
+
+      }
+  ?>
+
 	<div class="row">
 	<div class="span12">
     <ul class="breadcrumb">
@@ -138,8 +158,6 @@ Body Section
                 <tr>
                   <th>Product</th>
                   <th>Description</th>
-				  <th>	Ref. </th>
-                  <th>Avail.</th>
                   <th>Unit price</th>
                   <th>Qty </th>
                   <th>Total</th>
@@ -149,8 +167,6 @@ Body Section
                 <tr>
                   <td><img width="100" src="assets/img/e.jpg" alt=""></td>
                   <td>Items name here<br>Carate : 22<br>Model : n/a</td>
-                  <td> - </td>
-                  <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
                   <td>$50.00</td>
                   <td>
 					<input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="2">
@@ -163,8 +179,6 @@ Body Section
 				<tr>
                   <td><img width="100" src="assets/img/f.jpg" alt=""></td>
                   <td>Item names and brief details<br>Carate:24 <br>Model:HBK24</td>
-                  <td> - </td>
-                  <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
                   <td>$348.42</td>
                   <td>
 				  <input class="span1" style="max-width:34px" placeholder="1" size="16" type="text">
