@@ -1,14 +1,15 @@
 .w3-white, .w3-hover-white:hover {
-    color: #ff9800!important;
+    color: #6D6663;
     background-color: #fff!important;
 }
 
 .w3-xlarge {
   font-size: 23px!important;
-      padding: 7px;
+  padding: 7px;
 }
+
 .w3-bar-block .w3-bar-item {
-  width: 100%;
+    width: 100%;
     display: block;
     padding: 8px 16px;
     text-align: left;
@@ -18,6 +19,7 @@
     outline: 0;
     color: #ffffff;
 }
+
 .w3-top, .w3-bottom {
     position: fixed;
     width: 100%;
@@ -32,4 +34,35 @@
   border-bottom-color: hsla(36, 25%, 89%, 0.16);
   border-bottom-style: inset;
   border-bottom-width: 3px;
+}
+
+input.MyButton {
+  width: 100px;
+  padding:10px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #FC9761;
+  color: #FFFFFF;
+  border: 1px solid #FC9761;
+  border-radius: 8px;
+  font-family: "work" sans-serif;
+}
+
+input.MyButton:hover {
+  color: #FFFFFF;
+  background: #D3CCCA;
+  border: 1px solid #fff;
+}
+
+body{
+  font-family: "work" sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  color: #7A7776;
+}
+
+.w3-bar-block .w3-bar-item {
+  padding:20px;
 }
