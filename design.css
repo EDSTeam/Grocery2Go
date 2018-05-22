@@ -1,16 +1,16 @@
 
 .w3-white, .w3-hover-white:hover {
-    color: #ff9800!important;
+    color: #6D6663;
     background-color: #fff!important;
 }
 
 .w3-xlarge {
   font-size: 23px!important;
-      padding: 7px;
+  padding: 7px;
 }
 
 .w3-bar-block .w3-bar-item {
-  width: 100%;
+    width: 100%;
     display: block;
     padding: 8px 16px;
     text-align: left;
@@ -37,10 +37,42 @@
   border-bottom-width: 3px;
 }
 
+<<<<<<< HEAD
+input.MyButton {
+  width: 100px;
+  padding:10px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #FC9761;
+  color: #FFFFFF;
+  border: 1px solid #FC9761;
+  border-radius: 8px;
+  font-family: "work" sans-serif;
+}
+
+input.MyButton:hover {
+  color: #FFFFFF;
+  background: #D3CCCA;
+  border: 1px solid #fff;
+}
+
+body{
+  font-family: "work" sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  color: #7A7776;
+}
+
+.w3-bar-block .w3-bar-item {
+  padding:20px;
+=======
 .shopnow{
     border: #55555585;
     border-style: solid;
     font-size: 20px;
     border-width:thin;
     border-radius: 8px;
+>>>>>>> 33bb08b5effacd4a806b1689bd51b4a76f7b5670
 }
