@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2018 at 03:36 AM
+-- Generation Time: May 22, 2018 at 05:42 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -204,9 +204,8 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`id`, `product_id`, `quantity`, `member_id`) VALUES
-(31, 6, 2, 2),
-(32, 5, 3, 2),
-(34, 13, 1, 2);
+(36, 6, 1, 2),
+(37, 14, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -231,9 +230,9 @@ CREATE TABLE `tbl_product` (
 
 INSERT INTO `tbl_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`, `gm_id`, `categ_id`) VALUES
 (5, 'Monterey Lean Ground Pork Lean GroundPork\r\n', '500g', 'MLGPLG', 'assets\\Products\\freshMeat\\monLeanGroundPork.jpg\r\n', 117.50, 2, 4),
-(6, 'Monterey Pork Adobo Cut', '500g', 'MPAC', 'assets\\Products\\freshMeat\\Monterey Pork Adobo Cut.jpg', 117.50, 2, 4),
+(6, 'Monterey Pork Adobo Cut', '500g', 'MPAC', 'assets\\Products\\freshMeat\\Monterey Pork Adobo Cut.JPG', 117.50, 2, 4),
 (13, 'Magnolia Chicken Tapa', '330 g', 'MCTapa', 'assets\\Products\\freshMeat\\Magnolia Chicken Tapa.jpg', 80.85, 2, 4),
-(14, 'Magnolia Chicken Wings81.00', '500g', 'MCWings', 'assets\\Products\\freshMeat\\Magnolia Chicken Wings.jpg', 81.00, 2, 4);
+(14, 'Magnolia Chicken Wings', '500g', 'MCWings', 'assets\\Products\\freshMeat\\Magnolia Chicken Wings.jpg', 81.00, 2, 4);
 
 -- --------------------------------------------------------
 
@@ -377,7 +376,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
