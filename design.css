@@ -1,3 +1,4 @@
+
 .w3-white, .w3-hover-white:hover {
     color: #6D6663;
     background-color: #fff!important;
@@ -36,6 +37,7 @@
   border-bottom-width: 3px;
 }
 
+<<<<<<< HEAD
 input.MyButton {
   width: 100px;
   padding:10px;
@@ -65,4 +67,12 @@ body{
 
 .w3-bar-block .w3-bar-item {
   padding:20px;
+=======
+.shopnow{
+    border: #55555585;
+    border-style: solid;
+    font-size: 20px;
+    border-width:thin;
+    border-radius: 8px;
+>>>>>>> 33bb08b5effacd4a806b1689bd51b4a76f7b5670
 }
