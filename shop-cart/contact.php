@@ -27,7 +27,7 @@
 <!--
 	Upper Header Section
 -->
-<!--<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="topNav">
 		<div class="container">
 			<div class="alignR">
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 	</div>
-</div>-->
+</div>
 
 <!--
 Lower Header Section
@@ -64,11 +64,11 @@ Lower Header Section
   <div class="span4">
 
   </div>
-  <!--<div class="span4 alignR">
+  <div class="span4 alignR">
   <p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
   <span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
 
-</div>-->
+  </div>
 </div>
 </header>
 
@@ -85,16 +85,17 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class=""><a href="index.html">Home	</a></li>
-        <li class="active"><a href="general.html">FAQs</a></li>
-          <li class=""><a href="help.html">Help</a></li>
-          <li class=""><a href="livetrack.html">Live Track</a></li>
+			  <li class="active"><a href="index.html">Home	</a></li>
+			  <li class=""><a href="list-view.html">List View</a></li>
+			  <li class=""><a href="grid-view.html">Grid View</a></li>
+			  <li class=""><a href="three-col.html">Three Column</a></li>
+			  <li class=""><a href="four-col.html">Four Column</a></li>
+			  <li class=""><a href="general.html">General Content</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
 			<ul class="nav pull-right">
-        <li><a href="register.html">Sign Up</a></li>
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
 				<div class="dropdown-menu">
@@ -122,89 +123,91 @@ Navigation Bar Section
 <!--
 Body Section
 -->
-  <!--<ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">Page Title</li>
-  </ul>-->
-<div class="well well-small">
-  <div class="container" style="padding:20px">
-    <h2 class="text-center">How can we help you?</h2>
-  </div>
+	<hr class="soften">
+	<div class="well well-small">
+	<h1>Visit us</h1>
+	<hr class="soften"/>
+	<div class="row-fluid">
+		<div class="span8 relative">
+		<iframe style="width:100%; height:350px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Newbury+Street,+Boston,+MA,+United+States&amp;aq=1&amp;oq=NewBoston,+MA,+United+States&amp;sll=42.347238,-71.084011&amp;sspn=0.014099,0.033023&amp;ie=UTF8&amp;hq=Newbury+Street,+Boston,+MA,+United+States&amp;t=m&amp;ll=42.348994,-71.088248&amp;spn=0.001388,0.006276&amp;z=18&amp;iwloc=A&amp;output=embed"></iframe>
 
-  <!--collapse-->
-  <div class="accordion" id="accordion2">
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOrders"
-        style="font-size:25px;text-decoration:none;color:black;padding:15px">
-          Orders
-        </a>
-      </div>
-      <div id="collapseOrders" class="accordion-body collapse out">
-        <div class="accordion-inner"
-        style="padding:40px">
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
-           those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-           Malorum" by Cicero are also reproduced in their exact original form,
-          accompanied by English versions from the 1914 translation by H. Rackham.
-        </div>
-      </div>
-    </div>
+		<div class="absoluteBlk">
+		<div class="well wellsmall">
+		<h4>Contact Details</h4>
+		<h5>
+			2601 Mission St.<br/>
+			San Francisco, CA 94110<br/><br/>
 
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsePayment"
-        style="font-size:25px;text-decoration:none;color:black;padding:15px">
-          Payment
-        </a>
-      </div>
-      <div id="collapsePayment" class="accordion-body collapse out">
-        <div class="accordion-inner"
-        style="padding:40px">
-          Anim pariatur cliche...
-        </div>
-      </div>
-    </div>
+			info@mysite.com<br/>
+			﻿Tel 123-456-6780<br/>
+			Fax 123-456-5679<br/>
+			web:wwwmysitedomain.com
+		</h5>
+		</div>
+		</div>
+		</div>
 
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseDelivery"
-        style="font-size:25px;text-decoration:none;color:black;padding:15px">
-          Delivery
-        </a>
-      </div>
-      <div id="collapseDelivery" class="accordion-body collapse out">
-        <div class="accordion-inner"
-        style="padding:40px">
-          Anim pariatur cliche...
-        </div>
-      </div>
-    </div>
+		<div class="span4">
+		<h4>Email Us</h4>
+		<form class="form-horizontal">
+        <fieldset>
+          <div class="control-group">
 
-    <div class="accordion-group">
-      <div class="accordion-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsePartnership"
-        style="font-size:25px;text-decoration:none;color:black;padding:15px">
-          Partnership
-        </a>
-      </div>
-      <div id="collapsePartnership" class="accordion-body collapse out">
-        <div class="accordion-inner"
-        style="padding:40px">
-          Anim pariatur cliche...
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--collapse-->
+              <input type="text" placeholder="name" class="input-xlarge"/>
 
-</div>
+          </div>
+		   <div class="control-group">
 
-</div>
+              <input type="text" placeholder="email" class="input-xlarge"/>
+
+          </div>
+		   <div class="control-group">
+
+              <input type="text" placeholder="subject" class="input-xlarge"/>
+
+          </div>
+          <div class="control-group">
+              <textarea rows="3" id="textarea" class="input-xlarge"></textarea>
+
+          </div>
+
+            <button class="shopBtn" type="submit">Send email</button>
+
+        </fieldset>
+      </form>
+		</div>
+	</div>
+
+
 </div>
 <!--
 Clients
 -->
+<section class="our_client">
+	<hr class="soften"/>
+	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
+	<hr class="soften"/>
+	<div class="row">
+		<div class="span2">
+			<a href="#"><img alt="" src="assets/img/1.png"></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src="assets/img/2.png"></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src="assets/img/3.png"></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src="assets/img/4.png"></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src="assets/img/5.png"></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src="assets/img/6.png"></a>
+		</div>
+	</div>
+</section>
 
 <!--
 Footer
@@ -246,7 +249,18 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 </footer>
 </div><!-- /container -->
 
-
+<div class="copyright">
+<div class="container">
+	<p class="pull-right">
+		<a href="#"><img src="assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
+	</p>
+	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
+</div>
+</div>
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
