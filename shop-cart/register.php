@@ -56,7 +56,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="index.php"><span>Twitter Bootstrap ecommerce template</span>
 		<img src="assets/img/logo-bootstrap-shoping-cart.png" alt="bootstrap sexy shop">
 	</a>
 	</h1>
@@ -85,7 +85,7 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-			  <li class=""><a href="index.html">Home	</a></li>
+			  <li class=""><a href="index.php">Home	</a></li>
 			  <!--<li class=""><a href="list-view.html">List View</a></li>
 			  <li class=""><a href="grid-view.html">Grid View</a></li>
 			  <li class=""><a href="three-col.html">Three Column</a></li>
@@ -96,7 +96,7 @@ Navigation Bar Section
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
 			<ul class="nav pull-right">
-        <li><a href="register.html">Sign Up</a></li>
+        <li><a href="register.php">Sign Up</a></li>
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
 				<div class="dropdown-menu">
@@ -192,34 +192,52 @@ Body Section
 	<h3> Registration</h3>
 	<hr class="soft"/>
 	<div class="well">
-	<form class="form-horizontal">
+	<form class="form-horizontal" action="signup.php" method="post">
 		<h3>Your Personal Details</h3>
+      <div class="control-group">
+			<label class="control-label">First name <sup>*</sup></label>
+			<div class="controls">
+			  <input type="text" name="firstname" placeholder="First Name">
+			</div>
+      <!--<div class="control-group">-->
+ 			<label class="control-label">Last name <sup>*</sup></label>
+ 			<div class="controls">
+ 			  <input type="text" name="lastname" placeholder="Last Name">
+ 			</div>
+ 		 </div>
+      <div class="control-group">
+ 			<label class="control-label">Address <sup>*</sup></label>
+ 			<div class="controls">
+ 			  <input type="text" name="address" placeholder="Address">
+ 			</div>
+ 		 </div>
+      <div class="control-group">
+ 			<label class="control-label">Mobile Number<sup>*</sup></label>
+ 			<div class="controls">
+ 			  <input type="number" name="phoneNumb" placeholder="Mobile Number">
+ 			</div>
+ 		 </div>
+ 		<div class="control-group">
+ 		<label class="control-label">Email <sup>*</sup></label>
+ 		<div class="controls">
+ 		  <input type="text" name="email" placeholder="Email">
+ 		</div>
+ 	  </div>
+     <div class="control-group">
+ 		<label class="control-label">Username<sup>*</sup></label>
+ 		<div class="controls">
+ 		  <input type="text" name="username" placeholder="Username">
+ 		</div>
+ 	  </div>
+ 		<div class="control-group">
+ 		<label class="control-label">Password <sup>*</sup></label>
+ 		<div class="controls">
+ 		  <input type="Password" name="password" placeholder="Password">
+ 		</div>
+ 	  </div>
+		 </div>
 
-		<div class="control-group">
-			<label class="control-label" for="inputFname">First name <sup>*</sup></label>
-			<div class="controls">
-			  <input type="text" id="inputFname" placeholder="First Name">
-			</div>
-		 </div>
-		 <div class="control-group">
-			<label class="control-label" for="inputLname">Last name <sup>*</sup></label>
-			<div class="controls">
-			  <input type="text" id="inputLname" placeholder="Last Name">
-			</div>
-		 </div>
-		<div class="control-group">
-		<label class="control-label" for="inputEmail">Email <sup>*</sup></label>
-		<div class="controls">
-		  <input type="text" placeholder="Email">
-		</div>
-	  </div>
-		<div class="control-group">
-		<label class="control-label">Password <sup>*</sup></label>
-		<div class="controls">
-		  <input type="password" placeholder="Password">
-		</div>
-	  </div>
-		<div class="control-group">
+		<!--<div class="control-group">
 		<label class="control-label">Date of Birth <sup>*</sup></label>
 		<div class="controls">
 		  <select class="span1" name="days">
@@ -253,7 +271,7 @@ Body Section
 					<option value="7">7&nbsp;&nbsp;</option>
 			</select>
 		</div>
-	  </div>
+  </div>-->
 	<div class="control-group">
 		<div class="controls">
 		 <input type="submit" name="submitAccount" value="Register" class="exclusive shopBtn">
@@ -261,8 +279,9 @@ Body Section
 	</div>
 	</form>
 </div>
+</div>
 
-<div class="well">
+<!--<div class="well">
 	<form class="form-horizontal" >
 		<h3>Your Billing Details</h3>
 		<div class="control-group">
@@ -271,29 +290,32 @@ Body Section
 			  <input type="text" placeholder=" Field name">
 			</div>
 		</div>
-		<div class="control-group">
+
+    <div class="control-group">
 			<label class="control-label">Fiels label <sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" placeholder=" Field name">
 			</div>
 		</div>
-		 <div class="control-group">
+
+    <div class="control-group">
 			<label class="control-label">Fiels label <sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" placeholder=" Field name">
 			</div>
 		</div>
+
 		<div class="control-group">
 			<label class="control-label">Fiels label <sup>*</sup></label>
 			<div class="controls">
 			  <textarea></textarea>
 			</div>
 		</div>
-	<div class="control-group">
-		<div class="controls">
-		 <input type="submit" name="submitAccount" value="Register" class="shopBtn exclusive">
-		</div>
-	</div>
+	  <div class="control-group">
+		    <div class="controls">
+		        <input type="submit" name="submitAccount" value="Register" class="shopBtn exclusive">
+		    </div>
+	  </div>
 	</form>
 </div>
 
@@ -301,13 +323,14 @@ Body Section
 <div class="well">
 	<form class="form-horizontal" >
 		<h3>Your Account Details</h3>
-		<div class="control-group">
-			<label class="control-label">Fiels label <sup>*</sup></label>
-			<div class="controls">
-			  <input type="text" placeholder=" Field name">
-			</div>
-		</div>
-		<div class="control-group">
+		  <div class="control-group">
+			     <label class="control-label">Fiels label <sup>*</sup></label>
+			        <div class="controls">
+			             <input type="text" placeholder=" Field name">
+			        </div>
+		  </div>
+
+    <div class="control-group">
 			<label class="control-label">Fiels label <sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" placeholder=" Field name">
@@ -378,7 +401,7 @@ Body Section
 		</div>
 	</div>
 	</form>
-</div>
+</div>-->
 
 
 </div>

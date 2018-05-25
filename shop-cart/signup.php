@@ -3,25 +3,24 @@
 <head></head>
 <body>
   <?php
-    $servername="localhost ";
+    $servername="localhost";
     $serverusername="root";
     $serverpassword="";
     $dbname="grocery2go";
         //try to establis connection
-      $conn= new mysqli($servername,$sereverusername,$serverpassword,$dbname);
+      $conn= new mysqli($servername,$serverusername,$serverpassword,$dbname);
 
       if($conn->connect_error){
         die("Connection failed: ".$conn->connect_error);
       }
 
-      $firstname=$POST_['firstname'];
-      $username=$POST_["username"];
-      $lastname=$POST_["lastname"];
-      $mobilenumber=$POST_["mobilenumber"];
-      $address=$POST_["address"];
-      $email=$POST_["email"];
-      $password=$POST_["password"];
-
+      $firstname=$_POST['firstname'];
+      $username=$_POST['username'];
+      $lastname=$_POST['lastname'];
+      $mobilenumber=$_POST['phoneNumb'];
+      $address=$_POST['address'];
+      $email=$_POST['email'];
+      $password=$_POST['password'];
 
       $sql= "INSERT INTO customer_details (firstname,lastname,address,phoneNumb,email,username,password)
       VALUES('$firstname','$lastname','$address','$mobilenumber','$email','$username','$password')";
@@ -31,7 +30,7 @@
       }
       $conn->close();
 
-      header('Location: index.html');
+      header('Location: index.php');
   ?>
 </body>
 </html>

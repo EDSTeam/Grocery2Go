@@ -85,10 +85,11 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class=""><a href="index.html">Home	</a></li>
-        <li class="active"><a href="general.html">FAQs</a></li>
-          <li class=""><a href="help.html">Help</a></li>
-          <li class=""><a href="livetrack.html">Live Track</a></li>
+        <li class="active"><a href="index.php">Home	</a></li>
+        <!--<li class=""><a href="grid-view.html">Shop Now</a></li>-->
+        <li class=""><a href="general.php">FAQs</a></li>
+        <li class=""><a href="help.php">Help</a></li>
+        <li class=""><a href="livetrack.php">Live Track</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">

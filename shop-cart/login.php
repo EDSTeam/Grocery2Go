@@ -46,10 +46,10 @@ Lower Header Section
 	<div class="span4">
 
 	</div>
-	<div class="span4 alignR">
+	<!--<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) : 1234 678 </strong><br><br></p>
 	</div>
-</div>
+</div>-->
 </header>
 
 <!--
@@ -77,7 +77,6 @@ Body Section
 				<div class="controls">
 				  <input class="span3"  type="text" placeholder="Email" name="email" id="email">
 				</div>
-
       Username
 				<div class="controls">
 				  <input class="span3"  type="text" placeholder="username" name="username" id="username" required>
@@ -191,5 +190,5 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
 
-  </body>
+</body>
 </html>
