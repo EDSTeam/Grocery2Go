@@ -49,28 +49,14 @@
 
 <!--
 Lower Header Section
--->
-<div class="container">
-<div id="gototop"> </div>
-<header id="header">
-<div class="row">
-	<div class="span4">
-	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
-		<img src="assets/img/g2g.png" alt="grocery2go">
-	</a>
-	</h1>
-	</div>
-  <div class="span4">
+  -->
 
-  </div>
   <!--<div class="span4 alignR">
   <p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
   <span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
 
 </div>-->
-</div>
-</header>
+
 
 <!--
 Navigation Bar Section
@@ -127,8 +113,8 @@ Body Section
 		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
 		<li class="active">Page Title</li>
   </ul>-->
-<div class="well well-small">
-  <div class="container" style="padding:20px">
+<div class="well well-small" style="padding:50px;">
+  <div class="container">
     <h2 class="text-center">How can we help you?</h2>
   </div>
 
@@ -210,38 +196,19 @@ Clients
 <!--
 Footer
 -->
-<footer class="footer">
+<footer class="footer" style="padding:0">
 <div class="row-fluid">
 <div class="span2">
 <h5>Your Account</h5>
-<a href="#">YOUR ACCOUNT</a><br>
-<a href="#">PERSONAL INFORMATION</a><br>
-<a href="#">ADDRESSES</a><br>
-<a href="#">DISCOUNT</a><br>
-<a href="#">ORDER HISTORY</a><br>
  </div>
 <div class="span2">
 <h5>Iinformation</h5>
-<a href="contact.html">CONTACT</a><br>
-<a href="#">SITEMAP</a><br>
-<a href="#">LEGAL NOTICE</a><br>
-<a href="#">TERMS AND CONDITIONS</a><br>
-<a href="#">ABOUT US</a><br>
  </div>
 <div class="span2">
 <h5>Our Offer</h5>
-<a href="#">NEW PRODUCTS</a> <br>
-<a href="#">TOP SELLERS</a><br>
-<a href="#">SPECIALS</a><br>
-<a href="#">MANUFACTURERS</a><br>
-<a href="#">SUPPLIERS</a> <br/>
  </div>
  <div class="span6">
-<h5>The standard chunk of Lorem</h5>
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
- those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
- Malorum" by Cicero are also reproduced in their exact original form,
-accompanied by English versions from the 1914 translation by H. Rackham.
+
  </div>
  </div>
 </footer>
