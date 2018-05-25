@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap shopping cart</title>
+    <title>Grocery2Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -27,7 +27,7 @@
 <!--
 	Upper Header Section
 -->
-<!--<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="topNav">
 		<div class="container">
 			<div class="alignR">
@@ -39,13 +39,11 @@
 				</div>
 				<a class="active" href="index.html"> <span class="icon-home"></span> Home</a>
 				<a href="#"><span class="icon-user"></span> My Account</a>
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a>
 				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
 			</div>
 		</div>
 	</div>
-</div>-->
+</div>
 
 <!--
 Lower Header Section
@@ -56,7 +54,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="index.html"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -64,11 +62,11 @@ Lower Header Section
   <div class="span4">
 
   </div>
-  <!--<div class="span4 alignR">
+  <div class="span4 alignR">
   <p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
   <span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
 
-</div>-->
+  </div>
   </div>
 </header>
 
@@ -85,14 +83,16 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class="active"><a href="home.php">Home	</a></li>
+        <li class=""><a href="index.html">Home	</a></li>
+        <li class="active"><a href="grid-view.html">Shop Now</a></li>
+        <li class=""><a href="general.html">FAQs</a></li>
+          <li class=""><a href="help.html">Help</a></li>
+          <li class=""><a href="livetrack.html">Live Track</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
-
 			<ul class="nav pull-right">
-        <li><a href="register.html">Sign Up</a></li>
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
 				<div class="dropdown-menu">
@@ -122,7 +122,26 @@ Body Section
 -->
 	<div class="row">
 <div id="sidebar" class="span3">
+<div class="well well-small">
+	<ul class="nav nav-list">
+	<li><a href="products.html"><span class="icon-chevron-right"></span>Categories</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Drinks</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Dairy</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion, Eggs & Chilled Food</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Health & Beauty </a></li>
 
+
+	</ul>
+  <div class="well well-small alert alert-warning cntr">
+    <h3>Cash on Delivery only</h3>
+    <br />
+  </div>
+</div>
 
 			 <!-- <div class="
         well-small alert alert-warning cntr">
@@ -139,71 +158,89 @@ Body Section
 		  </ul>
 
 	</div>
-	<div class="span12">
-	<div class="well np">
-		<div id="myCarousel" class="carousel slide homCar">
-            <div class="carousel-inner">
-              <div class="item">
-                      <img style="width:100%" src="assets/img/g2gLogo.jpg" alt="bootstrap ecommerce templates">
-                      <div class="carousel-caption">
-                          <!--  <h4>Grocery2Go</h4>-->
-                            <p><span>Start Shopping now</span></p>
-                      </div>
-                    </div>
-			  <div class="item">
-                <img style="width:100%" src="assets/img/sld5.png" alt="bootstrap ecommerce templates">
-                <div class="carousel-caption">
-                      <h4>Grocery2Go</h4>
-                      <p><span>Start Shopping now</span></p>
-                </div>
-              </div>
+	<div class="span9">
 
-			       <div class="item active">
-                <img style="width:100%" src="assets/img/sld2.jpg" alt="bootstrap ecommerce templates">
-                <div class="carousel-caption">
-                <!--      <h4>Twitter Bootstrap cart</h4>-->
-                <!--      <p><span>Very easy to integrate and expand.</span></p>-->
-                </div>
-              </div>
-            </div>
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-          </div>
-        </div>
 <!--
 New Products
 -->
-	<div class="well well-small">
-	<h3>Grocery Stores </h3>
+<div class="well well-small">
+<h3>Our Products </h3>
+  <div class="row-fluid">
+    <ul class="thumbnails">
+      <?php include "displayitem.php";
+      if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+        }
+          $sql = "SELECT * FROM item_details";
+          $result = mysqli_query($conn, $sql);
+
+          if (mysqli_num_rows($result) > 0) {
+              while($row = mysqli_fetch_assoc($result)) {
+      ?>
+    <li class="span4">
+      <div class="thumbnail">
+      <a href="product_details.html" class="overlay"></a>
+      <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+      <a href="product_details.html"><img src="<?php echo$row['img_name'];?>" alt="" style="width:190px;height:200px"> </a>
+      <div class="caption cntr">
+        <p><?php echo $row['itm_name'];?></p>
+        <p><strong><?php echo $row['itm_price'];?></strong></p>
+        <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
+        <div class="actionList">
+          <a class="pull-left" href="#">Add to Wish List </a>
+          <a class="pull-left" href="#"> Add to Compare </a>
+        </div>
+        <br class="clr">
+      </div>
+      </div>
+    </li>
+<?php }
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+
+?>
+
+  </div>
+
+
+</div>
+	<!--
+	Featured Products
+	-->
+
+
+
+<!--
+Clients
+-->
+<section class="our_client">
 	<hr class="soften"/>
-		<div class="row-fluid">
-		<div id="newProductCar" class="carousel slide">
-            <div class="carousel-inner">
-
-		  <a class="left carousel-control" href="#newProductCar" data-slide="prev">&lsaquo;</a>
-            <a class="right carousel-control" href="#newProductCar" data-slide="next">&rsaquo;</a>
-		  </div>
-		  </div>
-		<div class="row-fluid">
-		  <ul class="thumbnails">
-			<li class="span6">
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href="product_details.html">
-          <img src="assets\img\sm.png" alt=""></a>
+	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
+	<hr class="soften"/>
+	<div class="row">
+		<div class="span2">
+			<a href="#"><img alt="" src=""></a>
 		</div>
-			</li>
-			<li class="span6">
-			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href="product_details.html"><img src="assets\img\rustans.png" alt=""></a>
-				</div>
-			  </div>
-			</li>
-
-		  </ul>
+		<div class="span2">
+			<a href="#"><img alt="" src=""></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src=""></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src=""></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src=""></a>
+		</div>
+		<div class="span2">
+			<a href="#"><img alt="" src=""></a>
 		</div>
 	</div>
+</section>
 
 <!--
 Footer
@@ -244,12 +281,19 @@ accompanied by English versions from the 1914 translation by H. Rackham.
  </div>
 </footer>
 </div><!-- /container -->
+
 <div class="copyright">
 <div class="container">
-	<span>Copyright &copy; 2018 - Grocery2Go</span>
+	<p class="pull-right">
+		<a href="#"><img src="assets/img/maestro.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/mc.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/pp.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
+		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
+	</p>
+	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
 </div>
 </div>
-
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>

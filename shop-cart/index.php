@@ -1,3 +1,14 @@
+<?php
+// Start the session
+
+if (isset($_SESSION)) {
+
+  session_start();
+}else {
+ header ('Location:login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,7 +67,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="index.html"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -85,8 +96,7 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class="active"><a href="index.html">Home	</a></li>
-        <!--<li class=""><a href="grid-view.html">Shop Now</a></li>-->
+        <li class="active"><a href="index.html">Home</a></li>
         <li class=""><a href="general.html">FAQs</a></li>
         <li class=""><a href="help.html">Help</a></li>
         <li class=""><a href="livetrack.html">Live Track</a></li>
@@ -94,28 +104,10 @@ Navigation Bar Section
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
-			<ul class="nav pull-right">
-        <li><a href="register.html">Sign Up</a></li>
-			<li class="dropdown">
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
-				<div class="dropdown-menu">
-				<form class="form-horizontal loginFrm">
-				  <div class="control-group">
-					<input type="text" class="span2" id="inputEmail" placeholder="Email">
-				  </div>
-				  <div class="control-group">
-					<input type="password" class="span2" id="inputPassword" placeholder="Password">
-				  </div>
-				  <div class="control-group">
-					<label class="checkbox">
-					<input type="checkbox"> Remember me
-					</label>
-					<button type="submit" class="shopBtn btn-block">Sign in</button>
-				  </div>
-				</form>
-				</div>
-			</li>
-    </ul>
+      <ul class="nav pull-right">
+        <li><a href="register.html"><?php echo "Welcome, ".$_SESSION["username"];?></a></li>
+
+      </ul>
 		  </div>
 		</div>
 	  </div>

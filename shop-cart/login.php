@@ -55,7 +55,30 @@ Lower Header Section
 <!--
 Navigation Bar Section
 -->
+<div class="navbar">
+	  <div class="navbar-inner">
+		<div class="container">
+		  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </a>
+		  <div class="nav-collapse">
+			<ul class="nav">
+        <li class=""><a href="home.php">Home</a></li>
+			</ul>
+			<form action="#" class="navbar-search pull-left">
+			  <input type="text" placeholder="Search" class="search-query span2">
+			</form>
 
+			<ul class="nav pull-right">
+        <li><a href="register.php">Sign Up</a></li>
+
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	</div>
 <!--
 Body Section
 -->
@@ -67,55 +90,9 @@ Body Section
 	<hr class="soft"/>
 
 	<div class="row">
-		<div class="span6">
-			<div class="well">
-			<h5>CREATE YOUR ACCOUNT</h5><br/>
 
-			<form action="signup.php" method="post">
-			  <div class="control-group">
-				E-mail address
-				<div class="controls">
-				  <input class="span3"  type="text" placeholder="Email" name="email" id="email">
-				</div>
-
-      Username
-				<div class="controls">
-				  <input class="span3"  type="text" placeholder="username" name="username" id="username" required>
-				</div>
-      Password
-        <div class="controls">
-				  <input class="span3"  type="Password" placeholder="password" name="username" id="username" required>
-				</div>
-
-      First Name
-        <div class="controls">
-          <input class="span3"  type="text" placeholder="firstname" name="firstname" id="firstname" required>
-        </div>
-
-        Last Name
-          <div class="controls">
-            <input class="span3"  type="text" placeholder="lastname" name="lastname" id="lastname" required>
-          </div>
-
-          Mobile Number
-            <div class="controls">
-              <input class="span3"  type="text" placeholder="mobilenumber" name="mobilenumber" id="mobilenumber" required>
-            </div>
-
-          Address
-              <div class="controls">
-                <input class="span3"  type="text" placeholder="address" name="address" id="address" required>
-              </div>
-
-			  </div>
-			  <div class="controls">
-			  <button type="submit" class="btn block">Create Your Account</button>
-			  </div>
-			</form>
-		</div>
-		</div>
 		<div class="span1"> &nbsp;</div>
-		<div class="span6">
+		<div class="span8">
 			<div class="well">
 			<h5>ALREADY REGISTERED ?</h5>
 			<form action="login.php" method="post">
