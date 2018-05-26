@@ -27,7 +27,7 @@
 <!--
 	Upper Header Section
 -->
-<!--<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="topNav">
 		<div class="container">
 			<div class="alignR">
@@ -37,15 +37,13 @@
 					<a href="#"><span class="icon-youtube"></span></a>
 					<a href="#"><span class="icon-tumblr"></span></a>
 				</div>
-				<a href="index.html"> <span class="icon-home"></span> Home</a>
+				<a class="active" href="index.html"> <span class="icon-home"></span> Home</a>
 				<a href="#"><span class="icon-user"></span> My Account</a>
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a>
 				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
 			</div>
 		</div>
 	</div>
-</div>-->
+</div>
 
 <!--
 Lower Header Section
@@ -56,7 +54,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="index.html"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -69,7 +67,7 @@ Lower Header Section
   <span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
 
   </div>
-</div>
+  </div>
 </header>
 
 <!--
@@ -85,11 +83,11 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class="active"><a href="index.php">Home	</a></li>
-        <!--<li class=""><a href="grid-view.html">Shop Now</a></li>-->
-        <li class=""><a href="general.php">FAQs</a></li>
-        <li class=""><a href="help.php">Help</a></li>
-        <li class=""><a href="livetrack.php">Live Track</a></li>
+        <li class=""><a href="index.html">Home	</a></li>
+        <li class="active"><a href="grid-view.html">Shop Now</a></li>
+        <li class=""><a href="general.html">FAQs</a></li>
+          <li class=""><a href="help.html">Help</a></li>
+          <li class=""><a href="livetrack.html">Live Track</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -122,63 +120,99 @@ Navigation Bar Section
 <!--
 Body Section
 -->
-	<hr class="soften">
-	<div class="well well-small">
-	<h1>Visit us</h1>
-	<hr class="soften"/>
-	<div class="row-fluid">
-		<div class="span8 relative">
-		<iframe style="width:100%; height:350px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Newbury+Street,+Boston,+MA,+United+States&amp;aq=1&amp;oq=NewBoston,+MA,+United+States&amp;sll=42.347238,-71.084011&amp;sspn=0.014099,0.033023&amp;ie=UTF8&amp;hq=Newbury+Street,+Boston,+MA,+United+States&amp;t=m&amp;ll=42.348994,-71.088248&amp;spn=0.001388,0.006276&amp;z=18&amp;iwloc=A&amp;output=embed"></iframe>
+	<div class="row">
+<div id="sidebar" class="span3">
+<div class="well well-small">
+	<ul class="nav nav-list">
+	<li><a href="products.html"><span class="icon-chevron-right"></span>Categories</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Drinks</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Dairy</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion, Eggs & Chilled Food</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Health & Beauty </a></li>
 
-		<div class="absoluteBlk">
-		<div class="well wellsmall">
-		<h4>Contact Details</h4>
-		<h5>
-			2601 Mission St.<br/>
-			San Francisco, CA 94110<br/><br/>
 
-			info@mysite.com<br/>
-			﻿Tel 123-456-6780<br/>
-			Fax 123-456-5679<br/>
-			web:wwwmysitedomain.com
-		</h5>
-		</div>
-		</div>
-		</div>
+	</ul>
+  <div class="well well-small alert alert-warning cntr">
+    <h3>Cash on Delivery only</h3>
+    <br />
+  </div>
+</div>
 
-		<div class="span4">
-		<h4>Email Us</h4>
-		<form class="form-horizontal">
-        <fieldset>
-          <div class="control-group">
+			 <!-- <div class="
+        well-small alert alert-warning cntr">
+				  <h2>50% Discount</h2>
+				  <p>
+					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
+				  </p>
+			  </div>-->
 
-              <input type="text" placeholder="name" class="input-xlarge"/>
 
-          </div>
-		   <div class="control-group">
 
-              <input type="text" placeholder="email" class="input-xlarge"/>
+			<ul class="nav nav-list promowrapper">
+		<!-- side bar-->
+		  </ul>
 
-          </div>
-		   <div class="control-group">
-
-              <input type="text" placeholder="subject" class="input-xlarge"/>
-
-          </div>
-          <div class="control-group">
-              <textarea rows="3" id="textarea" class="input-xlarge"></textarea>
-
-          </div>
-
-            <button class="shopBtn" type="submit">Send email</button>
-
-        </fieldset>
-      </form>
-		</div>
 	</div>
+	<div class="span9">
+
+<!--
+New Products
+-->
+<div class="well well-small">
+<h3>Our Products </h3>
+  <div class="row-fluid">
+    <ul class="thumbnails">
+      <?php include "displayitem.php";
+      if (!$conn) {
+          die("Connection failed: " . mysqli_connect_error());
+        }
+          $sql = "SELECT * FROM item_details";
+          $result = mysqli_query($conn, $sql);
+
+          if (mysqli_num_rows($result) > 0) {
+              while($row = mysqli_fetch_assoc($result)) {
+      ?>
+    <li class="span4">
+      <div class="thumbnail">
+      <a href="product_details.html" class="overlay"></a>
+      <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+      <a href="product_details.html"><img src="<?php echo$row['img_name'];?>" alt="" style="width:190px;height:200px"> </a>
+      <div class="caption cntr">
+        <p><?php echo $row['itm_name'];?></p>
+        <p><strong><?php echo $row['itm_price'];?></strong></p>
+        <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
+        <div class="actionList">
+          <a class="pull-left" href="#">Add to Wish List </a>
+          <a class="pull-left" href="#"> Add to Compare </a>
+        </div>
+        <br class="clr">
+      </div>
+      </div>
+    </li>
+<?php }
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+
+?>
+
+  </div>
 
 
 </div>
+	<!--
+	Featured Products
+	-->
+
+
+
 <!--
 Clients
 -->
@@ -188,22 +222,22 @@ Clients
 	<hr class="soften"/>
 	<div class="row">
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/1.png"></a>
+			<a href="#"><img alt="" src=""></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/2.png"></a>
+			<a href="#"><img alt="" src=""></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/3.png"></a>
+			<a href="#"><img alt="" src=""></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/4.png"></a>
+			<a href="#"><img alt="" src=""></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/5.png"></a>
+			<a href="#"><img alt="" src=""></a>
 		</div>
 		<div class="span2">
-			<a href="#"><img alt="" src="assets/img/6.png"></a>
+			<a href="#"><img alt="" src=""></a>
 		</div>
 	</div>
 </section>

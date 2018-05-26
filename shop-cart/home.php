@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap shopping cart</title>
+    <title>Grocery2Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -85,14 +85,18 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class="active"><a href="index.html">Home	</a></li>
+<<<<<<< HEAD
+        <li class="active"><a href="index.php">Home	</a></li>
+=======
+        <li class="active"><a href="home.php">Home	</a></li>
+>>>>>>> 7149e25f4c25961a4e42d911b2397fb0c9d01941
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
 
 			<ul class="nav pull-right">
-        <li><a href="register.html">Sign Up</a></li>
+        <li><a href="register.php">Sign Up</a></li>
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
 				<div class="dropdown-menu">

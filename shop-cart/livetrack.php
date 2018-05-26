@@ -56,7 +56,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="index.php"><span>Twitter Bootstrap ecommerce template</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -85,11 +85,11 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class=""><a href="index.html">Home	</a></li>
-        <li class=""><a href="general.html">FAQs</a></li>
-          <li class=""><a href="help.html">Help</a></li>
-          <li class="active"><a href="livetrack.html">Live Track</a></li>
-
+        <li class="active"><a href="index.php">Home	</a></li>
+        <!--<li class=""><a href="grid-view.html">Shop Now</a></li>-->
+        <li class=""><a href="general.php">FAQs</a></li>
+        <li class=""><a href="help.php">Help</a></li>
+        <li class=""><a href="livetrack.php">Live Track</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -126,16 +126,15 @@ Body Section
 		<div id="sidebar" class="span3">
 		<div class="well well-small">
 			<ul class="nav nav-list">
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Watches</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fine Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Engagement & Wedding</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Men's Jewelry</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Vintage & Antique</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Diamonds </a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>Loose Beads</a></li>
-				<li><a href="products.html"><span class="icon-chevron-right"></span>See All Jewelry & Watches</a></li>
+        <li><a href="drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
+      		<li><a href="dairy.php"><span class="icon-chevron-right"></span>Dairy</a></li>
+      		<li><a href="eggs-chilled-food.php"><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
+      		<li><a href="veggie.php"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
+      		<li><a href="meat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
+      		<li><a href="fruity.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
+      		<li><a href="canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
+      		<li><a href="house.php"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
+      		<li><a href="health-beauty.php"><span class="icon-chevron-right"></span>Health & Beauty </a></li>	</ul>
 				<li style="border:0"> &nbsp;</li>
 				<li> <a class="totalInCart" href="cart.html"><strong>Total Amount  <span class="badge badge-warning pull-right" style="line-height:18px;">$448.42</span></strong></a></li>
 			</ul>

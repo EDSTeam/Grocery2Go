@@ -46,16 +46,39 @@ Lower Header Section
 	<div class="span4">
 
 	</div>
-	<div class="span4 alignR">
+	<!--<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) : 1234 678 </strong><br><br></p>
 	</div>
-</div>
+</div>-->
 </header>
 
 <!--
 Navigation Bar Section
 -->
+<div class="navbar">
+	  <div class="navbar-inner">
+		<div class="container">
+		  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </a>
+		  <div class="nav-collapse">
+			<ul class="nav">
+        <li class=""><a href="home.php">Home</a></li>
+			</ul>
+			<form action="#" class="navbar-search pull-left">
+			  <input type="text" placeholder="Search" class="search-query span2">
+			</form>
 
+			<ul class="nav pull-right">
+        <li><a href="register.php">Sign Up</a></li>
+
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	</div>
 <!--
 Body Section
 -->
@@ -67,6 +90,7 @@ Body Section
 	<hr class="soft"/>
 
 	<div class="row">
+<<<<<<< HEAD
 		<div class="span6">
 			<div class="well">
 			<h5>CREATE YOUR ACCOUNT</h5><br/>
@@ -77,7 +101,6 @@ Body Section
 				<div class="controls">
 				  <input class="span3"  type="text" placeholder="Email" name="email" id="email">
 				</div>
-
       Username
 				<div class="controls">
 				  <input class="span3"  type="text" placeholder="username" name="username" id="username" required>
@@ -106,16 +129,11 @@ Body Section
               <div class="controls">
                 <input class="span3"  type="text" placeholder="address" name="address" id="address" required>
               </div>
+=======
+>>>>>>> 7149e25f4c25961a4e42d911b2397fb0c9d01941
 
-			  </div>
-			  <div class="controls">
-			  <button type="submit" class="btn block">Create Your Account</button>
-			  </div>
-			</form>
-		</div>
-		</div>
 		<div class="span1"> &nbsp;</div>
-		<div class="span6">
+		<div class="span8">
 			<div class="well">
 			<h5>ALREADY REGISTERED ?</h5>
 			<form action="login.php" method="post">
@@ -191,5 +209,5 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
 
-  </body>
+</body>
 </html>

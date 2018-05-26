@@ -1,53 +1,30 @@
+<?php
+// Start the session
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Grocery2Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Bootstrap styles -->
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
     <link href="style.css" rel="stylesheet"/>
+
     <!-- font awesome styles -->
 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-		<!--[if IE 7]>
-			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
-		<![endif]-->
 
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 
-	<!-- Favicons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
   </head>
 <body>
-<!--
-	Upper Header Section
--->
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="topNav">
-		<div class="container">
-			<div class="alignR">
-				<div class="pull-left socialNw">
-					<a href="#"><span class="icon-twitter"></span></a>
-					<a href="#"><span class="icon-facebook"></span></a>
-					<a href="#"><span class="icon-youtube"></span></a>
-					<a href="#"><span class="icon-tumblr"></span></a>
-				</div>
-				<a class="active" href="index.html"> <span class="icon-home"></span> Home</a>
-				<a href="#"><span class="icon-user"></span> My Account</a>
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-			</div>
-		</div>
-	</div>
-</div>
 
-<!--
-Lower Header Section
--->
 <div class="container">
 <div id="gototop"> </div>
 <header id="header">
@@ -64,7 +41,7 @@ Lower Header Section
   </div>
   <div class="span4 alignR">
   <p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
-  <span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
+
 
   </div>
   </div>
@@ -73,15 +50,13 @@ Lower Header Section
 <!--
 Navigation Bar Section
 -->
+
 <div class="navbar">
 	  <div class="navbar-inner">
-		<div class="container">
-		  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		  </a>
+		<div class="container-fluid">
+
 		  <div class="nav-collapse">
+
 			<ul class="nav">
         <li class=""><a href="index.html">Home	</a></li>
         <li class="active"><a href="grid-view.html">Shop Now</a></li>
@@ -134,79 +109,193 @@ Body Section
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Health & Beauty </a></li>
-
-
 	</ul>
   <div class="well well-small alert alert-warning cntr">
     <h3>Cash on Delivery only</h3>
     <br />
   </div>
 </div>
-
-			 <!-- <div class="
-        well-small alert alert-warning cntr">
-				  <h2>50% Discount</h2>
-				  <p>
-					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
-				  </p>
-			  </div>-->
-
-
-
-			<ul class="nav nav-list promowrapper">
-		<!-- side bar-->
-		  </ul>
-
 	</div>
 	<div class="span9">
 
-<!--
-New Products
--->
-<div class="well well-small">
-<h3>Our Products </h3>
-  <div class="row-fluid">
-    <ul class="thumbnails">
-      <?php include "displayitem.php";
-      if (!$conn) {
-          die("Connection failed: " . mysqli_connect_error());
-        }
-          $sql = "SELECT * FROM item_details";
-          $result = mysqli_query($conn, $sql);
+    <div class="container">
+      <div class="well well-small">
+      <h3>Fresh Meat</h3>
+        <div class="row-fluid">
+          <?php
+          require_once "ShoppingCart.php";
 
-          if (mysqli_num_rows($result) > 0) {
-              while($row = mysqli_fetch_assoc($result)) {
-      ?>
-    <li class="span4">
-      <div class="thumbnail">
-      <a href="product_details.html" class="overlay"></a>
-      <a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-      <a href="product_details.html"><img src="<?php echo$row['img_name'];?>" alt="" style="width:190px;height:200px"> </a>
-      <div class="caption cntr">
-        <p><?php echo $row['itm_name'];?></p>
-        <p><strong><?php echo $row['itm_price'];?></strong></p>
-        <h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
-        <div class="actionList">
-          <a class="pull-left" href="#">Add to Wish List </a>
-          <a class="pull-left" href="#"> Add to Compare </a>
+          $member_id = 2; // you can your integerate authentication module here to get logged in member
+
+          $shoppingCart = new ShoppingCart();
+          if (! empty($_GET["action"])) {
+              switch ($_GET["action"]) {
+                  case "add":
+                      if (! empty($_POST["quantity"])) {
+
+                          $productResult = $shoppingCart->getProductByCode($_GET["code"]);
+
+                          $cartResult = $shoppingCart->getCartItemByProduct($productResult[0]["id"], $member_id);
+
+                          if (! empty($cartResult)) {
+                              // Update cart item quantity in database
+                              $newQuantity = $cartResult[0]["quantity"] + $_POST["quantity"];
+                              $shoppingCart->updateCartQuantity($newQuantity, $cartResult[0]["id"]);
+                          } else {
+                              // Add to cart table
+                              $shoppingCart->addToCart($productResult[0]["id"], $_POST["quantity"], $member_id);
+                          }
+                      }
+                      break;
+                  case "remove":
+                      // Delete single entry from the cart
+                      $shoppingCart->deleteCartItem($_GET["id"]);
+                      break;
+                  case "empty":
+                      // Empty cart
+                      $shoppingCart->emptyCart($member_id);
+                      break;
+              }
+          }
+          ?>
+          <HTML>
+          <HEAD>
+          <TITLE></TITLE>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+
+          <link href="style1.css" type="text/css" rel="stylesheet" />
+          <script src="jquery-3.2.1.min.js"></script>
+          <script>
+          function increment_quantity(cart_id, price) {
+              var inputQuantityElement = $("#input-quantity-"+cart_id);
+              var newQuantity = parseInt($(inputQuantityElement).val())+1;
+              var newPrice = newQuantity * price;
+              save_to_db(cart_id, newQuantity, newPrice);
+          }
+
+          function decrement_quantity(cart_id, price) {
+              var inputQuantityElement = $("#input-quantity-"+cart_id);
+              if($(inputQuantityElement).val() > 1)
+              {
+              var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
+              var newPrice = newQuantity * price;
+              save_to_db(cart_id, newQuantity, newPrice);
+              }
+          }
+
+          function save_to_db(cart_id, new_quantity, newPrice) {
+          	var inputQuantityElement = $("#input-quantity-"+cart_id);
+          	var priceElement = $("#cart-price-"+cart_id);
+              $.ajax({
+          		url : "update_cart_quantity.php",
+          		data : "cart_id="+cart_id+"&new_quantity="+new_quantity,
+          		type : 'post',
+          		success : function(response) {
+          			$(inputQuantityElement).val(new_quantity);
+                      $(priceElement).text("$"+newPrice);
+                      var totalQuantity = 0;
+                      $("input[id*='input-quantity-']").each(function() {
+                          var cart_quantity = $(this).val();
+                          totalQuantity = parseInt(totalQuantity) + parseInt(cart_quantity);
+                      });
+                      $("#total-quantity").text(totalQuantity);
+                      var totalItemPrice = 0;
+                      $("div[id*='cart-price-']").each(function() {
+                          var cart_price = $(this).text().replace("$","");
+                          totalItemPrice = parseInt(totalItemPrice) + parseInt(cart_price);
+                      });
+                      $("#total-price").text(totalItemPrice);
+          		}
+          	});
+          }
+          </script>
+
+          </HEAD>
+          <BODY>
+          <?php
+          $cartItem = $shoppingCart->getMemberCartItem($member_id);
+          if (! empty($cartItem)) {
+              $item_quantity = 0;
+              $item_price = 0;
+              if (! empty($cartItem)) {
+                  foreach ($cartItem as $item) {
+                      $item_quantity = $item_quantity + $item["quantity"];
+                      $item_price = $item_price + ($item["price"] * $item["quantity"]);
+                  }
+              }
+          }
+          ?>
+              <div id="shopping-cart">
+                  <div class="txt-heading">
+                      <div class="txt-heading-label">Shopping Cart</div>
+
+                      <a id="btnEmpty" href="freshmeat.php?action=empty"><img
+                          src="empty-cart.png" alt="empty-cart" title="Empty Cart"
+                          class="float-right" /></a>
+                      <div class="cart-status">
+                          <div>Total Quantity: <span id="total-quantity"><?php echo $item_quantity; ?></span></div>
+                          <div>Total Price: <span id="total-price"><?php echo $item_price; ?></span></div>
+                      </div>
+                  </div>
+          <?php
+          if (! empty($cartItem)) {
+              ?>
+          <div class="shopping-cart-table">
+                      <div class="cart-item-container header">
+                          <div class="cart-info title">Title</div>
+                          <div class="cart-info">Quantity</div>
+                          <div class="cart-info price">Price</div>
+                      </div>
+          <?php
+              foreach ($cartItem as $item) {
+                  ?>
+          				<div class="cart-item-container">
+                          <div class="cart-info title">
+                              <?php echo $item["name"]; ?>
+                          </div>
+
+                          <div class="cart-info quantity">
+                              <div class="btn-increment-decrement" onClick="decrement_quantity(<?php echo $item["cart_id"]; ?>, '<?php echo $item["price"]; ?>')">-</div><input class="input-quantity"
+                                  id="input-quantity-<?php echo $item["cart_id"]; ?>" value="<?php echo $item["quantity"]; ?>"><div class="btn-increment-decrement"
+                                  onClick="increment_quantity(<?php echo $item["cart_id"]; ?>, '<?php echo $item["price"]; ?>')">+</div>
+                          </div>
+
+                          <div class="cart-info price" id="cart-price-<?php echo $item["cart_id"]; ?>">
+                                  <?php echo "$". ($item["price"] * $item["quantity"]); ?>
+                              </div>
+
+
+                          <div class="cart-info action">
+                              <a
+                                  href="freshmeat.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
+                                  class="btnRemoveAction"><img
+                                  src="icon-delete.png" alt="icon-delete"
+                                  title="Remove Item" /></a>
+                          </div>
+                      </div>
+          				<?php
+              }
+              ?>
+          </div>
+            <?php
+          }
+          ?>
+          <form class="" action="checkout.php" method="post">
+
+            <input type="submit" name="checkout" value="CHECKOUT">
+          </form>
+          </div>
+          <?php require_once "product-list.php"; ?>
+
+          </BODY>
+          </HTML>
+
         </div>
-        <br class="clr">
+
+
       </div>
-      </div>
-    </li>
-<?php }
-} else {
-    echo "0 results";
-}
+    </div>
 
-mysqli_close($conn);
-
-?>
-
-  </div>
-
-
-</div>
 	<!--
 	Featured Products
 	-->
@@ -216,90 +305,49 @@ mysqli_close($conn);
 <!--
 Clients
 -->
-<section class="our_client">
-	<hr class="soften"/>
-	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
-	<hr class="soften"/>
-	<div class="row">
-		<div class="span2">
-			<a href="#"><img alt="" src=""></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src=""></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src=""></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src=""></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src=""></a>
-		</div>
-		<div class="span2">
-			<a href="#"><img alt="" src=""></a>
-		</div>
-	</div>
-</section>
 
 <!--
 Footer
 -->
-<footer class="footer">
-<div class="row-fluid">
-<div class="span2">
-<h5>Your Account</h5>
-<a href="#">YOUR ACCOUNT</a><br>
-<a href="#">PERSONAL INFORMATION</a><br>
-<a href="#">ADDRESSES</a><br>
-<a href="#">DISCOUNT</a><br>
-<a href="#">ORDER HISTORY</a><br>
- </div>
-<div class="span2">
-<h5>Iinformation</h5>
-<a href="contact.html">CONTACT</a><br>
-<a href="#">SITEMAP</a><br>
-<a href="#">LEGAL NOTICE</a><br>
-<a href="#">TERMS AND CONDITIONS</a><br>
-<a href="#">ABOUT US</a><br>
- </div>
-<div class="span2">
-<h5>Our Offer</h5>
-<a href="#">NEW PRODUCTS</a> <br>
-<a href="#">TOP SELLERS</a><br>
-<a href="#">SPECIALS</a><br>
-<a href="#">MANUFACTURERS</a><br>
-<a href="#">SUPPLIERS</a> <br/>
- </div>
- <div class="span6">
-<h5>The standard chunk of Lorem</h5>
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
- those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
- Malorum" by Cicero are also reproduced in their exact original form,
-accompanied by English versions from the 1914 translation by H. Rackham.
- </div>
- </div>
-</footer>
+<div class="container">
+  <footer class="footer">
+  <div class="row-fluid">
+  <div class="span2">
+  <h5>Your Account</h5>
+  <a href="#">YOUR ACCOUNT</a><br>
+  <a href="#">PERSONAL INFORMATION</a><br>
+  <a href="#">ADDRESSES</a><br>
+  <a href="#">DISCOUNT</a><br>
+  <a href="#">ORDER HISTORY</a><br>
+   </div>
+  <div class="span2">
+  <h5>Iinformation</h5>
+  <a href="contact.html">CONTACT</a><br>
+  <a href="#">SITEMAP</a><br>
+  <a href="#">LEGAL NOTICE</a><br>
+  <a href="#">TERMS AND CONDITIONS</a><br>
+  <a href="#">ABOUT US</a><br>
+   </div>
+  <div class="span2">
+  <h5>Our Offer</h5>
+  <a href="#">NEW PRODUCTS</a> <br>
+  <a href="#">TOP SELLERS</a><br>
+  <a href="#">SPECIALS</a><br>
+  <a href="#">MANUFACTURERS</a><br>
+  <a href="#">SUPPLIERS</a> <br/>
+   </div>
+   <div class="span6">
+  <h5>The standard chunk of Lorem</h5>
+  The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
+   those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
+   Malorum" by Cicero are also reproduced in their exact original form,
+  accompanied by English versions from the 1914 translation by H. Rackham.
+   </div>
+   </div>
+  </footer>
+</div>
 </div><!-- /container -->
 
-<div class="copyright">
-<div class="container">
-	<p class="pull-right">
-		<a href="#"><img src="assets/img/maestro.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/mc.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/pp.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/visa.png" alt="payment"></a>
-		<a href="#"><img src="assets/img/disc.png" alt="payment"></a>
-	</p>
-	<span>Copyright &copy; 2013<br> bootstrap ecommerce shopping template</span>
-</div>
-</div>
-<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-    <script src="assets/js/shop.js"></script>
+
   </body>
 </html>
