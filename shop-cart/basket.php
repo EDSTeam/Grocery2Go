@@ -1,6 +1,6 @@
 <?php
-
-
+//extended to cart.php
+//increment/decrement
 require_once "ShoppingCart.php";
 
 $member_id = 2; // you can your integerate authentication module here to get logged in member
@@ -58,9 +58,7 @@ function decrement_quantity(cart_id, price) {
     {
     var newQuantity = parseInt($(inputQuantityElement).val()) - 1;
     var newPrice = newQuantity * price;
-    if (newPrice >= 2500) {
-      newPrice = newPrice-40;
-    }
+    
     save_to_db(cart_id, newQuantity, newPrice);
     }
 }

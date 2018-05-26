@@ -29,17 +29,17 @@ session_start();
 <div id="gototop"> </div>
 <header id="header">
 <div class="row">
-	<div class="span4">
+	<div class="span6">
 	<h1>
 	<a class="logo" href="index.html"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
 	</div>
-  <div class="span4">
+  <div class="span6">
 
   </div>
-  <div class="span4 alignR">
+  <div class="span6 alignR">
   <p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
 
 
@@ -68,25 +68,7 @@ Navigation Bar Section
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
 			<ul class="nav pull-right">
-			<li class="dropdown">
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
-				<div class="dropdown-menu">
-				<form class="form-horizontal loginFrm">
-				  <div class="control-group">
-					<input type="text" class="span2" id="inputEmail" placeholder="Email">
-				  </div>
-				  <div class="control-group">
-					<input type="password" class="span2" id="inputPassword" placeholder="Password">
-				  </div>
-				  <div class="control-group">
-					<label class="checkbox">
-					<input type="checkbox"> Remember me
-					</label>
-					<button type="submit" class="shopBtn btn-block">Sign in</button>
-				  </div>
-				</form>
-				</div>
-			</li>
+
 			</ul>
 		  </div>
 		</div>
@@ -96,13 +78,13 @@ Navigation Bar Section
 Body Section
 -->
 	<div class="row">
-<div id="sidebar" class="span3">
+<div id="sidebar" class="span6">
 <div class="well well-small">
 	<ul class="nav nav-list">
-	<li><a href="products.html"><span class="icon-chevron-right"></span>Categories</a></li>
+<h3>Categories</h3>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Drinks</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Dairy</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fashion, Eggs & Chilled Food</a></li>
+		<li><a href="products.html"><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
@@ -116,7 +98,8 @@ Body Section
   </div>
 </div>
 	</div>
-	<div class="span9">
+
+	<div class="span6">
 
     <div class="container">
       <div class="well well-small">
@@ -285,7 +268,7 @@ Body Section
             <input type="submit" name="checkout" value="CHECKOUT">
           </form>
           </div>
-          <?php require_once "product-list.php"; ?>
+          <?php require_once "freshmeat-list.php"; ?>
 
           </BODY>
           </HTML>

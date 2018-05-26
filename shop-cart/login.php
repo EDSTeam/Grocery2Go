@@ -46,10 +46,10 @@ Lower Header Section
 	<div class="span4">
 
 	</div>
-	<!--<div class="span4 alignR">
+	<div class="span4 alignR">
 	<p><br> <strong> Support (24/7) : 1234 678 </strong><br><br></p>
 	</div>
-</div>-->
+</div>
 </header>
 
 <!--
@@ -90,47 +90,6 @@ Body Section
 	<hr class="soft"/>
 
 	<div class="row">
-<<<<<<< HEAD
-		<div class="span6">
-			<div class="well">
-			<h5>CREATE YOUR ACCOUNT</h5><br/>
-
-			<form action="signup.php" method="post">
-			  <div class="control-group">
-				E-mail address
-				<div class="controls">
-				  <input class="span3"  type="text" placeholder="Email" name="email" id="email">
-				</div>
-      Username
-				<div class="controls">
-				  <input class="span3"  type="text" placeholder="username" name="username" id="username" required>
-				</div>
-      Password
-        <div class="controls">
-				  <input class="span3"  type="Password" placeholder="password" name="username" id="username" required>
-				</div>
-
-      First Name
-        <div class="controls">
-          <input class="span3"  type="text" placeholder="firstname" name="firstname" id="firstname" required>
-        </div>
-
-        Last Name
-          <div class="controls">
-            <input class="span3"  type="text" placeholder="lastname" name="lastname" id="lastname" required>
-          </div>
-
-          Mobile Number
-            <div class="controls">
-              <input class="span3"  type="text" placeholder="mobilenumber" name="mobilenumber" id="mobilenumber" required>
-            </div>
-
-          Address
-              <div class="controls">
-                <input class="span3"  type="text" placeholder="address" name="address" id="address" required>
-              </div>
-=======
->>>>>>> 7149e25f4c25961a4e42d911b2397fb0c9d01941
 
 		<div class="span1"> &nbsp;</div>
 		<div class="span8">
@@ -209,5 +168,5 @@ accompanied by English versions from the 1914 translation by H. Rackham.
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
 
-</body>
+  </body>
 </html>
