@@ -71,26 +71,26 @@
                   <div class="control-group">
                     <label class="control-label">Name</label>
                     <div class="controls">
-                      <input  class="span2" type="text" placeholder="<?$firstname?>">
-                      <input class="span2" type="text"  placeholder="<?$lastname?>">
+                      <input  class="span2" type="text" placeholder="<?= $firstname?>">
+                      <input class="span2" type="text"  placeholder="<?= $lastname?>">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Email</label>
                     <div class="controls">
-                      <input class="span4" type="text" placeholder="<?$email?>" disabled>
+                      <input class="span4" type="text" placeholder="<?= $email?>" disabled>
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Mobile #</label>
                     <div class="controls">
-                      <input class="span4" type="text" placeholder=""<?$phoneNumb?>"">
+                      <input class="span4" type="text" placeholder="<?= $phoneNumb?>">
                     </div>
                   </div>
                   <div class="control-group">
                     <label class="control-label">Address</label>
                     <div class="controls">
-                      <input class="span4" type="text" placeholder=""<?$address?>"">
+                      <input class="span4" type="text" placeholder="<?= $address?>">
                     </div>
                   </div>
                   <div class="control-group">
@@ -134,6 +134,6 @@
     </div>
 
 
-
+<? $conn->close();?>
 </body>
 </html>
