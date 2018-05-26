@@ -12,108 +12,11 @@
     <link href="style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-		<!--[if IE 7]>
-			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
-		<![endif]-->
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-	<!-- Favicons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
   </head>
 <body>
-<!--
-	Upper Header Section
--->
-<!--<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="topNav">
-		<div class="container">
-			<div class="alignR">
-				<div class="pull-left socialNw">
-					<a href="#"><span class="icon-twitter"></span></a>
-					<a href="#"><span class="icon-facebook"></span></a>
-					<a href="#"><span class="icon-youtube"></span></a>
-					<a href="#"><span class="icon-tumblr"></span></a>
-				</div>
-				<a href="index.html"> <span class="icon-home"></span> Home</a>
-				<a href="#"><span class="icon-user"></span> My Account</a>
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a>
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
-			</div>
-		</div>
-	</div>
-</div>-->
 
-<!--
-Lower Header Section hehehehehehe
-  -->
-
-  <!--<div class="span4 alignR">
-  <p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
-  <span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
-
-</div>-->
-
-
-<!--
-Navigation Bar Section
--->
-<div class="navbar">
-	  <div class="navbar-inner">
-		<div class="container">
-		  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		  </a>
-		  <div class="nav-collapse">
-			<ul class="nav">
-        <li class="active"><a href="index.php">Home	</a></li>
-        <!--<li class=""><a href="grid-view.html">Shop Now</a></li>-->
-        <li class=""><a href="general.php">FAQs</a></li>
-        <li class=""><a href="help.php">Help</a></li>
-        <li class=""><a href="livetrack.php">Live Track</a></li>
-			</ul>
-			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
-			</form>
-			<ul class="nav pull-right">
-        <li><a href="register.html">Sign Up</a></li>
-			<li class="dropdown">
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
-				<div class="dropdown-menu">
-				<form class="form-horizontal loginFrm">
-				  <div class="control-group">
-					<input type="text" class="span2" id="inputEmail" placeholder="Email">
-				  </div>
-				  <div class="control-group">
-					<input type="password" class="span2" id="inputPassword" placeholder="Password">
-				  </div>
-				  <div class="control-group">
-					<label class="checkbox">
-					<input type="checkbox"> Remember me
-					</label>
-					<button type="submit" class="shopBtn btn-block">Sign in</button>
-				  </div>
-				</form>
-				</div>
-			</li>
-			</ul>
-		  </div>
-		</div>
-	  </div>
-	</div>
-<!--
-Body Section
--->
-  <!--<ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">Page Title</li>
-  </ul>-->
-<div class="well well-small" style="padding:50px;">
+<div class="well container" style="padding:50px;">
   <div class="container">
     <h2 class="text-center">How can we help you?</h2>
   </div>
@@ -129,11 +32,13 @@ Body Section
       </div>
       <div id="collapseOrders" class="accordion-body collapse out">
         <div class="accordion-inner"
-        style="padding:40px">
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
-           those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-           Malorum" by Cicero are also reproduced in their exact original form,
-          accompanied by English versions from the 1914 translation by H. Rackham.
+        style="padding:30px">
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
         </div>
       </div>
     </div>
@@ -147,8 +52,13 @@ Body Section
       </div>
       <div id="collapsePayment" class="accordion-body collapse out">
         <div class="accordion-inner"
-        style="padding:40px">
-          Anim pariatur cliche...
+        style="padding:30px">
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
         </div>
       </div>
     </div>
@@ -162,8 +72,13 @@ Body Section
       </div>
       <div id="collapseDelivery" class="accordion-body collapse out">
         <div class="accordion-inner"
-        style="padding:40px">
-          Anim pariatur cliche...
+        style="padding:30px">
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
         </div>
       </div>
     </div>
@@ -177,49 +92,27 @@ Body Section
       </div>
       <div id="collapsePartnership" class="accordion-body collapse out">
         <div class="accordion-inner"
-        style="padding:40px">
-          Anim pariatur cliche...
+        style="padding:30px">
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
+        <h5>How many can i order?</h5>
+        <p>You can order as much as you can</p>
         </div>
       </div>
     </div>
   </div>
-  <!--collapse-->
+
 
 </div>
-
-</div>
-</div>
-<!--
-Clients
--->
-
-<!--
-Footer
--->
-<footer class="footer" style="padding:0">
-<div class="row-fluid">
-<div class="span2">
-<h5>Your Account</h5>
- </div>
-<div class="span2">
-<h5>Iinformation</h5>
- </div>
-<div class="span2">
-<h5>Our Offer</h5>
- </div>
- <div class="span6">
-
- </div>
- </div>
-</footer>
-</div><!-- /container -->
 
 
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.easing-1.3.min.js"></script>
+	   <script src="assets/js/bootstrap.min.js"></script>
+	   <script src="assets/js/jquery.easing-1.3.min.js"></script>
     <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
     <script src="assets/js/shop.js"></script>
   </body>
