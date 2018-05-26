@@ -24,29 +24,6 @@ session_start();
 
   </head>
 <body>
-<<<<<<< HEAD
-<!--
-	Upper Header Section
--->
-<!--<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="topNav">
-		<div class="container">
-			<div class="alignR">
-				<div class="pull-left socialNw">
-					<a href="#"><span class="icon-twitter"></span></a>
-					<a href="#"><span class="icon-facebook"></span></a>
-					<a href="#"><span class="icon-youtube"></span></a>
-					<a href="#"><span class="icon-tumblr"></span></a>
-				</div>
-				<a class="active" href="index.html"> <span class="icon-home"></span> Home</a>
-				<a href="#"><span class="icon-user"></span> My Account</a>
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-			</div>
-		</div>
-	</div>
-</div>-->
-=======
->>>>>>> 7149e25f4c25961a4e42d911b2397fb0c9d01941
 
 <div class="container">
 <div id="gototop"> </div>
@@ -54,12 +31,12 @@ session_start();
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.php"><span>Grocery2Go</span>
+	<a class="logo" href="index.html"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
 	</div>
-  <!--<div class="span4">
+  <div class="span4">
 
   </div>
   <div class="span4 alignR">
@@ -67,7 +44,7 @@ session_start();
 
 
   </div>
-</div>-->
+  </div>
 </header>
 
 <!--
@@ -81,11 +58,11 @@ Navigation Bar Section
 		  <div class="nav-collapse">
 
 			<ul class="nav">
-        <li class="active"><a href="index.php">Home	</a></li>
-        <!--<li class=""><a href="grid-view.html">Shop Now</a></li>-->
-        <li class=""><a href="general.php">FAQs</a></li>
-        <li class=""><a href="help.php">Help</a></li>
-        <li class=""><a href="livetrack.php">Live Track</a></li>
+        <li class=""><a href="index.html">Home	</a></li>
+        <li class="active"><a href="grid-view.html">Shop Now</a></li>
+        <li class=""><a href="general.html">FAQs</a></li>
+          <li class=""><a href="help.html">Help</a></li>
+          <li class=""><a href="livetrack.html">Live Track</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -122,17 +99,6 @@ Body Section
 <div id="sidebar" class="span3">
 <div class="well well-small">
 	<ul class="nav nav-list">
-<<<<<<< HEAD
-    <li><a href="drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
-  		<li><a href="dairy.php"><span class="icon-chevron-right"></span>Dairy</a></li>
-  		<li><a href="eggs-chilled-food.php"><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
-  		<li><a href="veggie.php"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
-  		<li><a href="meat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
-  		<li><a href="fruity.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
-  		<li><a href="canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
-  		<li><a href="house.php"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
-  		<li><a href="health-beauty.php"><span class="icon-chevron-right"></span>Health & Beauty </a></li>
-=======
 	<li><a href="products.html"><span class="icon-chevron-right"></span>Categories</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Drinks</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Dairy</a></li>
@@ -143,7 +109,6 @@ Body Section
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
 		<li><a href="products.html"><span class="icon-chevron-right"></span>Health & Beauty </a></li>
->>>>>>> 7149e25f4c25961a4e42d911b2397fb0c9d01941
 	</ul>
   <div class="well well-small alert alert-warning cntr">
     <h3>Cash on Delivery only</h3>
@@ -296,7 +261,7 @@ Body Section
                           </div>
 
                           <div class="cart-info price" id="cart-price-<?php echo $item["cart_id"]; ?>">
-                                  <?php echo "Php ". ($item["price"] * $item["quantity"]); ?>
+                                  <?php echo "$". ($item["price"] * $item["quantity"]); ?>
                               </div>
 
 

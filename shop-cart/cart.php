@@ -1,3 +1,4 @@
+<?php require_once  "cartdata.php" ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,25 +28,7 @@
 <!--
 	Upper Header Section
 -->
-<!--<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="topNav">
-		<div class="container">
-			<div class="alignR">
-				<div class="pull-left socialNw">
-					<a href="#"><span class="icon-twitter"></span></a>
-					<a href="#"><span class="icon-facebook"></span></a>
-					<a href="#"><span class="icon-youtube"></span></a>
-					<a href="#"><span class="icon-tumblr"></span></a>
-				</div>
-				<a href="index.html"> <span class="icon-home"></span> Home</a>
-				<a href="#"><span class="icon-user"></span> My Account</a>
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a>
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a class="active" href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
-			</div>
-		</div>
-	</div>
-</div>-->
+
 
 <!--
 Lower Header Section
@@ -56,7 +39,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="index.html"><span>Grocery2Go</span>
 			<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -85,36 +68,18 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class="active"><a href="index.php">Home	</a></li>
-        <!--<li class=""><a href="grid-view.html">Shop Now</a></li>-->
-        <li class=""><a href="general.php">FAQs</a></li>
-        <li class=""><a href="help.php">Help</a></li>
-        <li class=""><a href="livetrack.php">Live Track</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
+        <li class=""><a href="general.html">FAQs</a></li>
+        <li class=""><a href="help.html">Help</a></li>
+        <li class=""><a href="livetrack.html">Live Track</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
-			<ul class="nav pull-right">
-			<li class="dropdown">
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
-				<div class="dropdown-menu">
-				<form class="form-horizontal loginFrm">
-				  <div class="control-group">
-					<input type="text" class="span2" id="inputEmail" placeholder="Email">
-				  </div>
-				  <div class="control-group">
-					<input type="password" class="span2" id="inputPassword" placeholder="Password">
-				  </div>
-				  <div class="control-group">
-					<label class="checkbox">
-					<input type="checkbox"> Remember me
-					</label>
-					<button type="submit" class="shopBtn btn-block">Sign in</button>
-				  </div>
-				</form>
-				</div>
-			</li>
-			</ul>
+      <ul class="nav pull-right">
+        <li><a href="register.html"><?php echo "Welcome, put username here"//.$_SESSION["username"];?></a></li>
+
+      </ul>
 		  </div>
 		</div>
 	  </div>
@@ -122,25 +87,8 @@ Navigation Bar Section
 <!--
 Body Section
 -->
-  <?php
-      $servername="localhost";
-      $serverusername="root";
-      $servepassword="";
-      $dbname="grocery2go";
 
-      $conn = mysqli_connect($servername,$serverusername,$serverpassword,$dbname);
 
-      if(!$conn){
-        die("Connection failed:" .mysqli_connect_error());
-      }
-
-      $sql="SELECT * FROM ";
-      $result= mysqli_query($conn,$sql);
-
-      if(mysqli_num_rows($result)>0){
-
-      }
-  ?>
 
 	<div class="row">
 	<div class="span12">
@@ -149,70 +97,20 @@ Body Section
 		<li class="active">Check Out</li>
     </ul>
 	<div class="well well-small">
-		<h1>Check Out <small class="pull-right"> 2 Items are in the cart </small></h1>
+		<h1>Check Out <small class="pull-right"></small></h1>
 	<hr class="soften"/>
 
-	<table class="table table-bordered table-condensed">
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Description</th>
-                  <th>Unit price</th>
-                  <th>Qty </th>
-                  <th>Total</th>
-				</tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><img width="100" src="assets/img/e.jpg" alt=""></td>
-                  <td>Items name here<br>Carate : 22<br>Model : n/a</td>
-                  <td>$50.00</td>
-                  <td>
-					<input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="2">
-				  <div class="input-append">
-					<button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button"> + </button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-				</div>
-				</td>
-                  <td>$100.00</td>
-                </tr>
-				<tr>
-                  <td><img width="100" src="assets/img/f.jpg" alt=""></td>
-                  <td>Item names and brief details<br>Carate:24 <br>Model:HBK24</td>
-                  <td>$348.42</td>
-                  <td>
-				  <input class="span1" style="max-width:34px" placeholder="1" size="16" type="text">
-				  <div class="input-append">
-					<button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button">+</button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
-				</div>
-				  </td>
-                  <td>$348.42</td>
-                </tr>
-                  <tr>
-                  <td colspan="6" class="alignR"><b>Subtotal</b>	</td>
-                  <td> $00.00</td>
-                </tr>
-                 <tr>
-                  <td colspan="6" class="alignR">Delivery Fee:	</td>
-                  <td> $00.00</td>
-                </tr>
-				         <tr>
-                  <td colspan="6" class="alignR"><b>Total:</b></td>
-                  <td> $00.00</td>
-                </tr>
-
-				</tbody>
-            </table><br/>
-
-
+<br/>
+<?php require 'basket.php' ?>
             <table class="table table-bordered">
 			<tbody>
 				 <tr>
                   <td>
-				<form class="form-inline">
-				  <label style="min-width:159px"> VOUCHERS Code: </label>
-				<input type="text" class="input-medium" placeholder="CODE">
-				<button type="submit" class="shopBtn"> ADD</button>
-				</form>
+				<form class="form-inline" action="getFinalCheckout.php" method="post">
+				  <label style="min-width:159px">Change for: </label>
+				<input type="text" class="input-medium" placeholder="Enter amount of change">
+
+
 				</td>
                 </tr>
 
@@ -220,8 +118,8 @@ Body Section
 				</table>
 
 	<a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="login.html" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
-
+	<a href="login.html" class="shopBtn btn-large pull-right">	<button type="submit" class="shopBtn">Next</button><span class="icon-arrow-right"></span></a>
+	</form>
 </div>
 </div>
 </div>
