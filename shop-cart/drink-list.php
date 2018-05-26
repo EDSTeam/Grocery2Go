@@ -13,7 +13,7 @@
             ?>
         <div class="product-item">
         <form method="post"
-            action="drink.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+            action="drinks.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
             <div class="product-image">
                 <img src="<?php echo $product_array[$key]["image"]; ?>">
                 <div class="product-title">
