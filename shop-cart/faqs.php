@@ -46,7 +46,7 @@
 		</div>
 	</div>
 </div>-->
-
+  <?php include 'head.php'?>
 <!--
 Lower Header Section
   -->
