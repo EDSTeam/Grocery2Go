@@ -113,7 +113,7 @@ if (! empty($cartItem)) {
         <div class="txt-heading">
             <div class="txt-heading-label">Shopping Cart</div>
 
-            <a id="btnEmpty" href="freshmeat.php?action=empty"><img
+            <a id="btnEmpty" href="cart.php?action=empty"><img
                 src="empty-cart.png" alt="empty-cart" title="Empty Cart"
                 class="float-right" /></a>
             <div class="cart-status">

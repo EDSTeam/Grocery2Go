@@ -10,6 +10,7 @@ if (! empty($_GET["action"])) {
         case "add":
             if (! empty($_POST["quantity"])) {
 
+
                 $productResult = $shoppingCart->getProductByCode($_GET["code"]);
 
                 $cartResult = $shoppingCart->getCartItemByProduct($productResult[0]["id"], $member_id);
@@ -39,7 +40,7 @@ if (! empty($_GET["action"])) {
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap shopping cart</title>
+    <title>Grocery2Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -49,14 +50,7 @@ if (! empty($_GET["action"])) {
     <link href="style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-		<!--[if IE 7]>
-			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
-		<![endif]-->
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
+		
 	<!-- Favicons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
   </head>
@@ -84,8 +78,7 @@ Lower Header Section
 
 	</div>
 	<div class="span4 alignR">
-	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
-	<span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
+
 
 	</div>
 </div>
