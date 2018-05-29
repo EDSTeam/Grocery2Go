@@ -84,7 +84,7 @@ Navigation Bar Section
 			<span class="icon-bar"></span>
 		  </a>
 		  <div class="nav-collapse">
-			<ul class="nav">    
+			<ul class="nav">
         <li class="active"><a href="home.php">Home</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
@@ -96,12 +96,12 @@ Navigation Bar Section
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
 				<div class="dropdown-menu">
-				<form class="form-horizontal loginFrm">
+				<form action="verify.php" method="post" class="form-horizontal loginFrm">
 				  <div class="control-group">
-					<input type="text" class="span2" id="inputEmail" placeholder="Email">
+					<input type="text" class="span2" id="inputEmail" placeholder="Email" name="email">
 				  </div>
 				  <div class="control-group">
-					<input type="password" class="span2" id="inputPassword" placeholder="Password">
+					<input type="password" class="span2" id="inputPassword" placeholder="Password" name="password">
 				  </div>
 				  <div class="control-group">
 					<label class="checkbox">
@@ -109,6 +109,11 @@ Navigation Bar Section
 					</label>
 					<button type="submit" class="shopBtn btn-block">Sign in</button>
 				  </div>
+          <?php
+              $reasons = array("password" => "<p><br><br>Wrong Username or Password!</p>", "blank" => "<p><br><br>You have left one or more fields blank!</p>");
+              if (isset($_GET["loginFailed"]))
+              echo $reasons[$_GET["reason"]];
+            ?>
 				</form>
 				</div>
 			</li>

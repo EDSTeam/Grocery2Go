@@ -2,7 +2,7 @@
   session_start();
 
 if (!isset($_SESSION)) {
-header ('Location:login.php');
+header ('Location:verify.php');
 }
 
 ?>
@@ -66,7 +66,7 @@ header ('Location:login.php');
 
       <ul class="nav pull-right">
 
-        <li><a href=""><?php echo "Welcome, ".$_SESSION["username"];?></a></li>
+        <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
         <li><a href="logout.php"><b>Sign out</b></a></li>
 
 
