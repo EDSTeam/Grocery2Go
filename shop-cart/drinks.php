@@ -83,15 +83,15 @@ Body Section
 <div class="well well-small">
 	<ul class="nav nav-list">
 <h3>Categories</h3>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Drinks</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Dairy</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Health & Beauty </a></li>
+<li><a href="drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
+<li><a href=""><span class="icon-chevron-right"></span>Dairy</a></li>
+<li><a href=""><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
+<li><a href=""><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
+<li><a href="freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
+<li><a href=""><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
+<li><a href=""><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
+<li><a href=""><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
+<li><a href=""><span class="icon-chevron-right"></span>Health & Beauty </a></li>
 	</ul>
   <div class="well well-small alert alert-warning cntr">
     <h3>Cash on Delivery only</h3>

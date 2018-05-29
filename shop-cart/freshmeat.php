@@ -40,7 +40,7 @@ session_start();
 
   </div>
   <div class="span6 alignR">
-  <p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
+  <p><br> <strong> call us: 59-566-99</strong><br><br></p>
 
 
   </div>
@@ -57,12 +57,13 @@ Navigation Bar Section
 
 		  <div class="nav-collapse">
 
-			<ul class="nav">
-        <li class=""><a href="index.html">Home	</a></li>
-        <li class="active"><a href="grid-view.html">Shop Now</a></li>
-        <li class=""><a href="general.html">FAQs</a></li>
-          <li class=""><a href="help.html">Help</a></li>
-          <li class=""><a href="livetrack.html">Live Track</a></li>
+		<ul class="nav">
+      <li class="active"><a href="home.php">Home</a></li>
+      <li class=""><a href="freshmeat.php">ShopNow</a></li>
+      <li class=""><a href="faqs.php">FAQs</a></li>
+      <li class=""><a href="">Live Track</a></li>
+        <li class=""><a href="">Message</a></li>
+        <li class=""><a href="profile.php">Profile</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -78,37 +79,45 @@ Navigation Bar Section
 Body Section
 -->
 	<div class="row">
-<div id="sidebar" class="span6">
+<div id="sidebar" class="span4">
 <div class="well well-small">
 	<ul class="nav nav-list">
 <h3>Categories</h3>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Drinks</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Dairy</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
-		<li><a href="products.html"><span class="icon-chevron-right"></span>Health & Beauty </a></li>
+		<li><a href="drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
+		<li><a href=""><span class="icon-chevron-right"></span>Dairy</a></li>
+		<li><a href=""><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
+		<li><a href=""><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
+		<li><a href="freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
+		<li><a href=""><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
+		<li><a href=""><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
+		<li><a href=""><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
+		<li><a href=""><span class="icon-chevron-right"></span>Health & Beauty </a></li>
 	</ul>
   <div class="well well-small alert alert-warning cntr">
-    <h3>Cash on Delivery only</h3>
+    <h3>Cash on Delivery only </h3>
     <br />
   </div>
+
+  <div class="well well-small alert alert-warning cntr">
+
+      </div>
 </div>
 	</div>
+
+
 
 	<div class="span6">
 
     <div class="container">
+
       <div class="well well-small">
       <h3>Fresh Meat</h3>
         <div class="row-fluid">
           <?php
           require_once "ShoppingCart.php";
 
-          $member_id = 2; // you can your integerate authentication module here to get logged in member
+$id_mem=$_SESSION["cid"];
+          $member_id =$id_mem; // you can your integerate authentication module here to get logged in member
 
           $shoppingCart = new ShoppingCart();
           if (! empty($_GET["action"])) {
@@ -218,6 +227,7 @@ Body Section
                       <div class="cart-status">
                           <div>Total Quantity: <span id="total-quantity"><?php echo $item_quantity; ?></span></div>
                           <div>Total Price: <span id="total-price"><?php echo $item_price; ?></span></div>
+
                       </div>
                   </div>
           <?php
@@ -244,7 +254,7 @@ Body Section
                           </div>
 
                           <div class="cart-info price" id="cart-price-<?php echo $item["cart_id"]; ?>">
-                                  <?php echo "$". ($item["price"] * $item["quantity"]); ?>
+                                  <?php echo "PHP ". ($item["price"] * $item["quantity"]); ?>
                               </div>
 
 
@@ -263,7 +273,7 @@ Body Section
             <?php
           }
           ?>
-          <form class="" action="checkout.php" method="post">
+          <form class="" action="cart.php" method="post">
 
             <input type="submit" name="checkout" value="CHECKOUT">
           </form>

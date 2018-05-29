@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+if (!isset($_SESSION)) {
+header ('Location:login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,51 +21,18 @@
     <link href="style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-		<!--[if IE 7]>
-			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
-		<![endif]-->
 
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-
-	<!-- Favicons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
   </head>
 <body>
-<!--
-	Upper Header Section
--->
-<!--<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="topNav">
-		<div class="container">
-			<div class="alignR">
-				<div class="pull-left socialNw">
-					<a href="#"><span class="icon-twitter"></span></a>
-					<a href="#"><span class="icon-facebook"></span></a>
-					<a href="#"><span class="icon-youtube"></span></a>
-					<a href="#"><span class="icon-tumblr"></span></a>
-				</div>
-				<a class="active" href="index.html"> <span class="icon-home"></span> Home</a>
-				<a href="#"><span class="icon-user"></span> My Account</a>
-				<a href="register.html"><span class="icon-edit"></span> Free Register </a>
-				<a href="contact.html"><span class="icon-envelope"></span> Contact us</a>
-				<a href="cart.html"><span class="icon-shopping-cart"></span> 2 Item(s) - <span class="badge badge-warning"> $448.42</span></a>
-			</div>
-		</div>
-	</div>
-</div>-->
 
-<!--
-Lower Header Section
--->
 <div class="container">
 <div id="gototop"> </div>
 <header id="header">
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Twitter Bootstrap ecommerce template</span>
+	<a class="logo" href="index.html"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -64,17 +40,10 @@ Lower Header Section
   <div class="span4">
 
   </div>
-  <!--<div class="span4 alignR">
-  <p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
-  <span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
 
-</div>-->
   </div>
 </header>
 
-<!--
-Navigation Bar Section
--->
 <div class="navbar">
 	  <div class="navbar-inner">
 		<div class="container">
@@ -83,40 +52,25 @@ Navigation Bar Section
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </a>
+
 		  <div class="nav-collapse">
 			<ul class="nav">
-<<<<<<< HEAD
-        <li class="active"><a href="index.php">Home	</a></li>
-=======
-        <li class="active"><a href="home.php">Home	</a></li>
->>>>>>> 7149e25f4c25961a4e42d911b2397fb0c9d01941
-			</ul>
-			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
-			</form>
 
-			<ul class="nav pull-right">
-        <li><a href="register.php">Sign Up</a></li>
-			<li class="dropdown">
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
-				<div class="dropdown-menu">
-				<form class="form-horizontal loginFrm">
-				  <div class="control-group">
-					<input type="text" class="span2" id="inputEmail" placeholder="Email">
-				  </div>
-				  <div class="control-group">
-					<input type="password" class="span2" id="inputPassword" placeholder="Password">
-				  </div>
-				  <div class="control-group">
-					<label class="checkbox">
-					<input type="checkbox"> Remember me
-					</label>
-					<button type="submit" class="shopBtn btn-block">Sign in</button>
-				  </div>
-				</form>
-				</div>
-			</li>
-			</ul>
+        <li class="active"><a href="home.php">Home</a></li>
+        <li class=""><a href="freshmeat.php">ShopNow</a></li>
+        <li class=""><a href="faqs.php">FAQs</a></li>
+        <li class=""><a href="">Live Track</a></li>
+          <li class=""><a href="">Message</a></li>
+          <li class=""><a href="profile.php">Profile</a></li>
+      </ul>
+
+      <ul class="nav pull-right">
+
+        <li><a href=""><?php echo "Welcome, ".$_SESSION["username"];?></a></li>
+        <li><a href="logout.php"><b>Sign out</b></a></li>
+
+
+      </ul>
 		  </div>
 		</div>
 	  </div>
@@ -126,16 +80,6 @@ Body Section
 -->
 	<div class="row">
 <div id="sidebar" class="span3">
-
-
-			 <!-- <div class="
-        well-small alert alert-warning cntr">
-				  <h2>50% Discount</h2>
-				  <p>
-					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
-				  </p>
-			  </div>-->
-
 
 
 			<ul class="nav nav-list promowrapper">
@@ -151,7 +95,7 @@ Body Section
                       <img style="width:100%" src="assets/img/g2gLogo.jpg" alt="bootstrap ecommerce templates">
                       <div class="carousel-caption">
                           <!--  <h4>Grocery2Go</h4>-->
-                            <p><span>Start Shopping now</span></p>
+                            <p><span>Start Shopping Now</span></p>
                       </div>
                     </div>
 			  <div class="item">
@@ -192,14 +136,14 @@ New Products
 		  <ul class="thumbnails">
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a class="zoomTool" href="grid-view.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
 				<a href="product_details.html">
           <img src="assets\img\sm.png" alt=""></a>
 		</div>
 			</li>
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a class="zoomTool" href="grid-view.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
 				<a href="product_details.html"><img src="assets\img\rustans.png" alt=""></a>
 				</div>
 			  </div>
@@ -248,12 +192,12 @@ accompanied by English versions from the 1914 translation by H. Rackham.
  </div>
 </footer>
 </div><!-- /container -->
+
 <div class="copyright">
 <div class="container">
 	<span>Copyright &copy; 2018 - Grocery2Go</span>
 </div>
 </div>
-
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>

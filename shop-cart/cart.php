@@ -1,7 +1,8 @@
 <?php
 require_once "ShoppingCart.php";
-
-$member_id = 2; // you can your integerate authentication module here to get logged in member
+session_start();
+$id_mem=$_SESSION["cid"];
+          $member_id =$id_mem;  // you can your integerate authentication module here to get logged in member
 
 $shoppingCart = new ShoppingCart();
 if (! empty($_GET["action"])) {
@@ -103,10 +104,13 @@ Navigation Bar Section
 		  </a>
 		  <div class="nav-collapse">
 			<ul class="nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li class=""><a href="general.html">FAQs</a></li>
-        <li class=""><a href="help.html">Help</a></li>
-        <li class=""><a href="livetrack.html">Live Track</a></li>
+
+                <li class="active"><a href="home.php">Home</a></li>
+                <li class=""><a href="freshmeat.php">ShopNow</a></li>
+                <li class=""><a href="faqs.php">FAQs</a></li>
+                <li class=""><a href="">Live Track</a></li>
+                  <li class=""><a href="">Message</a></li>
+                  <li class=""><a href="profile.php">Profile</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
@@ -127,10 +131,7 @@ Body Section
 
 	<div class="row">
 	<div class="span12">
-    <ul class="breadcrumb">
-		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
-		<li class="active">Check Out</li>
-    </ul>
+
 	<div class="well well-small">
 		<h1>Check Out <small class="pull-right"></small></h1>
 	<hr class="soften"/>
@@ -152,7 +153,7 @@ Body Section
 			</tbody>
 				</table>
 
-	<a href="products.html" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
+	<a href="freshmeat.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
 	<a href="login.html" class="shopBtn btn-large pull-right">	<button type="submit" class="shopBtn">Next</button><span class="icon-arrow-right"></span></a>
 	</form>
 </div>

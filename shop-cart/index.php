@@ -1,14 +1,3 @@
-<?php
-// Start the session
-
-if (isset($_SESSION)) {
-
-  session_start();
-}else {
- header ('Location:login.php');
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -95,27 +84,35 @@ Navigation Bar Section
 			<span class="icon-bar"></span>
 		  </a>
 		  <div class="nav-collapse">
-			<ul class="nav">
-<<<<<<< HEAD
-        <li class="active"><a href="index.php">Home	</a></li>
-        <!--<li class=""><a href="grid-view.html">Shop Now</a></li>-->
-        <li class=""><a href="general.php">FAQs</a></li>
-        <li class=""><a href="help.php">Help</a></li>
-        <li class=""><a href="livetrack.php">Live Track</a></li>
-=======
-        <li class="active"><a href="index.html">Home</a></li>
-        <li class=""><a href="general.html">FAQs</a></li>
-        <li class=""><a href="help.html">Help</a></li>
-        <li class=""><a href="livetrack.html">Live Track</a></li>
->>>>>>> 7149e25f4c25961a4e42d911b2397fb0c9d01941
+			<ul class="nav">    
+        <li class="active"><a href="home.php">Home</a></li>
 			</ul>
 			<form action="#" class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
-      <ul class="nav pull-right">
-        <li><a href="register.html"><?php echo "Welcome, ".$_SESSION["username"];?></a></li>
 
-      </ul>
+			<ul class="nav pull-right">
+        <li><a href="register.php">Sign Up</a></li>
+			<li class="dropdown">
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Login <b class="caret"></b></a>
+				<div class="dropdown-menu">
+				<form class="form-horizontal loginFrm">
+				  <div class="control-group">
+					<input type="text" class="span2" id="inputEmail" placeholder="Email">
+				  </div>
+				  <div class="control-group">
+					<input type="password" class="span2" id="inputPassword" placeholder="Password">
+				  </div>
+				  <div class="control-group">
+					<label class="checkbox">
+					<input type="checkbox"> Remember me
+					</label>
+					<button type="submit" class="shopBtn btn-block">Sign in</button>
+				  </div>
+				</form>
+				</div>
+			</li>
+			</ul>
 		  </div>
 		</div>
 	  </div>
@@ -150,7 +147,7 @@ Body Section
                       <img style="width:100%" src="assets/img/g2gLogo.jpg" alt="bootstrap ecommerce templates">
                       <div class="carousel-caption">
                           <!--  <h4>Grocery2Go</h4>-->
-                            <p><span>Start Shopping Now</span></p>
+                            <p><span>Start Shopping now</span></p>
                       </div>
                     </div>
 			  <div class="item">
@@ -191,14 +188,14 @@ New Products
 		  <ul class="thumbnails">
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="grid-view.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
 				<a href="product_details.html">
           <img src="assets\img\sm.png" alt=""></a>
 		</div>
 			</li>
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="grid-view.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
 				<a href="product_details.html"><img src="assets\img\rustans.png" alt=""></a>
 				</div>
 			  </div>
@@ -247,12 +244,12 @@ accompanied by English versions from the 1914 translation by H. Rackham.
  </div>
 </footer>
 </div><!-- /container -->
-
 <div class="copyright">
 <div class="container">
 	<span>Copyright &copy; 2018 - Grocery2Go</span>
 </div>
 </div>
+
 <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
