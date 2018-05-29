@@ -48,7 +48,7 @@
       $email;
 
 
-      $sql="SELECT firstname,lastname,address,phoneNumb,email FROM customer_details WHERE username = $username ";
+      $sql="SELECT firstname,lastname,address,phoneNumb,email FROM customer_details WHERE username = $username";
       $result=mysqli_query($conn,$sql);
 
       if(mysqli_num_rows($result)>0){
