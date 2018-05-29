@@ -7,7 +7,7 @@
     $product_array = $shoppingCart->getAllProduct($query);
     if (! empty($product_array)) {
         foreach ($product_array as $key => $value) {
-          if ($product_array[$key]["categ_id"] == 1) {
+          if ($product_array[$key]["categ_id"] == 13) {
             // code...
 
             ?>
