@@ -39,11 +39,7 @@ session_start();
   <div class="span6">
 
   </div>
-  <div class="span6 alignR">
-  <p><br> <strong> call us: 59-566-99</strong><br><br></p>
 
-
-  </div>
   </div>
 </header>
 
@@ -59,7 +55,7 @@ Navigation Bar Section
 
 		<ul class="nav">
       <li class="active"><a href="home.php">Home</a></li>
-      <li class=""><a href="freshmeat.php">ShopNow</a></li>
+      <li class=""><a href="freshmeat.php">Shop Now</a></li>
       <li class=""><a href="faqs.php">FAQs</a></li>
       <li class=""><a href="">Live Track</a></li>
         <li class=""><a href="">Message</a></li>
@@ -116,8 +112,8 @@ Body Section
           <?php
           require_once "ShoppingCart.php";
 
-$id_mem=$_SESSION["cid"];
-          $member_id =$id_mem; // you can your integerate authentication module here to get logged in member
+
+        $member_id =$_SESSION["cid"]; // you can your integerate authentication module here to get logged in member
 
           $shoppingCart = new ShoppingCart();
           if (! empty($_GET["action"])) {

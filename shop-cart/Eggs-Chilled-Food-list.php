@@ -18,6 +18,7 @@
                 <img src="<?php echo $product_array[$key]["image"]; ?>">
                 <div class="product-title">
                     <?php echo $product_array[$key]["name"]; ?>
+                    <?php echo $product_array[$key]["itm_descrip"]; ?>
                 </div>
             </div>
             <div class="product-footer">
