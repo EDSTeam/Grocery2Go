@@ -23,7 +23,12 @@
   </head>
 
   <body>
+
     <?php
+
+      session_start();
+
+
       $servername ="localhost";
       $user="root";
       $pass="";
@@ -35,6 +40,7 @@
         die("Connection failed: ".mysqli_connect);
       }
 
+      $username=$_SESSION["username"];
       $firstname;
       $lastname;
       $address;
@@ -42,7 +48,7 @@
       $email;
 
 
-      $sql="SELECT firstname,lastname,address,phoneNumb,email FROM customer_details";
+      $sql="SELECT firstname,lastname,address,phoneNumb,email FROM customer_details WHERE username = $username";
       $result=mysqli_query($conn,$sql);
 
       if(mysqli_num_rows($result)>0){
@@ -56,7 +62,6 @@
         $email=$row["email"];
       }
     ?>
-
     <!--header-->
 
     <div class=" well container">
