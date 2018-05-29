@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2018 at 05:42 AM
+-- Generation Time: May 29, 2018 at 05:45 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -44,8 +44,8 @@ INSERT INTO `category_details` (`categ_id`, `categ_name`, `categ_desc`) VALUES
 (5, 'Fresh Fruit', 'Fresh fruits such as apple, grapes, orange, lemon and more'),
 (6, 'Canned & Packaged', 'Canned & Packaged '),
 (7, 'HouseHold & Cleaning', 'HouseHold & Cleaning'),
-(8, 'Canned & Packaged', 'Canned & Packaged and etc'),
-(9, 'HouseHold & Cleaning', 'HouseHold & Cleaning and etc');
+(9, 'Dairy', 'Dairy products'),
+(10, 'Health & beauty', 'healthy lifestyles');
 
 -- --------------------------------------------------------
 
@@ -69,10 +69,23 @@ CREATE TABLE `customer_details` (
 --
 
 INSERT INTO `customer_details` (`cid`, `firstname`, `lastname`, `address`, `phoneNumb`, `email`, `username`, `password`) VALUES
-(3, '', '', '', 0, '', '', ''),
-(4, 'admi', 'admin', 'admin', 12345891, 'admin22', '3213213123131', ''),
-(5, 's', 's', 's', 2147483647, 'admin', 's', 's'),
-(6, 'admin', 'admin', 'admin', 12345891, 'admin', 'admin', 'admin');
+(46, 'admin', 'admin', 'sdsdsd', 2147483647, 'sheila_1036@yahoo.com', 'adminsheila04', 'admin'),
+(47, 'sheila', 'valde', '', 0, '', '', ''),
+(48, 'Mickey', 'Mouse', 'admin', -2147483648, 'valdez.sheilamae@gmail.com', '12345666', '1212121212'),
+(49, 'admin', 'sasasas', 'admin23', 2147483647, 'sheila_1036@yahoo.com', 'aaaaa', '123456789'),
+(50, 'admin', 'admin', 'asasa', 2147483647, 'valdez.sheilamae@gmail.com', '123', '123'),
+(51, 'admin', 'aa', 'asasa', 551332323, 'asasa', 'aaaaaaaaaaaaaaaaaaaaaa', 'asasasas'),
+(52, 'admin', 'cxczcz', 'zxzxz', 2147483647, 'sheila_1036@yahoo.com', '5s5s55s5', 'aaaaaa'),
+(53, 'sasasa', 'admin', 'asdsfdfb', 632323232, '32323232', 'sheiAdmin', '1212121'),
+(54, 'sdsdsd', 'aaaa', 'asdfgfdsa', 2147483647, 'sheila_1036@yahoo.com', '11111', 'aasasa'),
+(55, 'sdsdsd', 'aaaa', 'asdfgfdsa', 2147483647, 'sheila_1036@yahoo.com', 'asdfds', 'aaaaaaaa'),
+(56, 'ZZ', 'admin', 'adasa', 66232232, 'asdcax', 'as', '5a5s1a212a12'),
+(57, 'sasa', 'aaaa', 'sasasaas', 56632323, '1ssss', 'aa', 'sasasa'),
+(58, 'zxzxz', 'sdsd', 'sdsdss', 5121121, 'dsdsds', 'dss13s', '2ss12s1s'),
+(59, 'asaa', 'aaaaa', 'sdfbvc', 13323323, 'aaaa', '112121', '66666666'),
+(60, 'Mickey', 'Mouse', 'every corner', 123456989, 'malakisiMickey', 'mickeyMouse', 'micketmouse'),
+(61, 'shei', 'ddgh', 'oyyioo', 14896, 'sheila_1036@yahoo.com', 'hhhhh', '12356'),
+(62, 'admin', 'Mouse', 'admin', 666666, 'valdez.sheilamae@gmail.com', 'asasaa3333', 'a21sa2sasa');
 
 -- --------------------------------------------------------
 
@@ -204,8 +217,15 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`id`, `product_id`, `quantity`, `member_id`) VALUES
-(36, 6, 1, 2),
-(37, 14, 2, 2);
+(69, 5, 2, 59),
+(70, 6, 2, 59),
+(71, 13, 2, 59),
+(72, 14, 2, 59),
+(73, 15, 3, 59),
+(74, 16, 4, 59),
+(75, 5, 1, 62),
+(76, 6, 2, 62),
+(77, 17, 3, 2);
 
 -- --------------------------------------------------------
 
@@ -229,10 +249,13 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`, `gm_id`, `categ_id`) VALUES
-(5, 'Monterey Lean Ground Pork Lean GroundPork\r\n', '500g', 'MLGPLG', 'assets\\Products\\freshMeat\\monLeanGroundPork.jpg\r\n', 117.50, 2, 4),
+(5, 'Monterey Lean Ground Pork\r\n', '500g', 'MLGPLG', 'assets\\Products\\freshMeat\\monLeanGroundPork.jpg\r\n', 117.50, 2, 4),
 (6, 'Monterey Pork Adobo Cut', '500g', 'MPAC', 'assets\\Products\\freshMeat\\Monterey Pork Adobo Cut.JPG', 117.50, 2, 4),
-(13, 'Magnolia Chicken Tapa', '330 g', 'MCTapa', 'assets\\Products\\freshMeat\\Magnolia Chicken Tapa.jpg', 80.85, 2, 4),
-(14, 'Magnolia Chicken Wings', '500g', 'MCWings', 'assets\\Products\\freshMeat\\Magnolia Chicken Wings.jpg', 81.00, 2, 4);
+(13, 'Monterey Pork Sinigang Cut', '500 g', 'MCTapa', 'assets\\Products\\freshMeat\\Monterey Pork Sinigang Cut.jpg', 80.85, 2, 4),
+(14, 'Magnolia Chiken Breast Fillet', '700g', 'MCbF', 'assets\\Products\\freshMeat\\magnoliaChikenBreastFillet.jpg', 164.75, 2, 4),
+(15, 'Bounty Fresh Chicken Tinola Cut', '500g', 'BFCTC', 'assets\\Products\\freshMeat\\Bounty Fresh Chicken Tinola Cut.jpg', 61.50, 2, 4),
+(16, 'Supersavers RF SS Pork Liempo Sobi', '500g', 'SFPL', 'assets\\Products\\freshMeat\\Supersavers RF SS Pork Liempo Sobi.jpg', 135.00, 2, 4),
+(17, 'Del monte Mango Flavor', '1 liter', 'DLmango', 'assets\\Products\\Drinks\\delmontemango.jpg', 98.50, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -243,6 +266,9 @@ INSERT INTO `tbl_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`
 CREATE TABLE `total_price` (
   `cid` int(11) NOT NULL,
   `total_qty` int(11) NOT NULL,
+  `sub_total_price` double NOT NULL,
+  `concierge_fee` double NOT NULL,
+  `delivery_fee` double NOT NULL,
   `total_price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -311,7 +337,8 @@ ALTER TABLE `order`
 -- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `member_id` (`member_id`);
 
 --
 -- Indexes for table `tbl_product`
@@ -336,12 +363,12 @@ ALTER TABLE `total_price`
 -- AUTO_INCREMENT for table `category_details`
 --
 ALTER TABLE `category_details`
-  MODIFY `categ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `categ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `customer_details`
 --
 ALTER TABLE `customer_details`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `delivery_table`
 --
@@ -376,12 +403,12 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- Constraints for dumped tables
 --
