@@ -39,7 +39,11 @@ session_start();
   <div class="span6">
 
   </div>
+  <div class="span6 alignR">
+  <p><br> <strong> call us: 59-566-99</strong><br><br></p>
 
+
+  </div>
   </div>
 </header>
 
@@ -55,7 +59,7 @@ Navigation Bar Section
 
 		<ul class="nav">
       <li class="active"><a href="home.php">Home</a></li>
-      <li class=""><a href="freshmeat.php">Shop Now</a></li>
+      <li class=""><a href="freshmeat.php">ShopNow</a></li>
       <li class=""><a href="faqs.php">FAQs</a></li>
       <li class=""><a href="">Live Track</a></li>
         <li class=""><a href="">Message</a></li>
@@ -112,8 +116,8 @@ Body Section
           <?php
           require_once "ShoppingCart.php";
 
-
-        $member_id =$_SESSION["cid"]; // you can your integerate authentication module here to get logged in member
+$id_mem=$_SESSION["cid"];
+          $member_id =$id_mem; // you can your integerate authentication module here to get logged in member
 
           $shoppingCart = new ShoppingCart();
           if (! empty($_GET["action"])) {
@@ -130,7 +134,11 @@ Body Section
                               $newQuantity = $cartResult[0]["quantity"] + $_POST["quantity"];
                               $shoppingCart->updateCartQuantity($newQuantity, $cartResult[0]["id"]);
                           } else {
-                              // Add to cart table
+                            $timezone = date_default_timezone_get();
+
+                            $t=time();
+                            $time =date("h:i:sa");
+                            $date = date("Y/m/d");
                               $shoppingCart->addToCart($productResult[0]["id"], $_POST["quantity"], $member_id);
                           }
                       }
@@ -201,10 +209,11 @@ Body Section
           </HEAD>
           <BODY>
           <?php
+          $item_quantity = 0;
+          $item_price = 0;
           $cartItem = $shoppingCart->getMemberCartItem($member_id);
           if (! empty($cartItem)) {
-              $item_quantity = 0;
-              $item_price = 0;
+
               if (! empty($cartItem)) {
                   foreach ($cartItem as $item) {
                       $item_quantity = $item_quantity + $item["quantity"];

@@ -108,8 +108,9 @@ Body Section
         <div class="row-fluid">
           <?php
           require_once "ShoppingCart.php";
-
-          $member_id = 2; // you can your integerate authentication module here to get logged in member
+          $item_quantity = 0;
+          $item_price = 0;
+          $member_id = $_SESSION['cid']; // you can your integerate authentication module here to get logged in member
 
           $shoppingCart = new ShoppingCart();
           if (! empty($_GET["action"])) {
@@ -264,7 +265,7 @@ Body Section
             <?php
           }
           ?>
-          <form class="" action="checkout.php" method="post">
+          <form class="" action="cart.php" method="post">
 
             <input type="submit" name="checkout" value="CHECKOUT">
           </form>

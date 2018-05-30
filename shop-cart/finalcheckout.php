@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "grocery2go";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,23 +48,25 @@
     </div>
       <div class="row-fluid">
       <div class="span5">
-        <form>
+        <form action="update-customer-details.php" method="post">
           <fieldset>
             <legend>Shipping details</legend>
             <div class="controls controls-row">
-              <input class="span6" type="text" placeholder="First name">
-              <input class="span6" type="text" placeholder="Last name">
+              <input class="span6" type="text" name="firstname" placeholder="<?php echo $_SESSION["firstname"]; ?>">
+              <input class="span6" type="text"  name="lastname" placeholder="<?php echo $_SESSION["lastname"]; ?>">
             </div>
             <div class="controls">
-              <input class="span12"type="text" placeholder="Address">
+              <input class="span12"type="text"  name="address"placeholder="<?php echo $_SESSION["address"]; ?>">
             </div>
             <div class="controls controls-row">
-              <input class="span6" type="text" placeholder="Apt,Suite,etc(optional)">
-              <input class="span6" type="text" placeholder="Mobile number">
+              <input class="span6" type="text"  name="mobilenum"placeholder="<?php echo $_SESSION["phoneNumb"]; ?>">
             </div>
-            <textarea rows="3" placeholder="Landmark and delivery instructions" name="instructions"></textarea>
+            <textarea rows="3" name="Landmark" placeholder="Landmark and delivery instructions" name="instructions"></textarea>
           </fieldset>
 
+<?php if (  $_SESSION["total_qty"]!=0){
+  ?><h3><?php echo rand(); ?></h3>
+<?php } ?>
 
 
           <fieldset>
@@ -79,42 +101,79 @@
           <legend>Payment</legend>
             <label class="radio">
               <input type="radio" name="cashondelviery" id="option" value="option1" checked>
-              Cash on Delivery
+              Cash on Delivery <?php if (  $_SESSION["total_qty"]!=0){
+                ?><p><font color='red'><h3>Tracking No.</h3> <h2><?php echo rand(); ?></h2> </font></p>
+              <?php } ?>
+
             </label>
       </div>
       <!--checkout summary division-->
+<?php
+$sqlGetProduct = "SELECT b.name AS 'Product Name',a.quantity AS 'Quantity', b.price AS 'Price'
+ FROM tbl_cart a INNER JOIN tbl_product b where a.product_id=b.id AND a.member_id=".$_SESSION["cid"];
+//SELECT b.name AS 'Product Name',a.quantity AS 'Quantity', b.price AS 'Price' FROM tbl_cart a INNER JOIN tbl_product b where a.product_id=b.id AND a.member_id=59
+//echo $sqlGetProduct;
+$resulta = $conn->query($sqlGetProduct);
+ ?>
+
+      <!-- this get the cartSummary-->
       <div class="span5 offset1">
 
-        <legend>Summary</legend>
+    <h3>Cart Summary</h3>
         <div class="row-fluid">
           <table class="table ">
+<!-- header -->
+<tr>
+  <th>Item(s)</th>
+  <td style="text-align:center"><b>Quantity</b></td>
+  <td style="text-align:right;"> <b>Price</b>  </td>
+</tr>
+<?php if ($resulta->num_rows > 0) {
+  while($row = $resulta->fetch_assoc()) {
+  ?>
             <tr>
-              <th>Item apple1 apple2</th>
-              <td style="text-align:center">1</td>
-              <td style="text-align:right;">$500.00</td>
+              <th><?php echo $row["Product Name"]; ?></th>
+              <td style="text-align:center"><?php  echo $row["Quantity"]; ?></td>
+              <td style="text-align:right;"><?php  echo "Php".$row["Price"] ?></td>
             </tr>
-            <tr>
-              <th>Item apple1 apple2</th>
-              <td style="text-align:center">1</td>
-              <td style="text-align:right">$500.00</td>
+<?php
+     }
+} else {
+echo "Empty Cart";
+}
 
-            </tr>
+  if (  $_SESSION["total_qty"]==0) {
+    $_SESSION["total_qty"]=0;
+    $_SESSION["subTotalPrice"]=0;
+    $_SESSION["concierge"]=0;
+    $_SESSION["deliveryfee"]=0;
+
+  }
+
+ ?>
+
+            <!-- this is to compute total-->
           </table>
           <table class="table table-stripped">
             <tr>
-              <td><small>Subtotal</small></td>
+              <td><small><font color="red">Sub-total</font></small></td>
               <td> </td>
-              <td style="text-align:right">$500.00</td>
+              <td style="text-align:right"><?php echo "Php ".$_SESSION["subTotalPrice"]; ?></td>
             </tr>
             <tr>
-              <td><small>Delivery fee</small></td>
+              <td><small><font color="red">Concierge fee</font></small></td>
               <td> </td>
-              <td style="text-align:right">$00.00</td>
+              <td style="text-align:right"><?php  echo "Php ".$_SESSION["concierge"]?></td>
             </tr>
             <tr>
-              <td><strong>Total</strong></td>
+              <td><small><font color="red">Delivery fee</font></small></td>
               <td> </td>
-              <td style="text-align:right"><strong>$500.00</strong></td>
+              <td style="text-align:right"><?php  echo "Php ".$_SESSION["deliveryfee"]?></td>
+            </tr>
+            <tr>
+              <td><strong><font color='red'>Total amount</font></strong></td>
+              <td> </td>
+              <td style="text-align:right"><strong><?php echo "Php ".$_SESSION["subTotalPrice"]+$_SESSION["concierge"]+$_SESSION["deliveryfee"]; ?></strong></td>
             </tr>
           </table>
         </div>

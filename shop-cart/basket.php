@@ -22,7 +22,9 @@ if (! empty($_GET["action"])) {
                     $shoppingCart->updateCartQuantity($newQuantity, $cartResult[0]["id"]);
                 } else {
                     // Add to cart table
-                    $shoppingCart->addToCart($productResult[0]["id"], $_POST["quantity"], $member_id);
+                    $time = date("H:i:s");
+                    $date =date("m/d/y");
+                    $shoppingCart->addToCart($productResult[0]["id"], $_POST["quantity"], $member_id,$date, $time);
                 }
             }
             break;
@@ -94,10 +96,13 @@ function save_to_db(cart_id, new_quantity, newPrice) {
 </HEAD>
 <BODY>
 <?php
+$item_quantity = 0;
+$item_price = 0;
+$deliveryfee=0;
+  $conciergefee=0;
 $cartItem = $shoppingCart->getMemberCartItem($member_id);
 if (! empty($cartItem)) {
-    $item_quantity = 0;
-    $item_price = 0;
+
     if (! empty($cartItem)) {
         foreach ($cartItem as $item) {
             $item_quantity = $item_quantity + $item["quantity"];
@@ -113,31 +118,49 @@ if (! empty($cartItem)) {
         <div class="txt-heading">
             <div class="txt-heading-label">Shopping Cart</div>
 
-            <a id="btnEmpty" href="freshmeat.php?action=empty"><img
+            <a id="btnEmpty" href="cart.php?action=empty"><img
                 src="empty-cart.png" alt="empty-cart" title="Empty Cart"
                 class="float-right" /></a>
             <div class="cart-status">
+              <?php if($item_quantity==0){
+                $item_quantity=0;
+                $item_price=0;
+                $conciergefee=0;
+                $deliveryfee=0;
+
+              } else {
+                $conciergefee=99;
+              }?>
+
                 <div>Total Quantity: <span id="total-quantity"><?php echo $item_quantity; ?></span></div>
                 <div>Sub Total Price: <span id="total-price"><?php echo $item_price; ?></span></div>
-                  <div>Concierge: <span id="total-price"><?php echo $conciergefee=99; ?></span></div>
-                  <?php if ($item_price >=2500){
-                    $deliveryfee=0;
-                    ?>
-                    <div>Delivery fee: <span id="total-price"><?php echo $deliveryfee ; ?></span></div>
-                  <div>Total: <span id="total-price"><?php echo $item_price + $conciergefee+ $deliveryfee ; ?></span></div>
-                <?php  }else{
-                    $deliveryfee=40;
-                    ?>
+                  <div>Concierge: <span id="total-price"><?php echo $conciergefee; ?></span></div>
+                  <?php if ($item_price >=2500 || $item_quantity==0){
+                    $deliveryfee=0;//compute for tot
+                   ?>
+                    <div>Delivery fee: <span id="total-price"><?php echo $deliveryfee; ?></span></div>
+                  <div>Total Price: <span id="total-price"><?php echo $deliveryfee + $item_price + $conciergefee; ?></span></div>
+                <?php  $_SESSION["finalTotal"]=$deliveryfee + $item_price + $conciergefee;}else{
+                    $deliveryfee=40//compute for total
+?>
                   <div>Delivery fee: <span id="total-price"><?php echo $deliveryfee ; ?></span></div>
-                <div>Total Price: <span id="total-price"><?php echo $item_price + $conciergefee+ $deliveryfee ; ?></span></div>
-              <?php } ?>
+                <div>Total Price: <span id="total-price"><?php echo $deliveryfee + $item_price + $conciergefee; ?></span></div>
+              <?php $_SESSION["finalTotal"]=$deliveryfee + $item_price + $conciergefee;}
+
+
+$_SESSION["total_qty"]=$item_quantity;
+$_SESSION["subTotalPrice"]=$item_price;
+$_SESSION["concierge"]=$conciergefee;
+$_SESSION["deliveryfee"]=$deliveryfee;
+
+              ?>
             </div>
         </div>
 <?php
 if (! empty($cartItem)) {
     ?>
 <div class="shopping-cart-table">
-            <div class="cart-item-container header">
+            <div class="header">
                 <div class="cart-info title">Title</div>
                 <div class="cart-info">Quantity</div>
                 <div class="cart-info price">Price</div>
@@ -145,7 +168,7 @@ if (! empty($cartItem)) {
 <?php
     foreach ($cartItem as $item) {
         ?>
-				<div class="cart-item-container">
+				<div class="">
                 <div class="cart-info title">
                     <?php echo $item["name"]; ?>
                 </div>

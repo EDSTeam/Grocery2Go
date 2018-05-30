@@ -1,9 +1,9 @@
 <?php
   session_start();
 
-if (!isset($_SESSION)) {
-header ('Location:verify.php');
-}
+  if (!isset($_SESSION)) {
+  header ('Location:index.php');
+  }
 
 ?>
 

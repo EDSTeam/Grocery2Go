@@ -12,9 +12,9 @@ body {
 }
 
 #shopping-cart .txt-heading {
-	border-top: #607d8b 2px solid;
+    border-top: #FF9800 2px solid;
     background: #ffffff;
-    border-bottom: #607d8b 2px solid;
+    border-bottom: #FF9800 2px solid;
 }
 
 .txt-heading-label {
