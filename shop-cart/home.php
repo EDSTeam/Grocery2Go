@@ -1,9 +1,9 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION["firstname"])) {
-  header ('Location:index.php');
-  }
+if (!isset($_SESSION)) {
+header ('Location:verify.php');
+}
 
 ?>
 
@@ -57,14 +57,14 @@
 			<ul class="nav">
 
         <li class="active"><a href="home.php">Home</a></li>
+        <li class=""><a href="freshmeat.php">ShopNow</a></li>
         <li class=""><a href="faqs.php">FAQs</a></li>
-        <li class=""><a href="">Live Track</a></li>
+        <li class=""><a href="livetrack.html">Live Track</a></li>
           <li class=""><a href="">Message</a></li>
           <li class=""><a href="profile.php">Profile</a></li>
       </ul>
 
       <ul class="nav pull-right">
-
         <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
         <li><a href="logout.php"><b>Sign out</b></a></li>
 
@@ -135,15 +135,15 @@ New Products
 		  <ul class="thumbnails">
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="freshmeat.php" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href="freshmeat.php">
+				<a class="zoomTool" href="grid-view.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a href="product_details.html">
           <img src="assets\img\sm.png" alt=""></a>
 		</div>
 			</li>
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href=""><img src="assets\img\rustans.png" alt=""></a>
+				<a class="zoomTool" href="grid-view.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a href="product_details.html"><img src="assets\img\rustans.png" alt=""></a>
 				</div>
 			  </div>
 			</li>
