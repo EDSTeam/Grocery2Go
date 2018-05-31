@@ -1,10 +1,8 @@
 <?php
   session_start();
-
   if (!isset($_SESSION["firstname"])) {
   header ('Location:index.php');
   }
-
 ?>
 
 <!DOCTYPE html>
@@ -135,15 +133,15 @@ New Products
 		  <ul class="thumbnails">
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="freshmeat.php" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href="freshmeat.php">
+				<a class="zoomTool" href="drinks.php" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a href="drinks.php">
           <img src="assets\img\sm.png" alt=""></a>
 		</div>
 			</li>
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href=""><img src="assets\img\rustans.png" alt=""></a>
+				<a class="zoomTool" href="r-drinks.php" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a href="r-drinks.php"><img src="assets\img\rustans.png" alt=""></a>
 				</div>
 			  </div>
 			</li>

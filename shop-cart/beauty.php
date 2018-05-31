@@ -25,14 +25,13 @@ session_start();
 <div class="row">
 	<div class="span6">
 	<h1>
-	<a class="logo" href="index.html"><span>Grocery2Go</span>
+	<a class="logo" href="index.php"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
-	</div>
-  <div class="span6">
 
-  </div>
+	</div>
+
 
   </div>
 </header>
@@ -43,20 +42,20 @@ Navigation Bar Section
 
 <div class="navbar">
 	  <div class="navbar-inner">
-		<div class="container-fluid">
+		<div class="container">
 
 		  <div class="nav-collapse">
 
-        <ul class="nav">
-          <li class=""><a href="home.php">Home</a></li>
-          <li class=""><a href="profile.php">Profile</a></li>
-          <li class=""><a href="faqs.php">FAQs</a></li>
-          <li class=""><a href="">Live Track</a></li>
-    			</ul>
-          <ul class="nav pull-right">
-            <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
-            <li><a href="logout.php"><b>Sign out</b></a></li>
-          </ul>
+		<ul class="nav">
+      <li class=""><a href="home.php">Home</a></li>
+      <li class=""><a href="profile.php">Profile</a></li>
+      <li class=""><a href="faqs.php">FAQs</a></li>
+      <li class=""><a href="">Live Track</a></li>
+			</ul>
+      <ul class="nav pull-right">
+        <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
+        <li><a href="logout.php"><b>Sign out</b></a></li>
+      </ul>
 
 			</ul>
 		  </div>
@@ -77,7 +76,7 @@ Body Section
 		<li><a href="freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
 		<li><a href="freshfruit.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
 		<li><a href="canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
-		<li><a href="household.php"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
+		<li><a href="household.php"><span class="icon-chevron-right"></span>Household & Cleaning</a></li>
     <li><a href="beauty.php"><span class="icon-chevron-right"></span>Beauty</a></li>
     <li><a href="health.php"><span class="icon-chevron-right"></span>Health</a></li>
 	</ul>
@@ -86,7 +85,7 @@ Body Section
     <br />
   </div>
 
-  </div>
+</div>
 	</div>
 
 
@@ -96,7 +95,7 @@ Body Section
     <div class="container">
 
       <div class="well well-small">
-      <h3>Fresh Meat</h3>
+      <h3>Beauty</h3>
         <div class="row-fluid">
           <?php
           require_once "ShoppingCart.php";
@@ -134,6 +133,7 @@ Body Section
               }
           }
           ?>
+
           <HTML>
           <HEAD>
           <TITLE></TITLE>
@@ -206,7 +206,7 @@ Body Section
                   <div class="txt-heading">
                       <div class="txt-heading-label">Shopping Cart</div>
 
-                      <a id="btnEmpty" href="freshmeat.php?action=empty"><img
+                      <a id="btnEmpty" href="beauty.php?action=empty"><img
                           src="empty-cart.png" alt="empty-cart" title="Empty Cart"
                           class="float-right" /></a>
                       <div class="cart-status">
@@ -243,7 +243,7 @@ Body Section
                               </div>
                           <div class="cart-info action">
                               <a
-                                  href="freshmeat.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
+                                  href="beauty.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
                                   class="btnRemoveAction"><img
                                   src="icon-delete.png" alt="icon-delete"
                                   title="Remove Item" /></a>
@@ -261,7 +261,7 @@ Body Section
             <input type="submit" name="checkout" value="CHECKOUT">
           </form>
           </div>
-          <?php require_once "freshmeat-list.php"; ?>
+          <?php require_once "beauty-list.php"; ?>
 
           </BODY>
           </HTML>
@@ -276,11 +276,7 @@ Body Section
 	Featured Products
 	-->
 
-  <div id="inner">
-    <?php
-      include 'chat.html';
-     ?>
-  </div>
+
 
 <!--
 Clients
@@ -288,6 +284,7 @@ Clients
 
 <!--
 Footer
+
 <div class="container">
   <footer class="footer">
   <div class="row-fluid">
@@ -325,7 +322,13 @@ Footer
    </div>
   </footer>
 </div>
-</div>container -->
+</div>-->
+
+<div id="inner">
+  <?php
+    include 'chat.html';
+   ?>
+</div>
 
 
   </body>

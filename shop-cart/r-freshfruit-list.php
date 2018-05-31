@@ -3,21 +3,22 @@
         <div class="txt-heading-label">Products</div>
     </div>
     <?php
-    $query = "SELECT * FROM tbl_product";
+    $query = "SELECT * FROM rustans_product";
     $product_array = $shoppingCart->getAllProduct($query);
     if (! empty($product_array)) {
         foreach ($product_array as $key => $value) {
-          if ($product_array[$key]["categ_id"] == 3) {
+          if ($product_array[$key]["categ_id"] == 5 && $product_array[$key]["gm_id"] == 1) {
             // code...
 
             ?>
         <div class="product-item">
         <form method="post"
-            action="freshvegetable.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+            action="r-freshfruit.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
             <div class="product-image">
                 <img src="<?php echo $product_array[$key]["image"]; ?>">
                 <div class="product-title">
                     <?php echo $product_array[$key]["name"]; ?>
+                    <?php echo $product_array[$key]["itm_descrip"]; ?>
                 </div>
             </div>
             <div class="product-footer">

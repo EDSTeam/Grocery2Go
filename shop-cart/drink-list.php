@@ -7,7 +7,7 @@
     $product_array = $shoppingCart->getAllProduct($query);
     if (! empty($product_array)) {
         foreach ($product_array as $key => $value) {
-          if ($product_array[$key]["categ_id"] == 1) {
+          if ($product_array[$key]["categ_id"] == 1 && $product_array[$key]["gm_id"] == 2) {
             // code...
 
             ?>
@@ -18,6 +18,7 @@
                 <img src="<?php echo $product_array[$key]["image"]; ?>">
                 <div class="product-title">
                     <?php echo $product_array[$key]["name"]; ?>
+                    <?php echo $product_array[$key]["itm_descrip"]; ?>
                 </div>
             </div>
             <div class="product-footer">

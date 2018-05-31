@@ -202,15 +202,15 @@ New Products
 		  <ul class="thumbnails">
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href="product_details.html">
+				<a class="zoomTool" href="drinks.php" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a href="drinks.php">
           <img src="assets\img\sm.png" alt=""></a>
 		</div>
 			</li>
 			<li class="span6">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href="product_details.html"><img src="assets\img\rustans.png" alt=""></a>
+				<a class="zoomTool" href="r-drinks.php" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
+				<a href="r-drinks.php"><img src="assets\img\rustans.png" alt=""></a>
 				</div>
 			  </div>
 			</li>
@@ -251,8 +251,8 @@ Footer
  <div class="span6">
 <h5>The standard chunk of Lorem</h5>
 The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
- those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
- Malorum" by Cicero are also reproduced in their exact original form,
+those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
+Malorum" by Cicero are also reproduced in their exact original form,
 accompanied by English versions from the 1914 translation by H. Rackham.
  </div>
  </div>

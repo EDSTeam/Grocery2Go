@@ -7,7 +7,7 @@
     $product_array = $shoppingCart->getAllProduct($query);
     if (! empty($product_array)) {
         foreach ($product_array as $key => $value) {
-          if ($product_array[$key]["categ_id"] == 2) {
+          if ($product_array[$key]["categ_id"] == 2 && $product_array[$key]["gm_id"] == 2) {
             // code...
 
             ?>

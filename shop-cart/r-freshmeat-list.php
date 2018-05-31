@@ -3,17 +3,16 @@
         <div class="txt-heading-label">Products</div>
     </div>
     <?php
-    $query = "SELECT * FROM tbl_product";
+    $query = "SELECT * FROM rustans_product";
     $product_array = $shoppingCart->getAllProduct($query);
     if (! empty($product_array)) {
         foreach ($product_array as $key => $value) {
-          if ($product_array[$key]["categ_id"] == 5 && $product_array[$key]["gm_id"] == 2) {
-            // code...
+          if ($product_array[$key]["categ_id"] == 4  && $product_array[$key]["gm_id"] == 2) {
 
             ?>
         <div class="product-item">
         <form method="post"
-            action="freshfruit.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+            action="r-freshmeat.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
             <div class="product-image">
                 <img src="<?php echo $product_array[$key]["image"]; ?>">
                 <div class="product-title">
@@ -27,7 +26,7 @@
                         size="2" class="input-cart-quantity" /><input type="image"
                         src="add-to-cart.png" class="btnAddAction" />
                 </div>
-                <div class="product-price float-left" id="product-price-<?php echo $product_array[$key]["code"]; ?>"><?php echo "$".$product_array[$key]["price"]; ?></div>
+                <div class="product-price float-left" id="product-price-<?php echo $product_array[$key]["code"]; ?>"><?php echo "PHP ".$product_array[$key]["price"]; ?></div>
 
             </div>
         </form>

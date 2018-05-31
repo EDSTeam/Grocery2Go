@@ -3,12 +3,15 @@
 session_start();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Grocery2Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
@@ -16,8 +19,12 @@ session_start();
 
     <!-- font awesome styles -->
 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+
+
   </head>
 <body>
+
 
 <div class="container">
 <div id="gototop"> </div>
@@ -25,7 +32,7 @@ session_start();
 <div class="row">
 	<div class="span6">
 	<h1>
-	<a class="logo" href="index.html"><span>Grocery2Go</span>
+	<a class="logo" href="home.php"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -57,8 +64,6 @@ Navigation Bar Section
             <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
             <li><a href="logout.php"><b>Sign out</b></a></li>
           </ul>
-
-			</ul>
 		  </div>
 		</div>
 	  </div>
@@ -71,55 +76,51 @@ Body Section
 <div class="well well-small">
 	<ul class="nav nav-list promowrapper">
 <h3>Categories</h3>
-		<li><a href="drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
-		<li><a href="dairy.php"><span class="icon-chevron-right"></span>Dairy</a></li>
-		<li><a href="freshvegg.php"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
-		<li><a href="freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
-		<li><a href="freshfruit.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
-		<li><a href="canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
-		<li><a href="household.php"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
-    <li><a href="beauty.php"><span class="icon-chevron-right"></span>Beauty</a></li>
-    <li><a href="health.php"><span class="icon-chevron-right"></span>Health</a></li>
-	</ul>
+<li><a href="r-drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
+<li><a href="r-dairy.php"><span class="icon-chevron-right"></span>Dairy</a></li>
+<li><a href="r-freshvegg.php"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
+<li><a href="r-freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
+<li><a href="r-freshfruit.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
+<li><a href="r-canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
+<li><a href="r-household.php"><span class="icon-chevron-right"></span>Household & Cleaning</a></li>
+<li><a href="r-beauty.php"><span class="icon-chevron-right"></span>Beauty</a></li>
+<li><a href="r-health.php"><span class="icon-chevron-right"></span>Health</a></li>	</ul>
   <div class="well well-small alert alert-warning cntr">
-    <h3>Cash on Delivery only </h3>
+    <h3>Cash on Delivery only</h3>
     <br />
   </div>
-
-  </div>
+</div>
 	</div>
-
-
 
 	<div class="span6">
 
     <div class="container">
-
       <div class="well well-small">
-      <h3>Fresh Meat</h3>
+      <h3>Drinks</h3>
         <div class="row-fluid">
           <?php
           require_once "ShoppingCart.php";
-
-          $member_id =$_SESSION["cid"]; // you can your integerate authentication module here to get logged in member
+          $item_quantity = 0;
+          $item_price = 0;
+          $member_id = $_SESSION['cid']; // you can your integerate authentication module here to get logged in member
 
           $shoppingCart = new ShoppingCart();
           if (! empty($_GET["action"])) {
               switch ($_GET["action"]) {
                   case "add":
                       if (! empty($_POST["quantity"])) {
+
                           $productResult = $shoppingCart->getProductByCode($_GET["code"]);
+
                           $cartResult = $shoppingCart->getCartItemByProduct($productResult[0]["id"], $member_id);
+
                           if (! empty($cartResult)) {
                               // Update cart item quantity in database
                               $newQuantity = $cartResult[0]["quantity"] + $_POST["quantity"];
                               $shoppingCart->updateCartQuantity($newQuantity, $cartResult[0]["id"]);
                           } else {
-                            $timezone = date_default_timezone_get();
-                            $t=time();
-                            $time =date("h:i:sa");
-                            $date = date("Y/m/d");
-                            $shoppingCart->addToCart($productResult[0]["id"], $_POST["quantity"], $member_id);
+                              // Add to cart table
+                              $shoppingCart->addToCart($productResult[0]["id"], $_POST["quantity"], $member_id);
                           }
                       }
                       break;
@@ -189,11 +190,10 @@ Body Section
           </HEAD>
           <BODY>
           <?php
-          $item_quantity = 0;
-          $item_price = 0;
           $cartItem = $shoppingCart->getMemberCartItem($member_id);
           if (! empty($cartItem)) {
-
+              $item_quantity = 0;
+              $item_price = 0;
               if (! empty($cartItem)) {
                   foreach ($cartItem as $item) {
                       $item_quantity = $item_quantity + $item["quantity"];
@@ -206,13 +206,12 @@ Body Section
                   <div class="txt-heading">
                       <div class="txt-heading-label">Shopping Cart</div>
 
-                      <a id="btnEmpty" href="freshmeat.php?action=empty"><img
+                      <a id="btnEmpty" href="r-drinks.php?action=empty"><img
                           src="empty-cart.png" alt="empty-cart" title="Empty Cart"
                           class="float-right" /></a>
                       <div class="cart-status">
                           <div>Total Quantity: <span id="total-quantity"><?php echo $item_quantity; ?></span></div>
                           <div>Total Price: <span id="total-price"><?php echo $item_price; ?></span></div>
-
                       </div>
                   </div>
           <?php
@@ -239,11 +238,13 @@ Body Section
                           </div>
 
                           <div class="cart-info price" id="cart-price-<?php echo $item["cart_id"]; ?>">
-                                  <?php echo "PHP ". ($item["price"] * $item["quantity"]); ?>
+                                  <?php echo "$". ($item["price"] * $item["quantity"]); ?>
                               </div>
+
+
                           <div class="cart-info action">
                               <a
-                                  href="freshmeat.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
+                                  href="r-drinks.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
                                   class="btnRemoveAction"><img
                                   src="icon-delete.png" alt="icon-delete"
                                   title="Remove Item" /></a>
@@ -261,7 +262,7 @@ Body Section
             <input type="submit" name="checkout" value="CHECKOUT">
           </form>
           </div>
-          <?php require_once "freshmeat-list.php"; ?>
+          <?php require_once "r-drink-list.php"; ?>
 
           </BODY>
           </HTML>
@@ -281,6 +282,7 @@ Body Section
       include 'chat.html';
      ?>
   </div>
+
 
 <!--
 Clients
@@ -325,7 +327,7 @@ Footer
    </div>
   </footer>
 </div>
-</div>container -->
+</div>/container -->
 
 
   </body>

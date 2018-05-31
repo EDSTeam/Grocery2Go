@@ -53,20 +53,16 @@ Navigation Bar Section
 
 		  <div class="nav-collapse">
 
-		<ul class="nav">
-      <li class=""><a href="home.php">Home</a></li>
-      <li class="active"><a href="freshmeat.php">Shop Now</a></li>
-      <li class=""><a href="faqs.php">FAQs</a></li>
-      <li class=""><a href="">Live Track</a></li>
-        <li class=""><a href="">Message</a></li>
-        <li class=""><a href="profile.php">Profile</a></li>
-			</ul>
-			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
-			</form>
-			<ul class="nav pull-right">
-
-			</ul>
+        <ul class="nav">
+          <li class=""><a href="home.php">Home</a></li>
+          <li class=""><a href="profile.php">Profile</a></li>
+          <li class=""><a href="faqs.php">FAQs</a></li>
+          <li class=""><a href="">Live Track</a></li>
+    			</ul>
+          <ul class="nav pull-right">
+            <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
+            <li><a href="logout.php"><b>Sign out</b></a></li>
+          </ul>
 		  </div>
 		</div>
 	  </div>
@@ -74,29 +70,25 @@ Navigation Bar Section
 <!--
 Body Section
 -->
-	<div class="row">
-<div id="sidebar" class="span4">
+<div class="span12">
+<div id="sidebar" class="span3">
 <div class="well well-small">
-	<ul class="nav nav-list">
+	<ul class="nav nav-list promowrapper">
 <h3>Categories</h3>
 		<li><a href="drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
 		<li><a href="dairy.php"><span class="icon-chevron-right"></span>Dairy</a></li>
-		<li><a href="eggs.php"><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
-		<li><a href="vegg.php"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
+		<li><a href="freshvegg.php"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
 		<li><a href="freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
-		<li><a href="fruits.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
+		<li><a href="freshfruit.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
 		<li><a href="canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
-		<li><a href="clean.php"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
-		<li><a href="beauty.php"><span class="icon-chevron-right"></span>Health & Beauty </a></li>
+		<li><a href="clean.php"><span class="icon-chevron-right"></span>Household & Cleaning</a></li>
+    <li><a href="beauty.php"><span class="icon-chevron-right"></span>Beauty</a></li>
+    <li><a href="health.php"><span class="icon-chevron-right"></span>Health</a></li>
 	</ul>
   <div class="well well-small alert alert-warning cntr">
     <h3>Cash on Delivery only </h3>
     <br />
   </div>
-
-  <div class="well well-small alert alert-warning cntr">
-
-      </div>
 </div>
 	</div>
 
@@ -107,7 +99,7 @@ Body Section
     <div class="container">
 
       <div class="well well-small">
-      <h3>Fresh Meat</h3>
+      <h3>Dairy</h3>
         <div class="row-fluid">
           <?php
           require_once "ShoppingCart.php";
@@ -288,7 +280,11 @@ Body Section
 	<!--
 	Featured Products
 	-->
-
+  <div id="inner">
+    <?php
+      include 'chat.html';
+     ?>
+  </div>
 
 
 <!--
@@ -297,7 +293,6 @@ Clients
 
 <!--
 Footer
--->
 <div class="container">
   <footer class="footer">
   <div class="row-fluid">
@@ -335,7 +330,7 @@ Footer
    </div>
   </footer>
 </div>
-</div><!-- /container -->
+</div>/container -->
 
 
   </body>

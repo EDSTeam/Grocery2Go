@@ -7,13 +7,13 @@
     $product_array = $shoppingCart->getAllProduct($query);
     if (! empty($product_array)) {
         foreach ($product_array as $key => $value) {
-          if ($product_array[$key]["categ_id"] == 5 && $product_array[$key]["gm_id"] == 2) {
+          if ($product_array[$key]["categ_id"] == 10 && $product_array[$key]["gm_id"] == 2) {
             // code...
 
             ?>
         <div class="product-item">
         <form method="post"
-            action="freshfruit.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+            action="health.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
             <div class="product-image">
                 <img src="<?php echo $product_array[$key]["image"]; ?>">
                 <div class="product-title">

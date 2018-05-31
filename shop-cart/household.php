@@ -13,7 +13,6 @@ session_start();
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <!-- Customize styles -->
     <link href="style.css" rel="stylesheet"/>
-
     <!-- font awesome styles -->
 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
   </head>
@@ -43,7 +42,7 @@ Navigation Bar Section
 
 <div class="navbar">
 	  <div class="navbar-inner">
-		<div class="container-fluid">
+		<div class="container">
 
 		  <div class="nav-collapse">
 
@@ -77,7 +76,7 @@ Body Section
 		<li><a href="freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
 		<li><a href="freshfruit.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
 		<li><a href="canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
-		<li><a href="household.php"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
+		<li><a href="household.php"><span class="icon-chevron-right"></span>Household & Cleaning</a></li>
     <li><a href="beauty.php"><span class="icon-chevron-right"></span>Beauty</a></li>
     <li><a href="health.php"><span class="icon-chevron-right"></span>Health</a></li>
 	</ul>
@@ -86,17 +85,15 @@ Body Section
     <br />
   </div>
 
-  </div>
+</div>
 	</div>
 
 
 
 	<div class="span6">
-
     <div class="container">
-
       <div class="well well-small">
-      <h3>Fresh Meat</h3>
+      <h3>Household and Cleaning</h3>
         <div class="row-fluid">
           <?php
           require_once "ShoppingCart.php";
@@ -116,6 +113,7 @@ Body Section
                               $shoppingCart->updateCartQuantity($newQuantity, $cartResult[0]["id"]);
                           } else {
                             $timezone = date_default_timezone_get();
+
                             $t=time();
                             $time =date("h:i:sa");
                             $date = date("Y/m/d");
@@ -206,7 +204,7 @@ Body Section
                   <div class="txt-heading">
                       <div class="txt-heading-label">Shopping Cart</div>
 
-                      <a id="btnEmpty" href="freshmeat.php?action=empty"><img
+                      <a id="btnEmpty" href="household.php?action=empty"><img
                           src="empty-cart.png" alt="empty-cart" title="Empty Cart"
                           class="float-right" /></a>
                       <div class="cart-status">
@@ -241,9 +239,11 @@ Body Section
                           <div class="cart-info price" id="cart-price-<?php echo $item["cart_id"]; ?>">
                                   <?php echo "PHP ". ($item["price"] * $item["quantity"]); ?>
                               </div>
+
+
                           <div class="cart-info action">
                               <a
-                                  href="freshmeat.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
+                                  href="household.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
                                   class="btnRemoveAction"><img
                                   src="icon-delete.png" alt="icon-delete"
                                   title="Remove Item" /></a>
@@ -261,7 +261,7 @@ Body Section
             <input type="submit" name="checkout" value="CHECKOUT">
           </form>
           </div>
-          <?php require_once "freshmeat-list.php"; ?>
+          <?php require_once "household-cleaning-list.php"; ?>
 
           </BODY>
           </HTML>
@@ -275,12 +275,12 @@ Body Section
 	<!--
 	Featured Products
 	-->
-
   <div id="inner">
     <?php
       include 'chat.html';
      ?>
   </div>
+
 
 <!--
 Clients
@@ -325,7 +325,7 @@ Footer
    </div>
   </footer>
 </div>
-</div>container -->
+</div>/container -->
 
 
   </body>

@@ -71,15 +71,15 @@ Body Section
 <div class="well well-small">
 	<ul class="nav nav-list promowrapper">
 <h3>Categories</h3>
-		<li><a href="drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
-		<li><a href="dairy.php"><span class="icon-chevron-right"></span>Dairy</a></li>
-		<li><a href="freshvegg.php"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
-		<li><a href="freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
-		<li><a href="freshfruit.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
-		<li><a href="canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
-		<li><a href="household.php"><span class="icon-chevron-right"></span>HouseHold & Cleaning</a></li>
-    <li><a href="beauty.php"><span class="icon-chevron-right"></span>Beauty</a></li>
-    <li><a href="health.php"><span class="icon-chevron-right"></span>Health</a></li>
+<li><a href="r-drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
+<li><a href="r-dairy.php"><span class="icon-chevron-right"></span>Dairy</a></li>
+<li><a href="r-freshvegg.php"><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
+<li><a href="r-freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
+<li><a href="r-freshfruit.php"><span class="icon-chevron-right"></span>Fresh Fruits</a></li>
+<li><a href="r-canned.php"><span class="icon-chevron-right"></span>Canned & Packaged</a></li>
+<li><a href="r-household.php"><span class="icon-chevron-right"></span>Household & Cleaning</a></li>
+<li><a href="r-beauty.php"><span class="icon-chevron-right"></span>Beauty</a></li>
+<li><a href="r-health.php"><span class="icon-chevron-right"></span>Health</a></li>
 	</ul>
   <div class="well well-small alert alert-warning cntr">
     <h3>Cash on Delivery only </h3>
@@ -206,7 +206,7 @@ Body Section
                   <div class="txt-heading">
                       <div class="txt-heading-label">Shopping Cart</div>
 
-                      <a id="btnEmpty" href="freshmeat.php?action=empty"><img
+                      <a id="btnEmpty" href="r-freshmeat.php?action=empty"><img
                           src="empty-cart.png" alt="empty-cart" title="Empty Cart"
                           class="float-right" /></a>
                       <div class="cart-status">
@@ -243,7 +243,7 @@ Body Section
                               </div>
                           <div class="cart-info action">
                               <a
-                                  href="freshmeat.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
+                                  href="r-freshmeat.php?action=remove&id=<?php echo $item["cart_id"]; ?>"
                                   class="btnRemoveAction"><img
                                   src="icon-delete.png" alt="icon-delete"
                                   title="Remove Item" /></a>
@@ -261,7 +261,7 @@ Body Section
             <input type="submit" name="checkout" value="CHECKOUT">
           </form>
           </div>
-          <?php require_once "freshmeat-list.php"; ?>
+          <?php require_once "r-freshmeat-list.php"; ?>
 
           </BODY>
           </HTML>
