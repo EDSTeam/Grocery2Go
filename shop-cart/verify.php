@@ -29,8 +29,9 @@
          session_start();
          $_SESSION['firstname'] = $firstName;
          $_SESSION['username'] = $username;
+
          echo "redirect me";
-         header('Location:home.php');
+         header('Location:getID.php');
       }else {
          header("Location:index.php?loginFailed=true&reason=password");
       }
