@@ -274,7 +274,7 @@ Body Section
             <input type="submit" name="checkout" value="CHECKOUT">
           </form>
           </div>
-          <?php include "dairy-list.php"; ?>
+          <?php require_once "dairy-list.php"; ?>
 
           </BODY>
           </HTML>

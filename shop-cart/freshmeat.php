@@ -80,7 +80,7 @@ Body Section
 	<ul class="nav nav-list">
 <h3>Categories</h3>
 		<li><a href="drinks.php"><span class="icon-chevron-right"></span>Drinks</a></li>
-		<li><a href=""><span class="icon-chevron-right"></span>Dairy</a></li>
+		<li><a href="dairy.php"><span class="icon-chevron-right"></span>Dairy</a></li>
 		<li><a href=""><span class="icon-chevron-right"></span>Eggs & Chilled Food</a></li>
 		<li><a href=""><span class="icon-chevron-right"></span>Fresh Vegetable</a></li>
 		<li><a href="freshmeat.php"><span class="icon-chevron-right"></span>Fresh Meat</a></li>
