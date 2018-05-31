@@ -52,21 +52,18 @@ if ($conn->connect_error) {
           <fieldset>
             <legend>Shipping details</legend>
             <div class="controls controls-row">
-              <input class="span6" type="text" name="firstname" placeholder="<?php echo $_SESSION["firstname"]; ?>">
-              <input class="span6" type="text"  name="lastname" placeholder="<?php echo $_SESSION["lastname"]; ?>">
+              <input class="span6" type="text" name="firstname" placeholder="" value="<?php echo $_SESSION["firstname"]; ?>">
+              <input class="span6" type="text"  name="lastname" placeholder="" value="<?php echo $_SESSION["lastname"]; ?>">
             </div>
             <div class="controls">
-              <input class="span12"type="text"  name="address"placeholder="<?php echo $_SESSION["address"]; ?>">
+              <input class="span12"type="text"  name="address"placeholder="" value="<?php echo $_SESSION["address"]; ?>">
             </div>
             <div class="controls controls-row">
-              <input class="span6" type="text"  name="mobilenum"placeholder="<?php echo $_SESSION["phoneNumb"]; ?>">
+              <input class="span6" type="text"  name="mobilenum"placeholder=""value="<?php echo $_SESSION["phoneNumb"]; ?>">
             </div>
             <textarea rows="3" name="Landmark" placeholder="Landmark and delivery instructions" name="instructions"></textarea>
           </fieldset>
 
-<?php if (  $_SESSION["total_qty"]!=0){
-  ?><h3><?php echo rand(); ?></h3>
-<?php } ?>
 
 
           <fieldset>
