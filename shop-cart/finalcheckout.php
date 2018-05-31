@@ -37,9 +37,61 @@ if ($conn->connect_error) {
 
 </head>
 <body>
+  <div class="container">
+  <header id="header">
+  <div class="row">
+    <div class="span4">
+    <h1>
+    <a class="logo" href="index.html"><span>Grocery2Go</span>
+      <img src="assets/img/g2g.png" alt="grocery2go">
+    </a>
+    </h1>
+    </div>
+    <div class="span4">
+
+    </div>
+
+    </div>
+  </header>
+</div>
+
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+      <div class="container">
+        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+
+          <li class="active"><a href="home.php">Home</a></li>
+          <li class=""><a href="freshmeat.php">ShopNow</a></li>
+          <li class=""><a href="faqs.php">FAQs</a></li>
+          <li class=""><a href="">Live Track</a></li>
+            <li class=""><a href="">Message</a></li>
+            <li class=""><a href="profile.php">Profile</a></li>
+        </ul>
+
+        <ul class="nav pull-right">
+
+          <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
+          <li><a href="logout.php"><b>Sign out</b></a></li>
+
+
+        </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
 
   <!-- body -->
-  <div class="well container">
+  <div class="container">
+      <div class="well well-small">
     <div class="row-fluid">
       <!--shipping details-->
       <div class="span6">
@@ -51,22 +103,16 @@ if ($conn->connect_error) {
         <form action="update-customer-details.php" method="post">
           <fieldset>
             <legend>Shipping details</legend>
-            <div class="controls controls-row">
-              <input class="span6" type="text" name="firstname" placeholder="<?php echo $_SESSION["firstname"]; ?>">
-              <input class="span6" type="text"  name="lastname" placeholder="<?php echo $_SESSION["lastname"]; ?>">
-            </div>
             <div class="controls">
-              <input class="span12"type="text"  name="address"placeholder="<?php echo $_SESSION["address"]; ?>">
+              <input class="span12"type="text"  name="address" placeholder="" value="<?php echo $_SESSION["address"]; ?>">
             </div>
             <div class="controls controls-row">
-              <input class="span6" type="text"  name="mobilenum"placeholder="<?php echo $_SESSION["phoneNumb"]; ?>">
+              <input class="span6" type="text" placeholder="Apt,Suite,etc(optional)">
+              <input class="span6" type="text"  name="mobilenum" placeholder=""value="<?php echo $_SESSION["phoneNumb"]; ?>">
             </div>
             <textarea rows="3" name="Landmark" placeholder="Landmark and delivery instructions" name="instructions"></textarea>
           </fieldset>
 
-<?php if (  $_SESSION["total_qty"]!=0){
-  ?><h3><?php echo rand(); ?></h3>
-<?php } ?>
 
 
           <fieldset>
@@ -185,7 +231,51 @@ echo "Empty Cart";
       </div>
     </div>
   </div>
+</div>
 
+<div class="container">
+<footer class="footer">
+<div class="row-fluid">
+<div class="span2">
+<h5>Your Account</h5>
+<a href="#">YOUR ACCOUNT</a><br>
+<a href="#">PERSONAL INFORMATION</a><br>
+<a href="#">ADDRESSES</a><br>
+<a href="#">DISCOUNT</a><br>
+<a href="#">ORDER HISTORY</a><br>
+ </div>
+<div class="span2">
+<h5>Iinformation</h5>
+<a href="contact.html">CONTACT</a><br>
+<a href="#">SITEMAP</a><br>
+<a href="#">LEGAL NOTICE</a><br>
+<a href="#">TERMS AND CONDITIONS</a><br>
+<a href="#">ABOUT US</a><br>
+ </div>
+<div class="span2">
+<h5>Our Offer</h5>
+<a href="#">NEW PRODUCTS</a> <br>
+<a href="#">TOP SELLERS</a><br>
+<a href="#">SPECIALS</a><br>
+<a href="#">MANUFACTURERS</a><br>
+<a href="#">SUPPLIERS</a> <br/>
+ </div>
+ <div class="span6">
+<h5>The standard chunk of Lorem</h5>
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
+ those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
+ Malorum" by Cicero are also reproduced in their exact original form,
+accompanied by English versions from the 1914 translation by H. Rackham.
+ </div>
+ </div>
+</footer>
+</div>
+
+<div class="copyright">
+<div class="container">
+<span>Copyright &copy; 2018 - Grocery2Go</span>
+</div>
+</div>
 
 
 <script>
