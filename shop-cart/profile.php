@@ -23,7 +23,6 @@
   </head>
 
   <body>
-
     <?php
 
       session_start();
@@ -62,81 +61,145 @@
         $email=$row["email"];
       }
     ?>
+
     <!--header-->
+    <div class="container">
+    <header id="header">
+    <div class="row">
+      <div class="span4">
+      <h1>
+      <a class="logo" href="index.html"><span>Grocery2Go</span>
+        <img src="assets/img/g2g.png" alt="grocery2go">
+      </a>
+      </h1>
+      </div>
+      <div class="span4">
 
-    <div class=" well container">
+      </div>
 
+      </div>
+    </header>
+  </div>
+
+    <div class="container">
+      <div class="navbar">
+        <div class="navbar-inner">
         <div class="container">
+          <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </a>
 
-          <div class="row">
-            <div class="span8 offset2">
-              <form class="form-horizontal">
-                <fieldset>
-                  <legend class="text-center">Profile</legend>
-                  <div class="control-group">
-                    <label class="control-label">Name</label>
-                    <div class="controls">
-                      <input  class="span2" type="text" placeholder="<?= $firstname?>">
-                      <input class="span2" type="text"  placeholder="<?= $lastname?>">
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label">Email</label>
-                    <div class="controls">
-                      <input class="span4" type="text" placeholder="<?= $email?>" disabled>
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label">Mobile #</label>
-                    <div class="controls">
-                      <input class="span4" type="text" placeholder="<?= $phoneNumb?>">
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label">Address</label>
-                    <div class="controls">
-                      <input class="span4" type="text" placeholder="<?= $address?>">
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <div class="controls">
-                      <label class="control-label">
-                        <button type="submit" class="btn btn-warning">SAVE</button>
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
+          <div class="nav-collapse">
+          <ul class="nav">
 
-              <form class="form-horizontal">
-                <fieldset>
-                  <legend class="text-center">Password</legend>
-                  <div class="control-group">
-                    <label class="control-label">Current Password</label>
-                    <div class="controls">
-                      <input class="span4" type="password">
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <label class="control-label">New Password</label>
-                    <div class="controls">
-                      <input class="span4" type="password">
-                    </div>
-                  </div>
-                  <div class="control-group">
-                    <div class="controls">
-                      <label class="control-label">
-                        <button type="submit" class="btn btn-warning">SAVE</button>
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
+            <li class="active"><a href="home.php">Home</a></li>
+            <li class=""><a href="freshmeat.php">ShopNow</a></li>
+            <li class=""><a href="faqs.php">FAQs</a></li>
+            <li class=""><a href="">Live Track</a></li>
+              <li class=""><a href="">Message</a></li>
+              <li class=""><a href="profile.php">Profile</a></li>
+          </ul>
 
+          <ul class="nav pull-right">
+
+            <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
+            <li><a href="logout.php"><b>Sign out</b></a></li>
+
+
+          </ul>
           </div>
+        </div>
         </div>
       </div>
     </div>
+
+        <!--badeh-->
+    <div class="container">
+      <div class="well well-small">
+        <center><h3><soft>My Profile</soft></h3></center>
+        <hr>
+        <div class="row">
+          <div class="span4 offset1">
+            <img style="width:100%" src="assets/img/avatar.jpg"  class="img-rounded" alt="user profile picture">
+            <center><h5><?echo "$firstname $lastname;"?></h5></center>
+          </div>
+          <div class="span5 offset1">
+            <form>
+              <span class="help-block"><strong>Email</strong></span>
+              <input type="text"  class="span4" value="<?$email?>" disabled>
+              <span class="help-block"><strong>Mobile Number</strong></span>
+              <input type="text"  class="span4" value="<?$phoneNumb?>" placeholder="Mobile No.">
+              <span class="help-block"><strong>Address 1</strong></span>
+              <input type="text"  class="span4" value="<?$address?>" placeholder="Address">
+              <span class="help-block"><strong>Address 2</strong></span>
+              <input type="text"  class="span4" placeholder="Address 2">
+              <span class="help-block"><strong></strong></span>
+              <button type="submit" class="btn btn-success" style="margin-left:240px">Save</button>
+            </form>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+            <!--badeh-->
+            <div class="container">
+            <footer class="footer">
+            <div class="row-fluid">
+            <div class="span2">
+            <h5>Your Account</h5>
+            <a href="#">YOUR ACCOUNT</a><br>
+            <a href="#">PERSONAL INFORMATION</a><br>
+            <a href="#">ADDRESSES</a><br>
+            <a href="#">DISCOUNT</a><br>
+            <a href="#">ORDER HISTORY</a><br>
+             </div>
+            <div class="span2">
+            <h5>Iinformation</h5>
+            <a href="contact.html">CONTACT</a><br>
+            <a href="#">SITEMAP</a><br>
+            <a href="#">LEGAL NOTICE</a><br>
+            <a href="#">TERMS AND CONDITIONS</a><br>
+            <a href="#">ABOUT US</a><br>
+             </div>
+            <div class="span2">
+            <h5>Our Offer</h5>
+            <a href="#">NEW PRODUCTS</a> <br>
+            <a href="#">TOP SELLERS</a><br>
+            <a href="#">SPECIALS</a><br>
+            <a href="#">MANUFACTURERS</a><br>
+            <a href="#">SUPPLIERS</a> <br/>
+             </div>
+             <div class="span6">
+            <h5>The standard chunk of Lorem</h5>
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
+             those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
+             Malorum" by Cicero are also reproduced in their exact original form,
+            accompanied by English versions from the 1914 translation by H. Rackham.
+             </div>
+             </div>
+            </footer>
+          </div>
+
+          <div class="copyright">
+          <div class="container">
+            <span>Copyright &copy; 2018 - Grocery2Go</span>
+          </div>
+          </div>
+
+
+
+
+        <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="assets/js/jquery.js"></script>
+             <script src="assets/js/bootstrap.min.js"></script>
+             <script src="assets/js/jquery.easing-1.3.min.js"></script>
+            <script src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+            <script src="assets/js/shop.js"></script>
 
 
 <? $conn->close();?>
