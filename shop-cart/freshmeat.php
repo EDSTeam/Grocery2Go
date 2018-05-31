@@ -65,10 +65,13 @@ Navigation Bar Section
         <li class=""><a href="">Message</a></li>
         <li class=""><a href="profile.php">Profile</a></li>
 			</ul>
-			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
-			</form>
-			<ul class="nav pull-right">
+      <ul class="nav pull-right">
+
+        <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
+        <li><a href="logout.php"><b>Sign out</b></a></li>
+
+
+      </ul>
 
 			</ul>
 		  </div>
