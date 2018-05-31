@@ -66,6 +66,7 @@ $_SESSION["username"]=$username;
 
          $_SESSION["id"]=$id;*/
           $_SESSION["username"]=$username;
+          $_SESSION["firstname"]=$firstname;
 
               if($conn->query($sql)==FALSE){
                 die("Query failed".$conn->connect_error);

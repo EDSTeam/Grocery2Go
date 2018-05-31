@@ -10,6 +10,7 @@ if (! empty($_GET["action"])) {
         case "add":
             if (! empty($_POST["quantity"])) {
 
+
                 $productResult = $shoppingCart->getProductByCode($_GET["code"]);
 
                 $cartResult = $shoppingCart->getCartItemByProduct($productResult[0]["id"], $member_id);
@@ -20,7 +21,9 @@ if (! empty($_GET["action"])) {
                     $shoppingCart->updateCartQuantity($newQuantity, $cartResult[0]["id"]);
                 } else {
                     // Add to cart table
-                    $shoppingCart->addToCart($productResult[0]["id"], $_POST["quantity"], $member_id);
+                    $time =date("H:i:s");
+                    $date =date("m/d/y");
+                    $shoppingCart->addToCart($productResult[0]["id"], $_POST["quantity"], $member_id, $date, $time);
                 }
             }
             break;
@@ -39,7 +42,7 @@ if (! empty($_GET["action"])) {
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap shopping cart</title>
+    <title>Grocery2Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -49,13 +52,6 @@ if (! empty($_GET["action"])) {
     <link href="style.css" rel="stylesheet"/>
     <!-- font awesome styles -->
 	<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-		<!--[if IE 7]>
-			<link href="css/font-awesome-ie7.min.css" rel="stylesheet">
-		<![endif]-->
-
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
 
 	<!-- Favicons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
@@ -84,8 +80,7 @@ Lower Header Section
 
 	</div>
 	<div class="span4 alignR">
-	<p><br> <strong> Support (24/7) :  0800 1234 678 </strong><br><br></p>
-	<span class="btn btn-mini">[ 2 ] <span class="icon-shopping-cart"></span></span>
+
 
 	</div>
 </div>
@@ -99,7 +94,7 @@ Navigation Bar Section
 		<div class="container">
 		  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
 			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
+			<span class="icon-bar"></spana>
 			<span class="icon-bar"></span>
 		  </a>
 		  <div class="nav-collapse">
@@ -112,11 +107,9 @@ Navigation Bar Section
                   <li class=""><a href="">Message</a></li>
                   <li class=""><a href="profile.php">Profile</a></li>
 			</ul>
-			<form action="#" class="navbar-search pull-left">
-			  <input type="text" placeholder="Search" class="search-query span2">
-			</form>
+
       <ul class="nav pull-right">
-        <li><a href="register.html"><?php echo "Welcome, put username here"//.$_SESSION["username"];?></a></li>
+        <li><a href="register.html"><?php echo "Welcome, e".$_SESSION["firstname"];?></a></li>
 
       </ul>
 		  </div>
@@ -129,8 +122,8 @@ Body Section
 
 
 
-	<div class="row">
-	<div class="span12">
+	<div class="container">
+	<div class="">
 
 	<div class="well well-small">
 		<h1>Check Out <small class="pull-right"></small></h1>
@@ -138,14 +131,10 @@ Body Section
 
 <br/>
 <?php require 'basket.php' ?>
-            <table class="table table-bordered">
+            <table class="">
 			<tbody>
 				 <tr>
                   <td>
-				<form class="form-inline" action="getFinalCheckout.php" method="post">
-				  <label style="min-width:159px">Change for: </label>
-				<input type="text" class="input-medium" placeholder="Enter amount of change">
-
 
 				</td>
                 </tr>
@@ -154,8 +143,8 @@ Body Section
 				</table>
 
 	<a href="freshmeat.php" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
-	<a href="login.html" class="shopBtn btn-large pull-right">	<button type="submit" class="shopBtn">Next</button><span class="icon-arrow-right"></span></a>
-	</form>
+	<a href="finalcheckout.php" class="shopBtn btn-large pull-right">	<button type="submit" class="shopBtn">Next</button><span class="icon-arrow-right"></span></a>
+
 </div>
 </div>
 </div>

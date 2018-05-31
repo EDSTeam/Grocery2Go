@@ -3,7 +3,7 @@ require_once "DBController.php";
 
 class ShoppingCart extends DBController
 {
-   
+
 
     function getAllProduct()
     {

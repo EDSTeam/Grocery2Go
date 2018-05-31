@@ -22,6 +22,11 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
       if ($_SESSION["username"]==$row["username"]) {
 $_SESSION["cid"]=$row["cid"];
+$_SESSION["firstname"]=$row["firstname"];
+$_SESSION["lastname"]=$row["lastname"];
+$_SESSION["address"]=$row["address"];
+$_SESSION["phoneNumb"]=$row["phoneNumb"];
+$_SESSION["email"]=$row["email"];
       }
     }
 } else {
