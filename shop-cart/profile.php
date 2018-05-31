@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "grocery2go";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,44 +40,6 @@
   </head>
 
   <body>
-    <?php
-
-      session_start();
-
-
-      $servername ="localhost";
-      $user="root";
-      $pass="";
-      $db="grocery2go";
-
-      $conn= new mysqli($servername,$user,$pass,$db);
-
-      if(!$conn){
-        die("Connection failed: ".mysqli_connect);
-      }
-
-      $username=$_SESSION["username"];
-      $firstname;
-      $lastname;
-      $address;
-      $phoneNumb;
-      $email;
-
-
-      $sql="SELECT firstname,lastname,address,phoneNumb,email FROM customer_details WHERE username = $username";
-      $result=mysqli_query($conn,$sql);
-
-      if(mysqli_num_rows($result)>0){
-
-        $row=mysqli_fetch_assoc($result);
-
-        $firstname=$row["firstname"];
-        $lastname=$row["lastname"];
-        $address=$row["address"];
-        $phoneNumb=$row["phoneNumb"];
-        $email=$row["email"];
-      }
-    ?>
 
     <!--header-->
     <div class="container">
@@ -123,16 +102,16 @@
         <div class="row">
           <div class="span4 offset1">
             <img style="width:100%" src="assets/img/avatar.jpg"  class="img-rounded" alt="user profile picture">
-            <center><h5><?echo "$firstname $lastname;"?></h5></center>
+            <center><h5><?php echo "$_SESSION["firstname"] $_SESSION["lastname"]"; ?></h5></center>
           </div>
           <div class="span5 offset1">
             <form>
               <span class="help-block"><strong>Email</strong></span>
-              <input type="text"  class="span4" value="<?$email?>" disabled>
+              <input type="text"  class="span4" value="<?$_SESSION["email"]?>" disabled>
               <span class="help-block"><strong>Mobile Number</strong></span>
-              <input type="text"  class="span4" value="<?$phoneNumb?>" placeholder="Mobile No.">
+              <input type="text"  class="span4" value="<?$_SESSION["phoneNumb"]?>" placeholder="Mobile No.">
               <span class="help-block"><strong>Address 1</strong></span>
-              <input type="text"  class="span4" value="<?$address?>" placeholder="Address">
+              <input type="text"  class="span4" value="<?$_SESSION["address"]?>" placeholder="Address">
               <span class="help-block"><strong>Address 2</strong></span>
               <input type="text"  class="span4" placeholder="Address 2">
               <span class="help-block"><strong></strong></span>
