@@ -76,8 +76,8 @@ if ($conn->connect_error) {
             <div class="span1">Time:</div>
             <div class="span1 offset5">Day:</div>
           </div>
-          <select class="span6">
-            <option value="now" selected>Now</option>
+          <select class="span6"  name="time">
+            <option value="9:00-10:00am"selected>Select time</option>
             <option value="9:00-10:00am">9:00-10:00am</option>
             <option value="10:00-11:00am">10:00-11:00am</option>
             <option value="11:00-12:00pm">11:00am-12:00pm</option>
@@ -89,21 +89,23 @@ if ($conn->connect_error) {
               <option value="8:00-9:00pm">8:00-9:00pm</option>
 
           </select>
-          <select class="span6">
-            <option value="2 June">Today, 2 June</option>
-            <option value="3 June">3 June</option>
-            <option value="4 June">4 June</option>
-            <option value="5 June">5 June</option>
-            <option value="6 June">6 June</option>
-            <option value="7 June">7 June</option>
+          <select class="span6" name="date">
+            <option value="06/02/18">Today, 2 June</option>
+            <option value="06/03/18">3 June</option>
+            <option value="06/04/18">4 June</option>
+            <option value="06/05/18">5 June</option>
+            <option value="06/06/18">6 June</option>
+            <option value="06/07/18">7 June</option>
           </select>
 
           <legend>Payment</legend>
             <label class="radio">
               <input type="radio" name="cashondelviery" id="option" value="option1" checked>
               Cash on Delivery <?php if (  $_SESSION["total_qty"]!=0){
-                ?><p><font color='red'><h3>Tracking No.</h3> <h2><?php echo rand(); ?></h2> </font></p>
-              <?php } ?>
+                ?><p><font color='red'><h3>Tracking No.</h3> <h2><?php echo  $_SESSION["tarckNo"]=rand(); ?></h2> </font></p>
+              <?php
+
+            } ?>
 
             </label>
       </div>
@@ -173,15 +175,30 @@ echo "Empty Cart";
             <tr>
               <td><strong><font color='red'>Total amount</font></strong></td>
               <td> </td>
-              <td style="text-align:right"><strong><?php echo "Php ".$_SESSION["subTotalPrice"]+$_SESSION["concierge"]+$_SESSION["deliveryfee"]; ?></strong></td>
+              <td style="text-align:right"><strong><?php echo "Php ".$_SESSION["finalTotal"]; ?></strong></td>
             </tr>
           </table>
         </div>
-        <center><button type="submit" class="btn btn-success">PLACE ORDER</center>
+        <center><button onclick="myFunction()" type="submit" class="btn btn-success">Place Order</center>
+          <p id="demo"></p>
         </form>
       </div>
     </div>
   </div>
+
+
+
+<script>
+function myFunction() {
+    var txt;
+    if (confirm("Thank you for shopping!")) {
+        txt = "You pressed OK!";
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+</script>
   <!-- end of body -->
 
   <a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
