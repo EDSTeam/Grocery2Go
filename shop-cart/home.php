@@ -1,9 +1,9 @@
 <?php
   session_start();
 
-  if (!isset($_SESSION["firstname"])) {
-  header ('Location:index.php');
-  }
+if (!isset($_SESSION)) {
+header ('Location:verify.php');
+}
 
 ?>
 
@@ -59,13 +59,12 @@
         <li class="active"><a href="home.php">Home</a></li>
         <li class=""><a href="freshmeat.php">ShopNow</a></li>
         <li class=""><a href="faqs.php">FAQs</a></li>
-        <li class=""><a href="">Live Track</a></li>
+        <li class=""><a href="livetrack.html">Live Track</a></li>
           <li class=""><a href="">Message</a></li>
           <li class=""><a href="profile.php">Profile</a></li>
       </ul>
 
       <ul class="nav pull-right">
-
         <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
         <li><a href="logout.php"><b>Sign out</b></a></li>
 
