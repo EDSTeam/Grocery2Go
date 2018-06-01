@@ -71,7 +71,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.html"><span>Grocery2Go</span>
+	<a class="logo" href="index.php"><span>Grocery2Go</span>
 			<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -101,11 +101,9 @@ Navigation Bar Section
 			<ul class="nav">
 
                 <li class="active"><a href="home.php">Home</a></li>
-                <li class=""><a href="freshmeat.php">ShopNow</a></li>
+                <li class=""><a href="profile.php">Profile</a></li>
                 <li class=""><a href="faqs.php">FAQs</a></li>
                 <li class=""><a href="">Live Track</a></li>
-                  <li class=""><a href="">Message</a></li>
-                  <li class=""><a href="profile.php">Profile</a></li>
 			</ul>
 
       <ul class="nav pull-right">

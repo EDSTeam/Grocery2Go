@@ -177,7 +177,7 @@ Body Section
                       $("#total-quantity").text(totalQuantity);
                       var totalItemPrice = 0;
                       $("div[id*='cart-price-']").each(function() {
-                          var cart_price = $(this).text().replace("$","");
+                          var cart_price = $(this).text().replace("$","PHP");
                           totalItemPrice = parseInt(totalItemPrice) + parseInt(cart_price);
                       });
                       $("#total-price").text(totalItemPrice);
