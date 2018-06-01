@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 29, 2018 at 05:45 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Host: localhost
+-- Generation Time: Jun 01, 2018 at 05:19 AM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -44,8 +46,9 @@ INSERT INTO `category_details` (`categ_id`, `categ_name`, `categ_desc`) VALUES
 (5, 'Fresh Fruit', 'Fresh fruits such as apple, grapes, orange, lemon and more'),
 (6, 'Canned & Packaged', 'Canned & Packaged '),
 (7, 'HouseHold & Cleaning', 'HouseHold & Cleaning'),
-(9, 'Dairy', 'Dairy products'),
-(10, 'Health & beauty', 'healthy lifestyles');
+(10, 'Health', 'health is wealth'),
+(12, 'Beauty', 'for beauty'),
+(13, 'Dairy', 'dairy products');
 
 -- --------------------------------------------------------
 
@@ -69,23 +72,10 @@ CREATE TABLE `customer_details` (
 --
 
 INSERT INTO `customer_details` (`cid`, `firstname`, `lastname`, `address`, `phoneNumb`, `email`, `username`, `password`) VALUES
-(46, 'admin', 'admin', 'sdsdsd', 2147483647, 'sheila_1036@yahoo.com', 'adminsheila04', 'admin'),
-(47, 'sheila', 'valde', '', 0, '', '', ''),
-(48, 'Mickey', 'Mouse', 'admin', -2147483648, 'valdez.sheilamae@gmail.com', '12345666', '1212121212'),
-(49, 'admin', 'sasasas', 'admin23', 2147483647, 'sheila_1036@yahoo.com', 'aaaaa', '123456789'),
-(50, 'admin', 'admin', 'asasa', 2147483647, 'valdez.sheilamae@gmail.com', '123', '123'),
-(51, 'admin', 'aa', 'asasa', 551332323, 'asasa', 'aaaaaaaaaaaaaaaaaaaaaa', 'asasasas'),
-(52, 'admin', 'cxczcz', 'zxzxz', 2147483647, 'sheila_1036@yahoo.com', '5s5s55s5', 'aaaaaa'),
-(53, 'sasasa', 'admin', 'asdsfdfb', 632323232, '32323232', 'sheiAdmin', '1212121'),
-(54, 'sdsdsd', 'aaaa', 'asdfgfdsa', 2147483647, 'sheila_1036@yahoo.com', '11111', 'aasasa'),
-(55, 'sdsdsd', 'aaaa', 'asdfgfdsa', 2147483647, 'sheila_1036@yahoo.com', 'asdfds', 'aaaaaaaa'),
-(56, 'ZZ', 'admin', 'adasa', 66232232, 'asdcax', 'as', '5a5s1a212a12'),
-(57, 'sasa', 'aaaa', 'sasasaas', 56632323, '1ssss', 'aa', 'sasasa'),
-(58, 'zxzxz', 'sdsd', 'sdsdss', 5121121, 'dsdsds', 'dss13s', '2ss12s1s'),
-(59, 'asaa', 'aaaaa', 'sdfbvc', 13323323, 'aaaa', '112121', '66666666'),
-(60, 'Mickey', 'Mouse', 'every corner', 123456989, 'malakisiMickey', 'mickeyMouse', 'micketmouse'),
-(61, 'shei', 'ddgh', 'oyyioo', 14896, 'sheila_1036@yahoo.com', 'hhhhh', '12356'),
-(62, 'admin', 'Mouse', 'admin', 666666, 'valdez.sheilamae@gmail.com', 'asasaa3333', 'a21sa2sasa');
+(3, '', '', '', 0, '', '', ''),
+(4, 'admi', 'admin', 'admin', 12345891, 'admin22', '3213213123131', ''),
+(5, 's', 's', 's', 2147483647, 'admin', 's', 's'),
+(6, 'admin', 'admin', 'admin', 12345891, 'admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -202,6 +192,79 @@ CREATE TABLE `order` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rustans_product`
+--
+
+CREATE TABLE `rustans_product` (
+  `id` int(8) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `itm_descrip` varchar(250) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `image` text NOT NULL,
+  `price` double(10,2) NOT NULL,
+  `gm_id` int(11) NOT NULL,
+  `categ_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rustans_product`
+--
+
+INSERT INTO `rustans_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`, `gm_id`, `categ_id`) VALUES
+(5, 'Monterey Lean Ground Pork Lean GroundPork\r\n', '500g', 'MLGPLG', 'assets\\Products\\freshMeat\\monLeanGroundPork.jpg\r\n', 120.00, 1, 4),
+(6, 'Monterey Pork Adobo Cut', '500g', 'MPAC', 'assets\\Products\\freshMeat\\Monterey Pork Adobo Cut.JPG', 120.50, 1, 4),
+(13, 'Magnolia Chicken Tapa', '330 g', 'MCTapa', 'assets\\Products\\freshMeat\\magnoliaChikenBreastFillet.JPG', 90.85, 1, 4),
+(14, 'Magnolia Chicken Wings', '500g', 'MCWings', 'assets\\Products\\freshMeat\\Monterey Pork Sinigang Cut.JPG', 85.00, 1, 4),
+(15, 'Apple', 'fresh red apples', 'APPL', 'assets\\Products\\freshFruits\\apple.jpg', 40.25, 1, 5),
+(16, 'Orange', 'fresh orange', 'ORNG', 'assets\\Products\\freshFruits\\orange.jpg', 30.75, 1, 5),
+(17, 'Dragon Fruit', 'fresh dragon fruit', 'DRGNFRT', 'assets\\Products\\freshFruits\\dragon fruit.jpg', 60.75, 1, 5),
+(18, 'Green Apple', 'fresh green apple', 'GRNAPL', 'assets\\Products\\freshFruits\\green apple.jpg', 40.75, 1, 5),
+(19, 'Pear', 'fresh pear', 'PR', 'assets\\Products\\freshFruits\\pear.jpg', 30.75, 1, 5),
+(20, 'Pineapple', 'fresh pineapple', 'FRSPINP', 'assets\\Products\\freshFruits\\pineappe.jpeg', 31.25, 1, 5),
+(21, 'Carrots', 'fresh carrots', 'CRRT', 'assets\\Products\\freshVegg\\carrots.jpg', 40.00, 1, 3),
+(22, 'Cauliflower', 'fresh caulflower', 'CLI', 'assets\\Products\\freshVegg\\cauliflower.jpg', 60.00, 1, 3),
+(23, 'Kale', 'fresh kale', 'KL', 'assets\\Products\\freshVegg\\kale.png', 35.00, 1, 3),
+(24, 'Potato', 'fresh potato', 'PTT', 'assets\\Products\\freshVegg\\potatoe.jpg', 45.00, 1, 3),
+(25, 'Spinach', 'fresh spinach', 'SPNCH', 'assets\\Products\\freshVegg\\spinach.jpeg', 68.76, 1, 3),
+(26, 'String Beans', 'fresh string beans', 'BNS', 'assets\\Products\\freshVegg\\string beans.jpg', 35.50, 1, 3),
+(27, 'Ceelin', 'Ages 2-12 \r\n100 mg/5 mL syrup', 'CLN', 'assets\\Products\\health\\ceelin.jpg', 80.75, 1, 10),
+(28, 'Dietary Supplement', '150 Vegetarian Capsules', 'DS', 'assets\\Products\\health\\Dietary supplement.jpg', 170.75, 1, 10),
+(29, 'Fish Oil', '360 mg Omega-3', 'FO', 'assets\\Products\\health\\fish oil.jpeg', 170.75, 1, 10),
+(30, 'I-carnitine', '500 mg per tablet', 'IC', 'assets\\Products\\health\\l-carnitine.jpeg', 165.75, 1, 10),
+(31, 'Multi-Vitamin', '120 pastilles (soft gummies)', 'MV', 'assets\\Products\\health\\multi-vitamin.jpg', 130.25, 1, 10),
+(32, 'Vitamin C', '30 g', 'VC', 'assets\\Products\\health\\vitamin c.jpg', 145.35, 1, 10),
+(33, 'Del Monte Mango Juice Drink', '1 liter', 'MNG', 'assets\\Products\\Drinks\\delmontemango.jpg', 30.75, 1, 1),
+(34, 'Fit \'n Right', 'Four Seasons\r\n350 ml', 'FNR', 'assets\\Products\\Drinks\\fitnright.jpg', 31.25, 1, 1),
+(35, 'Minute Maid', 'Orangle Flavor\r\n240 ml', 'MM', 'assets\\Products\\Drinks\\minute-maid.jpg', 30.50, 1, 1),
+(38, 'Mogu Mogu', '25% Lychee Juice with Nata de Coco\r\n320 ml', 'MMM', 'assets\\Products\\Drinks\\mogu-mogu.jpg', 30.50, 1, 1),
+(39, 'Summit Water', '500 ml', 'SM', 'assets\\Products\\Drinks\\summit.jpg', 20.00, 1, 1),
+(40, 'Pinto Beans', '425 g', 'PB', 'assets\\Products\\canned\\BEANS.jpg', 50.00, 1, 6),
+(41, 'Bumble Bee Chicken Breast with Rib Meat', '142 g', 'BBCB', 'assets\\Products\\canned\\CHICKEN.jpg', 45.00, 1, 6),
+(42, 'Corned Beef Hash', '425 g', 'CBH', 'assets\\Products\\canned\\CORNED BEEF.jpg', 81.00, 1, 6),
+(43, 'Spam', 'Chopped Pork and Ham', 'SPM', 'assets\\Products\\canned\\SPAM.jpg', 75.00, 1, 6),
+(44, 'Libby\'s Whole Kernel Sweet Corn', '425 g', 'WKSC', 'assets\\Products\\canned\\SWEET CORN.jpg', 67.00, 1, 6),
+(45, 'StarKist Solid White Albacore Tuna', '128 g', 'SSSWAT', 'assets\\Products\\canned\\TUNA.jpg', 59.00, 1, 6),
+(46, 'Sam\'s Natural Bamboo Charcoal Facial Soap', 'Cruelty Free Vegan', 'SNBCFS', 'assets\\Products\\beauty\\facesoap.jpg', 260.00, 1, 12),
+(47, 'Ursa Major Face Wash', '59 ml', 'UMFW', 'assets\\Products\\beauty\\facewasmen.jpg', 360.00, 1, 12),
+(50, 'Black & Red Super Hair Wax', 'Ultra Strong', 'BRSHW', 'assets\\Products\\beauty\\hariwax.jpg', 300.50, 1, 12),
+(51, 'Eos Lip Balm', '7g', 'EOS', 'assets\\Products\\beauty\\lipbalm.jpg', 195.00, 1, 12),
+(52, 'Gillette', 'for men', 'GG', 'assets\\Products\\beauty\\razor.jpg', 150.00, 1, 12),
+(53, 'Pantene Shampoo', '375 ml', 'PS', 'assets\\Products\\beauty\\shampoo.jpg', 115.75, 1, 12),
+(54, 'Ariel', 'Actlift', 'AA', 'assets\\Products\\cleaning\\ARIEL.jpg', 230.75, 1, 7),
+(55, 'Joy', '800 ml', 'JJJ', 'assets\\Products\\cleaning\\JOY.jpg', 90.75, 1, 7),
+(56, 'Lysol Lemon Breeze', '946 ml', 'L', 'assets\\Products\\cleaning\\Lysol.jpg', 121.00, 1, 7),
+(57, 'Scrotch-Brite', 'Hardwood Floor Mop Refill', 'SB', 'assets\\Products\\cleaning\\MOP.jpeg', 112.75, 1, 7),
+(58, 'Scrotch-Brite', '6 pack', 'SBS', 'assets\\Products\\cleaning\\SCOTCH.jpeg', 69.00, 1, 7),
+(59, 'Scrotch-Brite Heavy Duty Grill Scrubber', 'Handled Scrubber', 'SBSS', 'assets\\Products\\cleaning\\SCRUBBER.jpg', 65.75, 1, 7),
+(60, 'Achor Family Spread', 'Salted\r\n200 g', 'AFS', 'assets\\Products\\dairy\\anchor.PNG', 36.00, 1, 13),
+(61, 'DariCreme Lite', '200 g', 'DL', 'assets\\Products\\dairy\\dairykwim.PNG', 50.00, 1, 13),
+(65, 'Eden Cheese', '165 g', 'ECE', 'assets\\Products\\dairy\\eden.PNG', 90.00, 1, 13),
+(66, 'Magnolia Non Fat Milk', '1 liter', 'MNFM', 'assets\\Products\\dairy\\milk.PNG', 99.75, 1, 13),
+(69, 'Star Margarine', '100 g', 'SMSM', 'assets\\Products\\dairy\\star.PNG', 76.75, 1, 13);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_cart`
 --
 
@@ -217,15 +280,9 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`id`, `product_id`, `quantity`, `member_id`) VALUES
-(69, 5, 2, 59),
-(70, 6, 2, 59),
-(71, 13, 2, 59),
-(72, 14, 2, 59),
-(73, 15, 3, 59),
-(74, 16, 4, 59),
-(75, 5, 1, 62),
-(76, 6, 2, 62),
-(77, 17, 3, 2);
+(36, 6, 1, 2),
+(37, 14, 2, 2),
+(38, 5, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -249,13 +306,56 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`, `gm_id`, `categ_id`) VALUES
-(5, 'Monterey Lean Ground Pork\r\n', '500g', 'MLGPLG', 'assets\\Products\\freshMeat\\monLeanGroundPork.jpg\r\n', 117.50, 2, 4),
+(5, 'Monterey Lean Ground Pork Lean GroundPork\r\n', '500g', 'MLGPLG', 'assets\\Products\\freshMeat\\monLeanGroundPork.jpg\r\n', 117.50, 2, 4),
 (6, 'Monterey Pork Adobo Cut', '500g', 'MPAC', 'assets\\Products\\freshMeat\\Monterey Pork Adobo Cut.JPG', 117.50, 2, 4),
-(13, 'Monterey Pork Sinigang Cut', '500 g', 'MCTapa', 'assets\\Products\\freshMeat\\Monterey Pork Sinigang Cut.jpg', 80.85, 2, 4),
-(14, 'Magnolia Chiken Breast Fillet', '700g', 'MCbF', 'assets\\Products\\freshMeat\\magnoliaChikenBreastFillet.jpg', 164.75, 2, 4),
-(15, 'Bounty Fresh Chicken Tinola Cut', '500g', 'BFCTC', 'assets\\Products\\freshMeat\\Bounty Fresh Chicken Tinola Cut.jpg', 61.50, 2, 4),
-(16, 'Supersavers RF SS Pork Liempo Sobi', '500g', 'SFPL', 'assets\\Products\\freshMeat\\Supersavers RF SS Pork Liempo Sobi.jpg', 135.00, 2, 4),
-(17, 'Del monte Mango Flavor', '1 liter', 'DLmango', 'assets\\Products\\Drinks\\delmontemango.jpg', 98.50, 2, 1);
+(13, 'Magnolia Chicken Tapa', '330 g', 'MCTapa', 'assets\\Products\\freshMeat\\magnoliaChikenBreastFillet.JPG', 80.85, 2, 4),
+(14, 'Magnolia Chicken Wings', '500g', 'MCWings', 'assets\\Products\\freshMeat\\Monterey Pork Sinigang Cut.JPG', 81.00, 2, 4),
+(15, 'Apple', 'fresh red apples', 'APPL', 'assets\\Products\\freshFruits\\apple.jpg', 30.25, 2, 5),
+(16, 'Orange', 'fresh orange', 'ORNG', 'assets\\Products\\freshFruits\\orange.jpg', 25.75, 2, 5),
+(17, 'Dragon Fruit', 'fresh dragon fruit', 'DRGNFRT', 'assets\\Products\\freshFruits\\dragon fruit.jpg', 55.75, 2, 5),
+(18, 'Green Apple', 'fresh green apple', 'GRNAPL', 'assets\\Products\\freshFruits\\green apple.jpg', 30.75, 2, 5),
+(19, 'Pear', 'fresh pear', 'PR', 'assets\\Products\\freshFruits\\pear.jpg', 25.75, 2, 5),
+(20, 'Pineapple', 'fresh pineapple', 'FRSPINP', 'assets\\Products\\freshFruits\\pineappe.jpeg', 30.25, 2, 5),
+(21, 'Carrots', 'fresh carrots', 'CRRT', 'assets\\Products\\freshVegg\\carrots.jpg', 36.95, 2, 3),
+(22, 'Cauliflower', 'fresh caulflower', 'CLI', 'assets\\Products\\freshVegg\\cauliflower.jpg', 55.00, 2, 3),
+(23, 'Kale', 'fresh kale', 'KL', 'assets\\Products\\freshVegg\\kale.png', 33.25, 2, 3),
+(24, 'Potato', 'fresh potato', 'PTT', 'assets\\Products\\freshVegg\\potatoe.jpg', 43.25, 2, 3),
+(25, 'Spinach', 'fresh spinach', 'SPNCH', 'assets\\Products\\freshVegg\\spinach.jpeg', 66.76, 2, 3),
+(26, 'String Beans', 'fresh string beans', 'BNS', 'assets\\Products\\freshVegg\\string beans.jpg', 33.32, 2, 3),
+(27, 'Ceelin', 'Ages 2-12 \r\n100 mg/5 mL syrup', 'CLN', 'assets\\Products\\health\\ceelin.jpg', 77.75, 2, 10),
+(28, 'Dietary Supplement', '150 Vegetarian Capsules', 'DS', 'assets\\Products\\health\\Dietary supplement.jpg', 150.75, 2, 10),
+(29, 'Fish Oil', '360 mg Omega-3', 'FO', 'assets\\Products\\health\\fish oil.jpeg', 150.75, 2, 10),
+(30, 'I-carnitine', '500 mg per tablet', 'IC', 'assets\\Products\\health\\l-carnitine.jpeg', 160.75, 2, 10),
+(31, 'Multi-Vitamin', '120 pastilles (soft gummies)', 'MV', 'assets\\Products\\health\\multi-vitamin.jpg', 125.25, 2, 10),
+(32, 'Vitamin C', '30 g', 'VC', 'assets\\Products\\health\\vitamin c.jpg', 140.35, 2, 10),
+(33, 'Del Monte Mango Juice Drink', '1 liter', 'MNG', 'assets\\Products\\Drinks\\delmontemango.jpg', 24.75, 2, 1),
+(34, 'Fit \'n Right', 'Four Seasons\r\n350 ml', 'FNR', 'assets\\Products\\Drinks\\fitnright.jpg', 30.25, 2, 1),
+(35, 'Minute Maid', 'Orangle Flavor\r\n240 ml', 'MM', 'assets\\Products\\Drinks\\minute-maid.jpg', 25.50, 2, 1),
+(38, 'Mogu Mogu', '25% Lychee Juice with Nata de Coco\r\n320 ml', 'MMM', 'assets\\Products\\Drinks\\mogu-mogu.jpg', 25.50, 2, 1),
+(39, 'Summit Water', '500 ml', 'SM', 'assets\\Products\\Drinks\\summit.jpg', 16.00, 2, 1),
+(40, 'Pinto Beans', '425 g', 'PB', 'assets\\Products\\canned\\BEANS.jpg', 45.75, 2, 6),
+(41, 'Bumble Bee Chicken Breast with Rib Meat', '142 g', 'BBCB', 'assets\\Products\\canned\\CHICKEN.jpg', 44.00, 2, 6),
+(42, 'Corned Beef Hash', '425 g', 'CBH', 'assets\\Products\\canned\\CORNED BEEF.jpg', 80.50, 2, 6),
+(43, 'Spam', 'Chopped Pork and Ham', 'SPM', 'assets\\Products\\canned\\SPAM.jpg', 75.00, 2, 6),
+(44, 'Libby\'s Whole Kernel Sweet Corn', '425 g', 'WKSC', 'assets\\Products\\canned\\SWEET CORN.jpg', 66.40, 2, 6),
+(45, 'StarKist Solid White Albacore Tuna', '128 g', 'SSSWAT', 'assets\\Products\\canned\\TUNA.jpg', 55.00, 2, 6),
+(46, 'Sam\'s Natural Bamboo Charcoal Facial Soap', 'Cruelty Free Vegan', 'SNBCFS', 'assets\\Products\\beauty\\facesoap.jpg', 250.75, 2, 12),
+(47, 'Ursa Major Face Wash', '59 ml', 'UMFW', 'assets\\Products\\beauty\\facewasmen.jpg', 350.75, 2, 12),
+(50, 'Black & Red Super Hair Wax', 'Ultra Strong', 'BRSHW', 'assets\\Products\\beauty\\hariwax.jpg', 300.25, 2, 12),
+(51, 'Eos Lip Balm', '7g', 'EOS', 'assets\\Products\\beauty\\lipbalm.jpg', 195.00, 2, 12),
+(52, 'Gillette', 'for men', 'GG', 'assets\\Products\\beauty\\razor.jpg', 135.00, 2, 12),
+(53, 'Pantene Shampoo', '375 ml', 'PS', 'assets\\Products\\beauty\\shampoo.jpg', 115.25, 2, 12),
+(54, 'Ariel', 'Actlift', 'AA', 'assets\\Products\\cleaning\\ARIEL.jpg', 230.35, 2, 7),
+(55, 'Joy', '800 ml', 'JJJ', 'assets\\Products\\cleaning\\JOY.jpg', 89.75, 2, 7),
+(56, 'Lysol Lemon Breeze', '946 ml', 'L', 'assets\\Products\\cleaning\\Lysol.jpg', 120.00, 2, 7),
+(57, 'Scrotch-Brite', 'Hardwood Floor Mop Refill', 'SB', 'assets\\Products\\cleaning\\MOP.jpeg', 110.75, 2, 7),
+(58, 'Scrotch-Brite', '6 pack', 'SBS', 'assets\\Products\\cleaning\\SCOTCH.jpeg', 66.00, 2, 7),
+(59, 'Scrotch-Brite Heavy Duty Grill Scrubber', 'Handled Scrubber', 'SBSS', 'assets\\Products\\cleaning\\SCRUBBER.jpg', 65.75, 2, 7),
+(60, 'Achor Family Spread', 'Salted\r\n200 g', 'AFS', 'assets\\Products\\dairy\\anchor.PNG', 34.25, 2, 13),
+(61, 'DariCreme Lite', '200 g', 'DL', 'assets\\Products\\dairy\\dairykwim.PNG', 45.00, 2, 13),
+(65, 'Eden Cheese', '165 g', 'ECE', 'assets\\Products\\dairy\\eden.PNG', 89.00, 2, 13),
+(66, 'Magnolia Non Fat Milk', '1 liter', 'MNFM', 'assets\\Products\\dairy\\milk.PNG', 99.00, 2, 13),
+(69, 'Star Margarine', '100 g', 'SMSM', 'assets\\Products\\dairy\\star.PNG', 76.00, 2, 13);
 
 -- --------------------------------------------------------
 
@@ -266,9 +366,6 @@ INSERT INTO `tbl_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`
 CREATE TABLE `total_price` (
   `cid` int(11) NOT NULL,
   `total_qty` int(11) NOT NULL,
-  `sub_total_price` double NOT NULL,
-  `concierge_fee` double NOT NULL,
-  `delivery_fee` double NOT NULL,
   `total_price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -334,11 +431,16 @@ ALTER TABLE `order`
   ADD KEY `itm_id` (`itm_id`);
 
 --
+-- Indexes for table `rustans_product`
+--
+ALTER TABLE `rustans_product`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `member_id` (`member_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_product`
@@ -363,52 +465,68 @@ ALTER TABLE `total_price`
 -- AUTO_INCREMENT for table `category_details`
 --
 ALTER TABLE `category_details`
-  MODIFY `categ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `categ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
 -- AUTO_INCREMENT for table `customer_details`
 --
 ALTER TABLE `customer_details`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `delivery_table`
 --
 ALTER TABLE `delivery_table`
   MODIFY `tracking_id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `employee_details`
 --
 ALTER TABLE `employee_details`
   MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `grocerymarket`
 --
 ALTER TABLE `grocerymarket`
   MODIFY `gm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `item_details`
 --
 ALTER TABLE `item_details`
   MODIFY `itm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `item_grocery_table`
 --
 ALTER TABLE `item_grocery_table`
   MODIFY `id_itm_gm` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
   MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `rustans_product`
+--
+ALTER TABLE `rustans_product`
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+
 --
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+
 --
 -- Constraints for dumped tables
 --
@@ -454,6 +572,7 @@ ALTER TABLE `tbl_product`
 --
 ALTER TABLE `total_price`
   ADD CONSTRAINT `total_price_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `customer_details` (`cid`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
