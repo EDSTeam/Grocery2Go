@@ -97,7 +97,6 @@ body {
 }
 .cart-info.quantity {
     width: 90px;
-    border: #ccc 1px solid;
 }
 .cart-info.price {
 	min-width:20%;
@@ -132,7 +131,7 @@ body {
 .btn-increment-decrement {
     display: inline-block;
     padding: 5px 0px;
-    background: #e2e2e2;
+    background: #FFC107;
     width: 30px;
     text-align: center;
     cursor:pointer;

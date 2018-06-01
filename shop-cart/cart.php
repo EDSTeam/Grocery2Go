@@ -71,7 +71,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="index.php"><span>Grocery2Go</span>
+	<a class="logo" href="index.html"><span>Grocery2Go</span>
 			<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -89,25 +89,28 @@ Lower Header Section
 <!--
 Navigation Bar Section
 -->
-<div class="navbar">
+<<div class="navbar">
 	  <div class="navbar-inner">
 		<div class="container">
 		  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
 			<span class="icon-bar"></span>
-			<span class="icon-bar"></spana>
+			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </a>
+
 		  <div class="nav-collapse">
 			<ul class="nav">
 
-                <li class="active"><a href="home.php">Home</a></li>
-                <li class=""><a href="profile.php">Profile</a></li>
-                <li class=""><a href="faqs.php">FAQs</a></li>
-                <li class=""><a href="">Live Track</a></li>
-			</ul>
+        <li class=""><a href="home.php">Home</a></li>
+        <li class=""><a href="faqs.php">FAQs</a></li>
+          <li class=""><a href="livetrack.php">Live Track</a></li>
+          <li class=""><a href="profile.php">Profile</a></li>
+      </ul>
 
       <ul class="nav pull-right">
-        <li><a href="register.html"><?php echo "Welcome, e".$_SESSION["firstname"];?></a></li>
+        <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
+        <li><a href="logout.php"><b>Sign out</b></a></li>
+
 
       </ul>
 		  </div>

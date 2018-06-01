@@ -50,23 +50,6 @@ $_SESSION["username"]=$username;
           VALUES('$firstname','$lastname','$address','$mobilenumber','$email','$username','$password')";
          }
 
-         //get id of user
-      /*  $sqlID="SELECT * FROM customer_details";
-         $resID = $conn->query($sqlID);
-         $num_rowID=mysqli_num_rows($resID);
-
-         if($num_rowID > 0){
-             while($getData = mysqli_fetch_assoc($resID)) {
-               if($getData["username"]==$username){
-             $id=$getData["cid"];
-             echo "get it";
-                          }
-                }
-         }
-
-         $_SESSION["id"]=$id;*/
-          $_SESSION["username"]=$username;
-          $_SESSION["firstname"]=$firstname;
 
               if($conn->query($sql)==FALSE){
                 die("Query failed".$conn->connect_error);

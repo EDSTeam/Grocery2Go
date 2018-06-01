@@ -21,6 +21,9 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
       if ($_SESSION["username"]==$row["username"]) {
+
+$_SESSION["username"]=$username;
+$_SESSION["firstname"]=$firstname;
 $_SESSION["cid"]=$row["cid"];
 $_SESSION["firstname"]=$row["firstname"];
 $_SESSION["lastname"]=$row["lastname"];

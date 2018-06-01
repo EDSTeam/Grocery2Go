@@ -1,3 +1,7 @@
+
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +24,7 @@
   <div class="row">
   	<div class="span4">
   	<h1>
-  	<a class="logo" href="index.html"><span>Grocery2Go</span>
+  	<a class="logo" href="home.php"><span>Grocery2Go</span>
   		<img src="assets/img/g2g.png" alt="grocery2go">
   	</a>
   	</h1>
@@ -33,37 +37,34 @@
   </header>
 </div>
 
-  <div class="container">
-    <div class="navbar">
-  	  <div class="navbar-inner">
-  		<div class="container">
-  		  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
-  			<span class="icon-bar"></span>
-  			<span class="icon-bar"></span>
-  			<span class="icon-bar"></span>
-  		  </a>
+<div class="navbar">
+	  <div class="navbar-inner">
+		<div class="container">
+		  <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </a>
 
-  		  <div class="nav-collapse">
-  			<ul class="nav">
+		  <div class="nav-collapse">
+			<ul class="nav">
 
-          <li class=""><a href="home.php">Home</a></li>
+        <li class=""><a href="home.php">Home</a></li>
+        <li class="active"><a href="faqs.php">FAQs</a></li>
+          <li class=""><a href="livetrack.php">Live Track</a></li>
           <li class=""><a href="profile.php">Profile</a></li>
-          <li class="active"><a href="faqs.php">FAQs</a></li>
-          <li class=""><a href="livetrack.html">Live Track</a></li>
-        </ul>
+      </ul>
 
-        <ul class="nav pull-right">
-
-          <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
-          <li><a href="logout.php"><b>Sign out</b></a></li>
+      <ul class="nav pull-right">
+        <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
+        <li><a href="logout.php"><b>Sign out</b></a></li>
 
 
-        </ul>
-  		  </div>
-  		</div>
-  	  </div>
-  	</div>
-  </div>
+      </ul>
+		  </div>
+		</div>
+	  </div>
+	</div>
   <!--BADEH-->
   <div class="container">
     <div class="well well-small" style="padding:20px">

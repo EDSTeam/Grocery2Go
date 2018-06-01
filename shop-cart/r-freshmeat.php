@@ -25,7 +25,7 @@ session_start();
 <div class="row">
 	<div class="span6">
 	<h1>
-	<a class="logo" href="index.php"><span>Grocery2Go</span>
+	<a class="logo" href="index.html"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -51,7 +51,7 @@ Navigation Bar Section
           <li class=""><a href="home.php">Home</a></li>
           <li class=""><a href="profile.php">Profile</a></li>
           <li class=""><a href="faqs.php">FAQs</a></li>
-          <li class=""><a href="livetrack.html">Live Track</a></li>
+          <li class=""><a href="">Live Track</a></li>
     			</ul>
           <ul class="nav pull-right">
             <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
@@ -168,7 +168,7 @@ Body Section
           		type : 'post',
           		success : function(response) {
           			$(inputQuantityElement).val(new_quantity);
-                      $(priceElement).text("$"+newPrice);
+                      $(priceElement).text("PHP"+newPrice);
                       var totalQuantity = 0;
                       $("input[id*='input-quantity-']").each(function() {
                           var cart_quantity = $(this).val();
@@ -177,7 +177,7 @@ Body Section
                       $("#total-quantity").text(totalQuantity);
                       var totalItemPrice = 0;
                       $("div[id*='cart-price-']").each(function() {
-                          var cart_price = $(this).text().replace("$","PHP");
+                          var cart_price = $(this).text().replace("PHP","");
                           totalItemPrice = parseInt(totalItemPrice) + parseInt(cart_price);
                       });
                       $("#total-price").text(totalItemPrice);

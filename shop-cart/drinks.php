@@ -1,4 +1,4 @@
-<?php
+"PHP"<?php
 // Start the session
 session_start();
 ?>
@@ -10,6 +10,7 @@ session_start();
     <meta charset="utf-8">
     <title>Grocery2Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
@@ -31,7 +32,7 @@ session_start();
 <div class="row">
 	<div class="span6">
 	<h1>
-	<a class="logo" href="index.php"><span>Grocery2Go</span>
+	<a class="logo" href="home.php"><span>Grocery2Go</span>
 		<img src="assets/img/g2g.png" alt="grocery2go">
 	</a>
 	</h1>
@@ -57,7 +58,7 @@ Navigation Bar Section
           <li class=""><a href="home.php">Home</a></li>
           <li class=""><a href="profile.php">Profile</a></li>
           <li class=""><a href="faqs.php">FAQs</a></li>
-          <li class=""><a href="livetrack.html">Live Track</a></li>
+          <li class=""><a href="">Live Track</a></li>
     			</ul>
           <ul class="nav pull-right">
             <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
@@ -169,7 +170,7 @@ Body Section
           		type : 'post',
           		success : function(response) {
           			$(inputQuantityElement).val(new_quantity);
-                      $(priceElement).text("$"+newPrice);
+                      $(priceElement).text("PHP"+newPrice);
                       var totalQuantity = 0;
                       $("input[id*='input-quantity-']").each(function() {
                           var cart_quantity = $(this).val();
@@ -178,7 +179,7 @@ Body Section
                       $("#total-quantity").text(totalQuantity);
                       var totalItemPrice = 0;
                       $("div[id*='cart-price-']").each(function() {
-                          var cart_price = $(this).text().replace("$","PHP");
+                          var cart_price = $(this).text().replace("PHP","");
                           totalItemPrice = parseInt(totalItemPrice) + parseInt(cart_price);
                       });
                       $("#total-price").text(totalItemPrice);
@@ -238,7 +239,7 @@ Body Section
                           </div>
 
                           <div class="cart-info price" id="cart-price-<?php echo $item["cart_id"]; ?>">
-                                  <?php echo "$". ($item["price"] * $item["quantity"]); ?>
+                                  <?php echo "PHP ". ($item["price"] * $item["quantity"]); ?>
                               </div>
 
 

@@ -1,16 +1,16 @@
 <?php
   session_start();
-<<<<<<< HEAD
+
   if (!isset($_SESSION["firstname"])) {
   header ('Location:index.php');
   }
-=======
+
 
 if (!isset($_SESSION)) {
 header ('Location:verify.php');
 }
 
->>>>>>> 49f901bda8c7484f9e10ae3ad47eab1ff39b6f1d
+
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +63,8 @@ header ('Location:verify.php');
 			<ul class="nav">
 
         <li class="active"><a href="home.php">Home</a></li>
-        <li class=""><a href="freshmeat.php">ShopNow</a></li>
         <li class=""><a href="faqs.php">FAQs</a></li>
-        <li class=""><a href="livetrack.html">Live Track</a></li>
-          <li class=""><a href="">Message</a></li>
+          <li class=""><a href="livetrack.php">Live Track</a></li>
           <li class=""><a href="profile.php">Profile</a></li>
       </ul>
 
@@ -141,25 +139,19 @@ New Products
 		  <ul class="thumbnails">
 			<li class="span6">
 			  <div class="thumbnail">
-<<<<<<< HEAD
+
 				<a class="zoomTool" href="drinks.php" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
 				<a href="drinks.php">
-=======
-				<a class="zoomTool" href="grid-view.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href="product_details.html">
->>>>>>> 49f901bda8c7484f9e10ae3ad47eab1ff39b6f1d
-          <img src="assets\img\sm.png" alt=""></a>
+
+			          <img src="assets\img\sm.png" alt=""></a>
 		</div>
 			</li>
 			<li class="span6">
 			  <div class="thumbnail">
-<<<<<<< HEAD
+
 				<a class="zoomTool" href="r-drinks.php" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
 				<a href="r-drinks.php"><img src="assets\img\rustans.png" alt=""></a>
-=======
-				<a class="zoomTool" href="grid-view.html" title="add to cart"><span class="icon-search"></span>SHOP NOW</a>
-				<a href="product_details.html"><img src="assets\img\rustans.png" alt=""></a>
->>>>>>> 49f901bda8c7484f9e10ae3ad47eab1ff39b6f1d
+
 				</div>
 			  </div>
 			</li>

@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 01, 2018 at 08:30 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Host: 127.0.0.1
+-- Generation Time: Jun 01, 2018 at 11:30 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -46,9 +44,8 @@ INSERT INTO `category_details` (`categ_id`, `categ_name`, `categ_desc`) VALUES
 (5, 'Fresh Fruit', 'Fresh fruits such as apple, grapes, orange, lemon and more'),
 (6, 'Canned & Packaged', 'Canned & Packaged '),
 (7, 'HouseHold & Cleaning', 'HouseHold & Cleaning'),
-(10, 'Health', 'health is wealth'),
-(12, 'Beauty', 'for beauty'),
-(13, 'Dairy', 'dairy products');
+(9, 'Dairy', 'Dairy products'),
+(10, 'Health & beauty', 'healthy lifestyles');
 
 -- --------------------------------------------------------
 
@@ -72,10 +69,8 @@ CREATE TABLE `customer_details` (
 --
 
 INSERT INTO `customer_details` (`cid`, `firstname`, `lastname`, `address`, `phoneNumb`, `email`, `username`, `password`) VALUES
-(3, '', '', '', 0, '', '', ''),
-(4, 'admi', 'admin', 'admin', 12345891, 'admin22', '3213213123131', ''),
-(5, 's', 's', 's', 2147483647, 'admin', 's', 's'),
-(6, 'admin', 'admin', 'admin', 12345891, 'admin', 'admin', 'admin');
+(63, 'admin', 'admin', 'admin', 123456789, 'admin', 'admin', 'admin'),
+(64, 'admin', '', '', 0, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -84,13 +79,36 @@ INSERT INTO `customer_details` (`cid`, `firstname`, `lastname`, `address`, `phon
 --
 
 CREATE TABLE `delivery_table` (
-  `tracking_id` int(11) NOT NULL,
+  `tracking_id` varchar(11) NOT NULL,
+  `cid` int(11) NOT NULL,
   `eid` int(11) NOT NULL,
-  `oid` int(11) NOT NULL,
-  `dt_date` date NOT NULL,
+  `dt_date` varchar(50) NOT NULL,
   `dt_location` varchar(250) NOT NULL,
-  `dt_time` time NOT NULL
+  `dt_time` varchar(50) NOT NULL,
+  `landmark` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `delivery_table`
+--
+
+INSERT INTO `delivery_table` (`tracking_id`, `cid`, `eid`, `dt_date`, `dt_location`, `dt_time`, `landmark`) VALUES
+('121221', 65, 1, 'june 2', 'boni avenue', '9am-10am', 'near BDO'),
+('21213', 65, 1, 'none', 'none', 'none', 'none'),
+('22142', 65, 1, '06/02/18', '', '9:00-10:00am', ''),
+('22261', 65, 1, '06/02/18', '', '9:00-10:00am', ''),
+('17063', 65, 1, '06/02/18', '', '9:00-10:00am', ''),
+('25341', 65, 1, '06/02/18', '', '9:00-10:00am', ''),
+('18311', 65, 1, '06/02/18', '', '9:00-10:00am', ''),
+('25155', 65, 1, '06/06/18', '', '3:00-4:00pm', ''),
+('24146', 65, 1, '06/02/18', '', '9:00-10:00am', ''),
+('3486', 65, 1, '06/02/18', '', '9:00-10:00am', ''),
+('28927', 65, 1, '06/02/18', 'asasasa', '9:00-10:00am', 'sasasasasasa'),
+('17667', 65, 1, '06/02/18', 'asasa', '9:00-10:00am', ''),
+('8756', 63, 1, '06/02/18', 'admin', '9:00-10:00am', ''),
+('26066', 63, 1, '06/02/18', 'admin', '9:00-10:00am', ''),
+('4222', 63, 1, '06/06/18', 'admin', '6:00-7:00pm', 'NEAR BDO, LIGAYA STREET'),
+('24209', 63, 1, '06/02/18', 'admin', '9:00-10:00am', '');
 
 -- --------------------------------------------------------
 
@@ -106,6 +124,13 @@ CREATE TABLE `employee_details` (
   `emp_phoneNumb` int(11) NOT NULL,
   `emp_email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee_details`
+--
+
+INSERT INTO `employee_details` (`eid`, `emp_firstname`, `emp_lastname`, `emp_address`, `emp_phoneNumb`, `emp_email`) VALUES
+(1, 'Edward', 'rodriguez', '107 tondo manila', 912345678, 'edward@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -125,8 +150,8 @@ CREATE TABLE `grocerymarket` (
 --
 
 INSERT INTO `grocerymarket` (`gm_id`, `gm_name`, `gm_phoneNumb`, `gm_descrip`) VALUES
-(1, 'Rustan\'s SuperMarket', 922256789, 'Rustan\'s Supermarket in BGC and Makati only'),
-(2, 'SM Supermarket', 912345897, 'SM Supermarket in BGC and Makati only');
+(1, 'Robinson SuperMarket', 922256789, 'Robinson SuperMarket in BGC and Makati only'),
+(2, 'SM Supermarket', 912345897, 'SM Supermarket in makati and bgc Only');
 
 -- --------------------------------------------------------
 
@@ -192,79 +217,6 @@ CREATE TABLE `order` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rustans_product`
---
-
-CREATE TABLE `rustans_product` (
-  `id` int(8) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `itm_descrip` varchar(250) NOT NULL,
-  `code` varchar(255) NOT NULL,
-  `image` text NOT NULL,
-  `price` double(10,2) NOT NULL,
-  `gm_id` int(11) NOT NULL,
-  `categ_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `rustans_product`
---
-
-INSERT INTO `rustans_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`, `gm_id`, `categ_id`) VALUES
-(5, 'Monterey Lean Ground Pork Lean GroundPork\r\n', '500g', 'MLGPLG', 'assets\\Products\\freshMeat\\monLeanGroundPork.jpg\r\n', 120.00, 1, 4),
-(6, 'Monterey Pork Adobo Cut', '500g', 'MPAC', 'assets\\Products\\freshMeat\\Monterey Pork Adobo Cut.JPG', 120.50, 1, 4),
-(13, 'Magnolia Chicken Tapa', '330 g', 'MCTapa', 'assets\\Products\\freshMeat\\magnoliaChikenBreastFillet.JPG', 90.85, 1, 4),
-(14, 'Magnolia Chicken Wings', '500g', 'MCWings', 'assets\\Products\\freshMeat\\Monterey Pork Sinigang Cut.JPG', 85.00, 1, 4),
-(15, 'Apple', 'fresh red apples', 'APPL', 'assets\\Products\\freshFruits\\apple.jpg', 40.25, 1, 5),
-(16, 'Orange', 'fresh orange', 'ORNG', 'assets\\Products\\freshFruits\\orange.jpg', 30.75, 1, 5),
-(17, 'Dragon Fruit', 'fresh dragon fruit', 'DRGNFRT', 'assets\\Products\\freshFruits\\dragon fruit.jpg', 60.75, 1, 5),
-(18, 'Green Apple', 'fresh green apple', 'GRNAPL', 'assets\\Products\\freshFruits\\green apple.jpg', 40.75, 1, 5),
-(19, 'Pear', 'fresh pear', 'PR', 'assets\\Products\\freshFruits\\pear.jpg', 30.75, 1, 5),
-(20, 'Pineapple', 'fresh pineapple', 'FRSPINP', 'assets\\Products\\freshFruits\\pineappe.jpeg', 31.25, 1, 5),
-(21, 'Carrots', 'fresh carrots', 'CRRT', 'assets\\Products\\freshVegg\\carrots.jpg', 40.00, 1, 3),
-(22, 'Cauliflower', 'fresh caulflower', 'CLI', 'assets\\Products\\freshVegg\\cauliflower.jpg', 60.00, 1, 3),
-(23, 'Kale', 'fresh kale', 'KL', 'assets\\Products\\freshVegg\\kale.png', 35.00, 1, 3),
-(24, 'Potato', 'fresh potato', 'PTT', 'assets\\Products\\freshVegg\\potatoe.jpg', 45.00, 1, 3),
-(25, 'Spinach', 'fresh spinach', 'SPNCH', 'assets\\Products\\freshVegg\\spinach.jpeg', 68.76, 1, 3),
-(26, 'String Beans', 'fresh string beans', 'BNS', 'assets\\Products\\freshVegg\\string beans.jpg', 35.50, 1, 3),
-(27, 'Ceelin', 'Ages 2-12 \r\n100 mg/5 mL syrup', 'CLN', 'assets\\Products\\health\\ceelin.jpg', 80.75, 1, 10),
-(28, 'Dietary Supplement', '150 Vegetarian Capsules', 'DS', 'assets\\Products\\health\\Dietary supplement.jpg', 170.75, 1, 10),
-(29, 'Fish Oil', '360 mg Omega-3', 'FO', 'assets\\Products\\health\\fish oil.jpeg', 170.75, 1, 10),
-(30, 'I-carnitine', '500 mg per tablet', 'IC', 'assets\\Products\\health\\l-carnitine.jpeg', 165.75, 1, 10),
-(31, 'Multi-Vitamin', '120 pastilles (soft gummies)', 'MV', 'assets\\Products\\health\\multi-vitamin.jpg', 130.25, 1, 10),
-(32, 'Vitamin C', '30 g', 'VC', 'assets\\Products\\health\\vitamin c.jpg', 145.35, 1, 10),
-(33, 'Del Monte Mango Juice Drink', '1 liter', 'MNG', 'assets\\Products\\Drinks\\delmontemango.jpg', 30.75, 1, 1),
-(34, 'Fit \'n Right', 'Four Seasons\r\n350 ml', 'FNR', 'assets\\Products\\Drinks\\fitnright.jpg', 31.25, 1, 1),
-(35, 'Minute Maid', 'Orangle Flavor\r\n240 ml', 'MM', 'assets\\Products\\Drinks\\minute-maid.jpg', 30.50, 1, 1),
-(38, 'Mogu Mogu', '25% Lychee Juice with Nata de Coco\r\n320 ml', 'MMM', 'assets\\Products\\Drinks\\mogu-mogu.jpg', 30.50, 1, 1),
-(39, 'Summit Water', '500 ml', 'SM', 'assets\\Products\\Drinks\\summit.jpg', 20.00, 1, 1),
-(40, 'Pinto Beans', '425 g', 'PB', 'assets\\Products\\canned\\BEANS.jpg', 50.00, 1, 6),
-(41, 'Bumble Bee Chicken Breast with Rib Meat', '142 g', 'BBCB', 'assets\\Products\\canned\\CHICKEN.jpg', 45.00, 1, 6),
-(42, 'Corned Beef Hash', '425 g', 'CBH', 'assets\\Products\\canned\\CORNED BEEF.jpg', 81.00, 1, 6),
-(43, 'Spam', 'Chopped Pork and Ham', 'SPM', 'assets\\Products\\canned\\SPAM.jpg', 75.00, 1, 6),
-(44, 'Libby\'s Whole Kernel Sweet Corn', '425 g', 'WKSC', 'assets\\Products\\canned\\SWEET CORN.jpg', 67.00, 1, 6),
-(45, 'StarKist Solid White Albacore Tuna', '128 g', 'SSSWAT', 'assets\\Products\\canned\\TUNA.jpg', 59.00, 1, 6),
-(46, 'Sam\'s Natural Bamboo Charcoal Facial Soap', 'Cruelty Free Vegan', 'SNBCFS', 'assets\\Products\\beauty\\facesoap.jpg', 260.00, 1, 12),
-(47, 'Ursa Major Face Wash', '59 ml', 'UMFW', 'assets\\Products\\beauty\\facewasmen.jpg', 360.00, 1, 12),
-(50, 'Black & Red Super Hair Wax', 'Ultra Strong', 'BRSHW', 'assets\\Products\\beauty\\hariwax.jpg', 300.50, 1, 12),
-(51, 'Eos Lip Balm', '7g', 'EOS', 'assets\\Products\\beauty\\lipbalm.jpg', 195.00, 1, 12),
-(52, 'Gillette', 'for men', 'GG', 'assets\\Products\\beauty\\razor.jpg', 150.00, 1, 12),
-(53, 'Pantene Shampoo', '375 ml', 'PS', 'assets\\Products\\beauty\\shampoo.jpg', 115.75, 1, 12),
-(54, 'Ariel', 'Actlift', 'AA', 'assets\\Products\\cleaning\\ARIEL.jpg', 230.75, 1, 7),
-(55, 'Joy', '800 ml', 'JJJ', 'assets\\Products\\cleaning\\JOY.jpg', 90.75, 1, 7),
-(56, 'Lysol Lemon Breeze', '946 ml', 'L', 'assets\\Products\\cleaning\\Lysol.jpg', 121.00, 1, 7),
-(57, 'Scrotch-Brite', 'Hardwood Floor Mop Refill', 'SB', 'assets\\Products\\cleaning\\MOP.jpeg', 112.75, 1, 7),
-(58, 'Scrotch-Brite', '6 pack', 'SBS', 'assets\\Products\\cleaning\\SCOTCH.jpeg', 69.00, 1, 7),
-(59, 'Scrotch-Brite Heavy Duty Grill Scrubber', 'Handled Scrubber', 'SBSS', 'assets\\Products\\cleaning\\SCRUBBER.jpg', 65.75, 1, 7),
-(60, 'Achor Family Spread', 'Salted\r\n200 g', 'AFS', 'assets\\Products\\dairy\\anchor.PNG', 36.00, 1, 13),
-(61, 'DariCreme Lite', '200 g', 'DL', 'assets\\Products\\dairy\\dairykwim.PNG', 50.00, 1, 13),
-(65, 'Eden Cheese', '165 g', 'ECE', 'assets\\Products\\dairy\\eden.PNG', 90.00, 1, 13),
-(66, 'Magnolia Non Fat Milk', '1 liter', 'MNFM', 'assets\\Products\\dairy\\milk.PNG', 99.75, 1, 13),
-(69, 'Star Margarine', '100 g', 'SMSM', 'assets\\Products\\dairy\\star.PNG', 76.75, 1, 13);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_cart`
 --
 
@@ -280,13 +232,21 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`id`, `product_id`, `quantity`, `member_id`) VALUES
-(36, 6, 1, 2),
-(37, 14, 2, 2),
-(38, 5, 1, 10),
-(39, 33, 1, 6),
-(40, 34, 1, 6),
-(41, 60, 2, 6),
-(42, 46, 1, 6);
+(69, 5, 2, 59),
+(70, 6, 2, 59),
+(71, 13, 2, 59),
+(72, 14, 2, 59),
+(73, 15, 3, 59),
+(74, 16, 4, 59),
+(75, 5, 1, 62),
+(76, 6, 2, 62),
+(77, 17, 3, 2),
+(78, 17, 4, 65),
+(79, 6, 1, 46),
+(80, 5, 1, 46),
+(81, 15, 1, 46),
+(82, 13, 1, 46),
+(92, 6, 1, 63);
 
 -- --------------------------------------------------------
 
@@ -411,18 +371,6 @@ INSERT INTO `tbl_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`
 (120, 'Magnolia Non Fat Milk', '1 liter', 'R-MNFM', 'assets\\Products\\dairy\\milk.PNG', 100.00, 1, 13),
 (121, 'Star Margarine', '100 g', 'R-SMSM', 'assets\\Products\\dairy\\star.PNG', 77.00, 1, 13);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `total_price`
---
-
-CREATE TABLE `total_price` (
-  `cid` int(11) NOT NULL,
-  `total_qty` int(11) NOT NULL,
-  `total_price` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 --
 -- Indexes for dumped tables
 --
@@ -443,9 +391,8 @@ ALTER TABLE `customer_details`
 -- Indexes for table `delivery_table`
 --
 ALTER TABLE `delivery_table`
-  ADD PRIMARY KEY (`tracking_id`),
-  ADD KEY `eid` (`eid`),
-  ADD KEY `oid` (`oid`);
+  ADD KEY `delivery_table_ibfk_1` (`cid`),
+  ADD KEY `eid` (`eid`);
 
 --
 -- Indexes for table `employee_details`
@@ -485,16 +432,11 @@ ALTER TABLE `order`
   ADD KEY `itm_id` (`itm_id`);
 
 --
--- Indexes for table `rustans_product`
---
-ALTER TABLE `rustans_product`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `member_id` (`member_id`);
 
 --
 -- Indexes for table `tbl_product`
@@ -506,12 +448,6 @@ ALTER TABLE `tbl_product`
   ADD KEY `categ_id` (`categ_id`);
 
 --
--- Indexes for table `total_price`
---
-ALTER TABLE `total_price`
-  ADD KEY `cid` (`cid`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -519,78 +455,50 @@ ALTER TABLE `total_price`
 -- AUTO_INCREMENT for table `category_details`
 --
 ALTER TABLE `category_details`
-  MODIFY `categ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
+  MODIFY `categ_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `customer_details`
 --
 ALTER TABLE `customer_details`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `delivery_table`
---
-ALTER TABLE `delivery_table`
-  MODIFY `tracking_id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 --
 -- AUTO_INCREMENT for table `employee_details`
 --
 ALTER TABLE `employee_details`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `grocerymarket`
 --
 ALTER TABLE `grocerymarket`
   MODIFY `gm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `item_details`
 --
 ALTER TABLE `item_details`
   MODIFY `itm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `item_grocery_table`
 --
 ALTER TABLE `item_grocery_table`
   MODIFY `id_itm_gm` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
   MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `rustans_product`
---
-ALTER TABLE `rustans_product`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
-
 --
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
   MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
-
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `delivery_table`
---
-ALTER TABLE `delivery_table`
-  ADD CONSTRAINT `delivery_table_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `employee_details` (`eid`),
-  ADD CONSTRAINT `delivery_table_ibfk_2` FOREIGN KEY (`oid`) REFERENCES `order` (`oid`);
 
 --
 -- Constraints for table `item_details`
@@ -605,28 +513,6 @@ ALTER TABLE `item_details`
 ALTER TABLE `item_grocery_table`
   ADD CONSTRAINT `item_grocery_table_ibfk_1` FOREIGN KEY (`itm_id`) REFERENCES `item_details` (`itm_id`),
   ADD CONSTRAINT `item_grocery_table_ibfk_2` FOREIGN KEY (`gm_id`) REFERENCES `grocerymarket` (`gm_id`);
-
---
--- Constraints for table `order`
---
-ALTER TABLE `order`
-  ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `customer_details` (`cid`),
-  ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`id_itm_gm`) REFERENCES `item_grocery_table` (`id_itm_gm`),
-  ADD CONSTRAINT `order_ibfk_3` FOREIGN KEY (`itm_id`) REFERENCES `item_details` (`itm_id`);
-
---
--- Constraints for table `tbl_product`
---
-ALTER TABLE `tbl_product`
-  ADD CONSTRAINT `tbl_product_ibfk_1` FOREIGN KEY (`gm_id`) REFERENCES `grocerymarket` (`gm_id`),
-  ADD CONSTRAINT `tbl_product_ibfk_2` FOREIGN KEY (`categ_id`) REFERENCES `category_details` (`categ_id`);
-
---
--- Constraints for table `total_price`
---
-ALTER TABLE `total_price`
-  ADD CONSTRAINT `total_price_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `customer_details` (`cid`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

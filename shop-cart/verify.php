@@ -29,7 +29,6 @@
          session_start();
          $_SESSION['firstname'] = $firstName;
          $_SESSION['username'] = $username;
-
          echo "redirect me";
          header('Location:getID.php');
       }else {

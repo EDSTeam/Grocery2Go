@@ -27,7 +27,7 @@
                         size="2" class="input-cart-quantity" /><input type="image"
                         src="add-to-cart.png" class="btnAddAction" />
                 </div>
-                <div class="product-price float-left" id="product-price-<?php echo $product_array[$key]["code"]; ?>"><?php echo "PHP ".$product_array[$key]["price"]; ?></div>
+                <div class="product-price float-left" id="product-price-<?php echo $product_array[$key]["code"]; ?>"><?php echo "PHP".$product_array[$key]["price"]; ?></div>
 
             </div>
         </form>

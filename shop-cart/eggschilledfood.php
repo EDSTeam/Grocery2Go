@@ -179,7 +179,7 @@ Body Section
           		type : 'post',
           		success : function(response) {
           			$(inputQuantityElement).val(new_quantity);
-                      $(priceElement).text("$"+newPrice);
+                      $(priceElement).text("PHP"+newPrice);
                       var totalQuantity = 0;
                       $("input[id*='input-quantity-']").each(function() {
                           var cart_quantity = $(this).val();
@@ -188,7 +188,7 @@ Body Section
                       $("#total-quantity").text(totalQuantity);
                       var totalItemPrice = 0;
                       $("div[id*='cart-price-']").each(function() {
-                          var cart_price = $(this).text().replace("$","");
+                          var cart_price = $(this).text().replace("PHP","");
                           totalItemPrice = parseInt(totalItemPrice) + parseInt(cart_price);
                       });
                       $("#total-price").text(totalItemPrice);

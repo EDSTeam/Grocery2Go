@@ -47,7 +47,7 @@ if ($conn->connect_error) {
     <div class="row">
       <div class="span4">
       <h1>
-      <a class="logo" href="index.php"><span>Grocery2Go</span>
+      <a class="logo" href="index.html"><span>Grocery2Go</span>
         <img src="assets/img/g2g.png" alt="grocery2go">
       </a>
       </h1>
@@ -60,35 +60,32 @@ if ($conn->connect_error) {
     </header>
   </div>
 
-    <div class="container">
-      <div class="navbar">
-        <div class="navbar-inner">
-        <div class="container">
-          <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </a>
+  <div class="navbar">
+      <div class="navbar-inner">
+      <div class="container">
+        <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </a>
 
-          <div class="nav-collapse">
-          <ul class="nav">
+        <div class="nav-collapse">
+        <ul class="nav">
 
-            <li class=""><a href="home.php">Home</a></li>
+          <li class=""><a href="home.php">Home</a></li>
+          <li class=""><a href="faqs.php">FAQs</a></li>
+            <li class=""><a href="livetrack.php">Live Track</a></li>
             <li class="active"><a href="profile.php">Profile</a></li>
-            <li class=""><a href="faqs.php">FAQs</a></li>
-            <li class=""><a href="livetrack.html">Live Track</a></li>
-          </ul>
+        </ul>
 
-          <ul class="nav pull-right">
-
-            <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
-            <li><a href="logout.php"><b>Sign out</b></a></li>
+        <ul class="nav pull-right">
+          <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>
+          <li><a href="logout.php"><b>Sign out</b></a></li>
 
 
-          </ul>
-          </div>
+        </ul>
         </div>
-        </div>
+      </div>
       </div>
     </div>
 
@@ -100,16 +97,16 @@ if ($conn->connect_error) {
         <div class="row">
           <div class="span4 offset1">
             <img style="width:100%" src="assets/img/avatar.jpg"  class="img-rounded" alt="user profile picture">
-            <center><h5><?php echo "$_SESSION["firstname"] $_SESSION["lastname"]"; ?></h5></center>
+            <center><h5><?php echo $_SESSION["firstname"]; echo " ".$_SESSION["lastname"];?></h5></center>
           </div>
           <div class="span5 offset1">
             <form>
               <span class="help-block"><strong>Email</strong></span>
-              <input type="text"  class="span4" value="<?$_SESSION["email"]?>" disabled>
+              <input type="text"  class="span4" value="<?php echo $_SESSION["email"]; ?>" disabled>
               <span class="help-block"><strong>Mobile Number</strong></span>
-              <input type="text"  class="span4" value="<?$_SESSION["phoneNumb"]?>" placeholder="Mobile No.">
+              <input type="text"  class="span4" value="<?php echo $_SESSION["phoneNumb"]; ?>" placeholder="Mobile No.">
               <span class="help-block"><strong>Address 1</strong></span>
-              <input type="text"  class="span4" value="<?$_SESSION["address"]?>" placeholder="Address">
+              <input type="text"  class="span4" value="<?php echo $_SESSION["address"]; ?>" placeholder="Address">
               <span class="help-block"><strong>Address 2</strong></span>
               <input type="text"  class="span4" placeholder="Address 2">
               <span class="help-block"><strong></strong></span>

@@ -75,7 +75,7 @@ function save_to_db(cart_id, new_quantity, newPrice) {
 		type : 'post',
 		success : function(response) {
 			$(inputQuantityElement).val(new_quantity);
-            $(priceElement).text("$"+newPrice);
+            $(priceElement).text("PHP"+newPrice);
             var totalQuantity = 0;
             $("input[id*='input-quantity-']").each(function() {
                 var cart_quantity = $(this).val();
@@ -84,7 +84,7 @@ function save_to_db(cart_id, new_quantity, newPrice) {
             $("#total-quantity").text(totalQuantity);
             var totalItemPrice = 0;
             $("div[id*='cart-price-']").each(function() {
-                var cart_price = $(this).text().replace("$","");
+                var cart_price = $(this).text().replace("PHP","");
                 totalItemPrice = parseInt(totalItemPrice) + parseInt(cart_price);
             });
             $("#total-price").text(totalItemPrice);
@@ -180,7 +180,7 @@ if (! empty($cartItem)) {
                 </div>
 
                 <div class="cart-info price" id="cart-price-<?php echo $item["cart_id"]; ?>">
-                        <?php echo "$". ($item["price"] * $item["quantity"]); ?>
+                        <?php echo "PHP". ($item["price"] * $item["quantity"]); ?>
                     </div>
 
 
