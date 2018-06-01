@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 01, 2018 at 05:19 AM
+-- Generation Time: Jun 01, 2018 at 08:30 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -125,8 +125,8 @@ CREATE TABLE `grocerymarket` (
 --
 
 INSERT INTO `grocerymarket` (`gm_id`, `gm_name`, `gm_phoneNumb`, `gm_descrip`) VALUES
-(1, 'Robinson SuperMarket', 922256789, 'Robinson SuperMarket in BGC and Makati only'),
-(2, 'SM Supermarket', 912345897, 'SM Supermarket in makati and bgc Only');
+(1, 'Rustan\'s SuperMarket', 922256789, 'Rustan\'s Supermarket in BGC and Makati only'),
+(2, 'SM Supermarket', 912345897, 'SM Supermarket in BGC and Makati only');
 
 -- --------------------------------------------------------
 
@@ -282,7 +282,11 @@ CREATE TABLE `tbl_cart` (
 INSERT INTO `tbl_cart` (`id`, `product_id`, `quantity`, `member_id`) VALUES
 (36, 6, 1, 2),
 (37, 14, 2, 2),
-(38, 5, 1, 10);
+(38, 5, 1, 10),
+(39, 33, 1, 6),
+(40, 34, 1, 6),
+(41, 60, 2, 6),
+(42, 46, 1, 6);
 
 -- --------------------------------------------------------
 
@@ -348,14 +352,64 @@ INSERT INTO `tbl_product` (`id`, `name`, `itm_descrip`, `code`, `image`, `price`
 (54, 'Ariel', 'Actlift', 'AA', 'assets\\Products\\cleaning\\ARIEL.jpg', 230.35, 2, 7),
 (55, 'Joy', '800 ml', 'JJJ', 'assets\\Products\\cleaning\\JOY.jpg', 89.75, 2, 7),
 (56, 'Lysol Lemon Breeze', '946 ml', 'L', 'assets\\Products\\cleaning\\Lysol.jpg', 120.00, 2, 7),
-(57, 'Scrotch-Brite', 'Hardwood Floor Mop Refill', 'SB', 'assets\\Products\\cleaning\\MOP.jpeg', 110.75, 2, 7),
-(58, 'Scrotch-Brite', '6 pack', 'SBS', 'assets\\Products\\cleaning\\SCOTCH.jpeg', 66.00, 2, 7),
-(59, 'Scrotch-Brite Heavy Duty Grill Scrubber', 'Handled Scrubber', 'SBSS', 'assets\\Products\\cleaning\\SCRUBBER.jpg', 65.75, 2, 7),
+(57, 'Scotch-Brite', 'Hardwood Floor Mop Refill', 'SB', 'assets\\Products\\cleaning\\MOP.jpeg', 110.75, 2, 7),
+(58, 'Scotch-Brite', '6 pack', 'SBS', 'assets\\Products\\cleaning\\SCOTCH.jpeg', 66.00, 2, 7),
+(59, 'Scotch-Brite Heavy Duty Grill Scrubber', 'Handled Scrubber', 'SBSS', 'assets\\Products\\cleaning\\SCRUBBER.jpg', 65.75, 2, 7),
 (60, 'Achor Family Spread', 'Salted\r\n200 g', 'AFS', 'assets\\Products\\dairy\\anchor.PNG', 34.25, 2, 13),
 (61, 'DariCreme Lite', '200 g', 'DL', 'assets\\Products\\dairy\\dairykwim.PNG', 45.00, 2, 13),
 (65, 'Eden Cheese', '165 g', 'ECE', 'assets\\Products\\dairy\\eden.PNG', 89.00, 2, 13),
 (66, 'Magnolia Non Fat Milk', '1 liter', 'MNFM', 'assets\\Products\\dairy\\milk.PNG', 99.00, 2, 13),
-(69, 'Star Margarine', '100 g', 'SMSM', 'assets\\Products\\dairy\\star.PNG', 76.00, 2, 13);
+(69, 'Star Margarine', '100 g', 'SMSM', 'assets\\Products\\dairy\\star.PNG', 76.00, 2, 13),
+(72, 'Monterey Lean Ground Pork Lean', '500g', 'R-MLGPLG', 'assets\\Products\\freshMeat\\monLeanGroundPork.jpg', 118.50, 1, 4),
+(73, 'Monterey Pork Adobo Cut', '500g', 'R-MPAC', 'assets\\Products\\freshMeat\\Monterey Pork Adobo Cut.JPG', 118.50, 1, 4),
+(74, 'Magnolia Chicken Tapa', '330 g', 'R-MCTapa', 'assets\\Products\\freshMeat\\magnoliaChikenBreastFillet.JPG', 90.75, 1, 4),
+(75, 'Magnolia Chicken Wings', '500g', 'R-MCWings', 'assets\\Products\\freshMeat\\Monterey Pork Sinigang Cut.JPG', 89.00, 1, 4),
+(76, 'Apple', 'fresh red apples', 'R-APPL', 'assets\\Products\\freshFruits\\apple.jpg', 31.00, 1, 5),
+(77, 'Orange', 'fresh orange', 'R-ORNG', 'assets\\Products\\freshFruits\\orange.jpg', 26.00, 1, 5),
+(78, 'Dragon Fruit', 'fresh dragon fruit', 'R-DRGNFRT', 'assets\\Products\\freshFruits\\dragon fruit.jpg', 56.00, 1, 5),
+(79, 'Green Apple', 'fresh green apple', 'R-GRNAPL', 'assets\\Products\\freshFruits\\green apple.jpg', 31.00, 1, 5),
+(80, 'Pear', 'fresh pear', 'R-PR', 'assets\\Products\\freshFruits\\pear.jpg', 26.00, 1, 5),
+(81, 'Pineapple', 'fresh pineapple', 'R-FRSPINP', 'assets\\Products\\freshFruits\\pineappe.jpeg', 31.00, 1, 5),
+(82, 'Carrots', 'fresh carrots', 'R-CRRT', 'assets\\Products\\freshVegg\\carrots.jpg', 37.00, 1, 3),
+(83, 'Cauliflower', 'fresh caulflower', 'R-CLI', 'assets\\Products\\freshVegg\\cauliflower.jpg', 56.00, 1, 3),
+(84, 'Kale', 'fresh kale', 'R-KL', 'assets\\Products\\freshVegg\\kale.png', 34.00, 1, 3),
+(85, 'Potato', 'fresh potato', 'R-PTT', 'assets\\Products\\freshVegg\\potatoe.jpg', 44.00, 1, 3),
+(86, 'Spinach', 'fresh spinach', 'R-SPNCH', 'assets\\Products\\freshVegg\\spinach.jpeg', 67.00, 1, 3),
+(87, 'String Beans', 'fresh string beans', 'R-BNS', 'assets\\Products\\freshVegg\\string beans.jpg', 34.00, 1, 3),
+(88, 'Ceelin', 'Ages 2-12 \r\n100 mg/5 mL syrup', 'R-CLN', 'assets\\Products\\health\\ceelin.jpg', 78.00, 1, 10),
+(89, 'Dietary Supplement', '150 Vegetarian Capsules', 'R-DS', 'assets\\Products\\health\\Dietary supplement.jpg', 160.00, 1, 10),
+(90, 'Fish Oil', '360 mg Omega-3\r\n', 'R-FO', 'assets\\Products\\health\\fish oil.jpeg', 160.00, 1, 10),
+(91, 'l-carnitine', '500 mg per tablet', 'R-IC', 'assets\\Products\\health\\l-carnitine.jpeg', 170.00, 1, 10),
+(92, 'Multi-Vitamin', '120 pastilles (soft gummies)', 'R-MV', 'assets\\Products\\health\\multi-vitamin.jpg', 126.00, 1, 10),
+(93, 'Vitamin C', '30 g', 'R-VC', 'assets\\Products\\health\\vitamin c.jpg', 141.00, 1, 10),
+(94, 'Del Monte Mango Juice Drink', '1 liter', 'R-MNG', 'assets\\Products\\Drinks\\delmontemango.jpg', 25.00, 1, 1),
+(95, 'Fit \'n Right', 'Four Seasons\r\n350 ml', 'R-FNR', 'assets\\Products\\Drinks\\fitnright.jpg', 31.00, 1, 1),
+(96, 'Minute Maid', 'Orangle Flavor\r\n240 ml', 'R-MM', 'assets\\Products\\Drinks\\minute-maid.jpg', 26.00, 1, 1),
+(97, 'Mogu Mogu', '25% Lychee Juice with Nata de Coco\r\n320 ml', 'R-MMM', 'assets\\Products\\Drinks\\mogu-mogu.jpg', 26.00, 1, 1),
+(98, 'Summit Water', '500 ml', 'R-SM', 'assets\\Products\\Drinks\\summit.jpg', 17.00, 1, 1),
+(99, 'Pinto Beans', '425 g', 'R-PB', 'assets\\Products\\canned\\BEANS.jpg', 46.00, 1, 6),
+(100, 'Bumble Bee Chicken Breast with Rib Meat', '142 g', 'R-BBCB', 'assets\\Products\\canned\\CHICKEN.jpg', 45.00, 1, 6),
+(101, 'Corned Beef Hash', '425 g', 'R-CBH', 'assets\\Products\\canned\\CORNED BEEF.jpg', 81.00, 1, 6),
+(102, 'Spam', 'Chopped Pork and Ham', 'R-SPM', 'assets\\Products\\canned\\SPAM.jpg', 76.00, 1, 6),
+(103, 'Libby\'s Whole Kernel Sweet Corn', '425 g', 'R-WKSC', 'assets\\Products\\canned\\SWEET CORN.jpg', 67.00, 1, 6),
+(104, 'StarKist Solid White Albacore Tuna', '128 g', 'R-SSSWAT', 'assets\\Products\\canned\\TUNA.jpg', 56.00, 1, 6),
+(105, 'Sam\'s Natural Bamboo Charcoal Facial Soap', 'Cruelty Free Vegan', 'R-SNBCFS', 'assets\\Products\\beauty\\facesoap.jpg', 260.00, 1, 12),
+(106, 'Ursa Major Face Wash', '59 ml', 'R-UMFW', 'assets\\Products\\beauty\\facewasmen.jpg', 360.00, 1, 12),
+(107, 'Black & Red Super Hair Wax', 'Ultra Strong', 'R-BRSHW', 'assets\\Products\\beauty\\hariwax.jpg', 301.00, 1, 12),
+(108, 'Eos Lip Balm', '7g', 'R-EOS', 'assets\\Products\\beauty\\lipbalm.jpg', 200.00, 1, 12),
+(109, 'Gillette', 'for men', 'R-GG', 'assets\\Products\\beauty\\razor.jpg', 136.00, 1, 12),
+(110, 'Pantene Shampoo', '375 ml', 'R-PS', 'assets\\Products\\beauty\\shampoo.jpg', 116.00, 1, 12),
+(111, 'Ariel', 'Actlift', 'R-AA', 'assets\\Products\\cleaning\\ARIEL.jpg', 231.00, 1, 7),
+(112, 'Joy', '800 ml', 'R-JJJ', 'assets\\Products\\cleaning\\JOY.jpg', 90.00, 1, 7),
+(113, 'Lysol Lemon Breeze', '946 ml', 'R-L', 'assets\\Products\\cleaning\\Lysol.jpg', 121.00, 1, 7),
+(114, 'Scotch-Brite', 'Hardwood Floor Mop Refill', 'R-SB', 'assets\\Products\\cleaning\\MOP.jpeg', 110.00, 1, 7),
+(115, 'Scotch-Brite', '6 pack', 'R-SBS', 'assets\\Products\\cleaning\\SCOTCH.jpeg', 67.00, 1, 7),
+(116, 'Scotch-Brite Heavy Duty Grill Scrubber', 'Handled Scrubber', 'R-SBSS', 'assets\\Products\\cleaning\\SCRUBBER.jpg', 66.00, 1, 7),
+(117, 'Achor Family Spread', 'Salted\r\n200 g', 'R-AFS', 'assets\\Products\\dairy\\anchor.PNG', 35.00, 1, 13),
+(118, 'DariCreme Lite', '200 g', 'R-DL', 'assets\\Products\\dairy\\dairykwim.PNG', 46.00, 1, 13),
+(119, 'Eden Cheese', '165 g', 'R-ECE', 'assets\\Products\\dairy\\eden.PNG', 90.00, 1, 13),
+(120, 'Magnolia Non Fat Milk', '1 liter', 'R-MNFM', 'assets\\Products\\dairy\\milk.PNG', 100.00, 1, 13),
+(121, 'Star Margarine', '100 g', 'R-SMSM', 'assets\\Products\\dairy\\star.PNG', 77.00, 1, 13);
 
 -- --------------------------------------------------------
 
@@ -519,13 +573,13 @@ ALTER TABLE `rustans_product`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 
 --
 -- Constraints for dumped tables
