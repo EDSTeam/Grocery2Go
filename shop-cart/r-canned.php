@@ -56,7 +56,7 @@ Navigation Bar Section
           <li class=""><a href="home.php">Home</a></li>
           <li class=""><a href="profile.php">Profile</a></li>
           <li class=""><a href="faqs.php">FAQs</a></li>
-          <li class=""><a href="">Live Track</a></li>
+          <li class=""><a href="livetrack.html">Live Track</a></li>
     			</ul>
           <ul class="nav pull-right">
             <li><a href=""><?php echo "Welcome, ".$_SESSION['firstname'];?></a></li>

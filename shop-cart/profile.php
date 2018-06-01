@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap shopping cart</title>
+    <title>Grocery2Go</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -47,7 +47,7 @@ if ($conn->connect_error) {
     <div class="row">
       <div class="span4">
       <h1>
-      <a class="logo" href="index.html"><span>Grocery2Go</span>
+      <a class="logo" href="index.php"><span>Grocery2Go</span>
         <img src="assets/img/g2g.png" alt="grocery2go">
       </a>
       </h1>
@@ -73,12 +73,10 @@ if ($conn->connect_error) {
           <div class="nav-collapse">
           <ul class="nav">
 
-            <li class="active"><a href="home.php">Home</a></li>
-            <li class=""><a href="freshmeat.php">ShopNow</a></li>
+            <li class=""><a href="home.php">Home</a></li>
+            <li class="active"><a href="profile.php">Profile</a></li>
             <li class=""><a href="faqs.php">FAQs</a></li>
-            <li class=""><a href="">Live Track</a></li>
-              <li class=""><a href="">Message</a></li>
-              <li class=""><a href="profile.php">Profile</a></li>
+            <li class=""><a href="livetrack.html">Live Track</a></li>
           </ul>
 
           <ul class="nav pull-right">
